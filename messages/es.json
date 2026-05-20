@@ -1,0 +1,74 @@
+{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portafolio",
+        "Illustration" : "Ilustración",
+        "ConceptArt" :{
+            "Name" : "Hada del bosque",
+            "Explanation" : "Proyecto de concept art inspirado en Caroline Polachek",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "ChappelRoan" : {
+            "Name" : "La flor",
+            "Explanation" : "Retrato de la cantante Chappell Roan",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Ilustración para pantallas de carga de videojuegos inspirada en la novela de Stephen King, Carrie",
+            "Tools": "Herramientas usadas para desarrollar el proyecto:"
+        }
+    },
+
+    "ReachOut": {
+        "Title": "Contáctame",
+        "Phylosophy":{
+            "Title": "Mi filosofía de arte",
+            "Description": "Como decía Richard Sennett en El Artesano \"no hay arte sin artesanía\". Para mí toda ilustración es un ejercicio de poner ojo en el detalle y profundizar en cada aspecto de la ilustración para obtener un resultado extraordinario."
+        }
+    },
+
+    "AboutMe" : {
+        "Title" : "Acerca de mí",
+        "Actuality" : "Actualidad",
+        "Bio": {
+          "Title": "Hola!",
+          "Description": "Soy Sergio y me he especializado en diseño gráfico, ilustración y diseño UI. Cuento con una formación sólida en Bellas Artes complementada con conocimientos de programación adquiridos durante mi trayectoria académica. Utilizo esta mezcla multidisciplinar para crear diseños que se adapten de forma óptima a diferentes procesos de desarrollo técnico. Le animo a echar un vistazo a mi portafolio para conocer mi trabajo de cerca."  
+        },
+        
+        "Formation": {
+          "Title": "Formación",
+          "Description": "En Bellas Artes aprendí a programar en varias asignaturas además de adquirir sólidos conocimientos en volumen, composición, teoría del color, edición de fotografía (con Adobe Photoshop) y edición de video (adquirí amplias nociones sobre el uso de Adobe Premiere). A parte de la formación principal, me especialicé en Adobe Illustrator, Adobe InDesign e Ilustración aplicada al Textil mediante cursos de formación extensiva universitaria. Después de mi estancia en la Universidad de Málaga, estudié el Máster de Ilustración y Diseño de la UPV, en el que profundicé en el oficio del diseño gráfico. Actualmente me encuentro estudiando un Curso de Python impartido en Code Place por la Universidad de Stanford.",
+          "UMA" : {
+            "University":"Universidad de Málaga",
+            "Grade": "Grado en Bellas Artes",
+            "Courses": {
+                "Illustrator":"Curso de extensión universitaria de Adobe Illustrator",
+                "Indesign": "Curso de extensión universitaria de Adobe InDesign",
+                "Textil": "Curso de extensión universitaria de Ilustración aplicada al textil"
+            }
+          },
+          "UPV" : {
+            "University":"Universitat Politècnica de València",
+            "Grade": "Máster de Ilustración y Diseño"
+          },
+          "Standford" : {
+            "University":"Universidad de Stanford",
+            "Grade": "Curso de Python"
+          }
+        },
+
+        "Skills":{
+            "Title":"Competencias",
+            "Description": "Tengo un amplio bagaje en el uso de un variado número de lenguajes de programación en mi desarrollo, como JavaScript, HTML, CSS3 para desarrollo web, o Python para automatizaciones. Por otro lado, suelo diseñar e ilustrar con software de código abierto como Gimp, Krita e Inkscape.",
+            "Programmes": "Herramientas",
+            "SofwareDesign": "Herramientas de diseño"
+        },
+        "Leanguages" : {
+            "Title": "Idiomas"
+        },
+        "Hobbies" : {
+            "Title": "Intereses",
+            "Description": "Amo tocar la guitarra y pasear por la playa mientras el agua del mar acaricia mis pies."
+        }
+    }
+}

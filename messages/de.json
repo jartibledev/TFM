@@ -1,0 +1,74 @@
+{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portfolio",
+        "Illustration" : "Illustration",
+        "ConceptArt" :{
+            "Name" : "Waldfee",
+            "Explanation" : "Concept-Art-Projekt, inspiriert von Caroline Polachek",
+            "Tools": "Für das Projekt verwendete Werkzeuge:"
+        },
+        "ChappelRoan" : {
+            "Name" : "Die Blume",
+            "Explanation" : "Porträt der Sängerin Chappell Roan, erstellt als Fan-Art",
+            "Tools": "Für das Projekt verwendete Werkzeuge:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Illustration für einen Videospiel-Ladebildschirm, inspiriert von der Hauptfigur aus Stephen Kings Roman Carrie",
+            "Tools": "Für das Projekt verwendete Werkzeuge:"
+        }
+    },
+
+    "ReachOut": {
+        "Title": "Kontakt",
+        "Phylosophy":{
+            "Title": "Meine Kunstphilosophie",
+            "Description": "Wie Richard Sennett in Der Handwerker schrieb: \"Es gibt keine Kunst ohne Handwerk\". Für mich ist jede Illustration eine Übung, das Auge auf das Detail zu richten und in jeden Aspekt des Bildes einzutauchen, um ein außergewöhnliches Ergebnis zu erzielen."
+        }
+    },
+
+    "AboutMe" : {
+        "Title" : "Über mich",
+        "Actuality" : "Aktuell",
+        "Bio": {
+          "Title": "Hallo!",
+          "Description": "Ich bin Sergio. Ich habe mich auf UI-Design und Grafikdesign spezialisiert. Ich liebe es, mit neuen künstlerischen Ausdrucksformen wie Code zu experimentieren. Programmieren ist für mich eine Möglichkeit, neue angenehme Erlebnisse für den Nutzer zu schaffen. In meiner Freizeit lerne ich Gitarre spielen, zeichne Illustrationen und suche nach neuen Kontakten!"  
+        },
+        
+        "Formation": {
+          "Title": "Ausbildung",
+          "Description": "Im Kunststudium habe ich in mehreren Fächern das Programmieren gelernt und fundierte Kenntnisse in Volumen, Komposition, Farblehre, Fotobearbeitung (mit Adobe Photoshop) und Videobearbeitung (mit Adobe Premiere) erworben. Darüber hinaus habe ich mich durch universitäre Erweiterungskurse auf Adobe Illustrator, Adobe InDesign und Textildruck spezialisiert. Danach habe ich einen Master in Illustration und Design in Valencia absolviert, um mein Grafikdesign-Wissen zu vertiefen. Derzeit mache ich einen Python-Kurs an der Stanford University über Code Place.",
+          "UMA" : {
+            "University":"Universität von Málaga",
+            "Grade": "Bachelor-Abschluss in Freier Kunst",
+            "Courses": {
+                "Illustrator":"Universitärer Erweiterungskurs in Adobe Illustrator",
+                "Indesign": "Universitärer Erweiterungskurs in Adobe InDesign",
+                "Textil": "Universitärer Erweiterungskurs in Textilillustration"
+            }
+          },
+          "UPV" : {
+            "University":"Polytechnische Universität Valencia",
+            "Grade": "Master in Illustration und Design"
+          },
+          "Standford" : {
+            "University":"Stanford University",
+            "Grade": "Python-Kurs"
+          }
+        },
+
+        "Skills":{
+            "Title":"Fähigkeiten",
+            "Description": "Ich beherrsche viele Programmiersprachen für meine Entwicklungen, wie JavaScript, HTML und CSS3 für die Webentwicklung oder Python für Automatisierungen. Andererseits entwerfe und illustriere ich meistens mit Open-Source-Software wie Gimp, Krita und Inkscape.",
+            "Programmes": "Werkzeuge",
+            "SofwareDesign": "Design-Software"
+        },
+        "Leanguages" : {
+            "Title": "Sprachen"
+        },
+        "Hobbies" : {
+            "Title": "Hobbys",
+            "Description": "Ich liebe es, Gitarre zu spielen und am Strand spazieren zu gehen, während das Meerwasser meine Füße umspült."
+        }
+    }
+}

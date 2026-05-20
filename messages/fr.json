@@ -1,0 +1,74 @@
+{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portfolio",
+        "Illustration" : "Illustration",
+        "ConceptArt" :{
+            "Name" : "Fée de Bois",
+            "Explanation" : "Projet de concept art inspiré par Caroline Polachek",
+            "Tools": "Outils utilisés pour développer le projet :"
+        },
+        "ChappelRoan" : {
+            "Name" : "La Fleur",
+            "Explanation" : "Portrait de la chanteuse Chappell Roan",
+            "Tools": "Outils utilisés pour développer le projet :"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Illustration pour l'écran de chargement de jeux vidéo inspirée du personnage principal du roman de Stephen King, Carrie",
+            "Tools": "Outils utilisés pour développer le projet :"
+        }
+    },
+
+    "ReachOut": {
+        "Title": "Contactez-moi",
+        "Phylosophy":{
+            "Title": "Ma philosophie d'art",
+            "Description": "Comme dit Richard Sennett dans L'Artisan : \"Il n'y a pas d'art sans artisanat\". Pour moi, chaque illustration est un exercice d'attention aux détails et d'approfondissement de chaque aspect du dessin pour obtenir un résultat extraordinaire."
+        }
+    },
+
+    "AboutMe" : {
+        "Title" : "Sur moi",
+        "Actuality" : "Actuellement",
+        "Bio": {
+          "Title": "Salut !",
+          "Description": "Je suis Sergio, je suis un designer graphique qui aime l'UI/UX (et aussi la programmation). Je conçois pendant mon temps libre, je dessine des illustrations et j'essaie d'apprendre à jouer de la guitare. J'aime les défis, alors connectons-nous !"  
+        },
+        
+        "Formation": {
+          "Title": "Formation",
+          "Description": "Aux Beaux-Arts, j'ai appris à programmer dans plusieurs matières, en plus d'acquérir de solides connaissances en volume, composition, théorie des couleurs, retouche photo (avec Adobe Photoshop) et montage vidéo (avec Adobe Premiere). De plus, je me suis spécialisé en Adobe Illustrator, Adobe InDesign et illustration textile via des cours universitaires de formation continue. Après mes études à l'Université de Málaga, j'ai suivi le Master en Illustration et Design à l'UPV, où j'ai approfondi le métier de designer graphique. Actuellement, je suis un cours de Python dispensé à Code Place par l'Université de Stanford.",
+          "UMA" : {
+            "University":"Université de Málaga",
+            "Grade": "Licence en Beaux-Arts",
+            "Courses": {
+                "Illustrator":"Cours d'extension universitaire Adobe Illustrator",
+                "Indesign": "Cours d'extension universitaire Adobe InDesign",
+                "Textil": "Cours d'extension universitaire d'Illustration appliquée au textile"
+            }
+          },
+          "UPV" : {
+            "University":"Université Polytechnique de Valence",
+            "Grade": "Master en Illustration et Design"
+          },
+          "Standford" : {
+            "University":"Université de Stanford",
+            "Grade": "Cours de Python"
+          }
+        },
+
+        "Skills":{
+            "Title":"Compétences",
+            "Description": "J'ai une vaste expérience dans l'utilisation de plusieurs langages de programmation pour mes développements, comme JavaScript, HTML, CSS3 pour le web, ou Python pour les automatisations. D'autre part, j'utilise généralement des logiciels open-source comme Gimp, Krita et Inkscape pour la création de mes designs.",
+            "Programmes": "Outils",
+            "SofwareDesign": "Outils de conception"
+        },
+        "Leanguages" : {
+            "Title": "Langues"
+        },
+        "Hobbies" : {
+            "Title": "Intérêts",
+            "Description": "J'aime jouer de la guitare et me promener sur la plage pendant que l'eau de la mer caresse mes pieds."
+        }
+    }
+}

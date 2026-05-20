@@ -1,0 +1,74 @@
+{
+    "PortafolioIllustration": {
+        "Portafolio" : "Portfolio",
+        "Illustration" : "Illustration",
+        "ConceptArt" :{
+            "Name" : "Wood Fairy",
+            "Explanation" : "Concept art project inspired by Caroline Polachek",
+            "Tools": "Tools used to develop the project:"
+        },
+        "ChappelRoan" : {
+            "Name" : "The Flower",
+            "Explanation" : "Chappell Roan portrait, made as fan art",
+            "Tools": "Tools used to develop the project:"
+        },
+        "Carrie" : {
+            "Name" : "Carrie",
+            "Explanation" : "Illustration for a video game loading screen inspired by the main character of Stephen King's novel, Carrie",
+            "Tools": "Tools used to develop the project:"
+        }
+    },
+
+    "ReachOut": {
+        "Title": "Contact Me",
+        "Phylosophy":{
+            "Title": "My Art Philosophy",
+            "Description": "As Richard Sennett wrote in The Artisan \"There is no art without craftwork\". For myself, every illustration is an exercise in paying attention to detail and getting deeper into each aspect of the artwork to obtain an amazing result." 
+        }
+    },
+
+    "AboutMe" : {
+        "Title" : "About Me",
+        "Actuality" : "Current",
+        "Bio": {
+          "Title": "Hi!",
+          "Description": "I'm Sergio. I specialize in UI Design and Graphic Design. I love experimenting with new forms of artistic expression, such as code. I consider coding as a way to create new pleasant experiences for the user. In my free time, you can find me trying to learn guitar and drawing illustrations. I like a good challenge and opportunities to meet different connections, so let's connect!"
+        },
+        
+        "Formation": {
+          "Title": "Education",
+          "Description": "In Fine Arts, I learned to code in several subjects, alongside gaining skills in volume, composition, color theory, photography editing (with Adobe Photoshop), and video editing (delving into wide notions about the use of Adobe Premiere). Furthermore, I specialized in Adobe Illustrator, Adobe InDesign, and textile stamps through extensive university extension courses. After that, I studied a Master's Degree in Illustration and Design in Valencia, where I gained graphic design knowledge. Currently, I am doing a Python course at Stanford University via Code Place.",
+          "UMA" : {
+            "University":"University of Málaga",
+            "Grade": "Bachelor's Degree in Fine Arts",
+            "Courses": {
+                "Illustrator":"University Extension Course in Adobe Illustrator",
+                "Indesign": "University Extension Course in Adobe InDesign",
+                "Textil": "University Extension Course in Fashion Illustration"
+            }
+          },
+          "UPV" : {
+            "University":"Polytechnic University of Valencia",
+            "Grade": "Master's Degree in Illustration and Design"
+          },
+          "Standford" : {
+            "University":"Stanford University",
+            "Grade": "Python Course"
+          }
+        },
+
+        "Skills":{
+            "Title":"Skills",
+            "Description": "I know many programming languages which I use in my developments, such as JavaScript, HTML, and CSS3 for web development, or Python for automations. On the other hand, I usually design and illustrate with open-source software like Gimp, Krita, and Inkscape.",
+            "Programmes": "Tools",
+            "SofwareDesign": "Software Design"
+        },
+        "Leanguages" : {
+            "Title": "Languages"
+        },
+        "Hobbies" : {
+            "Title": "Hobbies",
+            "Description": "I love playing guitar and walking on the beach while the sea water caresses my feet."
+        }
+    }
+}
