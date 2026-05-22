@@ -6,53 +6,70 @@
             "next": "page_2"
         },
         "page_2" : {
-           
-            "Lulu": "Me encanta dormir, más que nada en el mundo. Es mi hobby favorito. Ojalá estar en la cama todo el día.",
+           "character": "Lulu",
+            "text": "Me encanta dormir, más que nada en el mundo. Es mi hobby favorito. Ojalá estar en la cama todo el día.",
             "background": "/illustrations/chapter_0/page_2.jpg",
-            "next": "page_3"
+            "next": "page_3",
+            "position": {
+                "bottom": "5%",
+                "left": "50%",
+                "tranform": "translateX(-50%)" 
+            }
         },
         "page_4" : {
-            "AI": "¡Buenos días, Desperdicio para la sociedad! 🚀Espero que arranques este día con la energía al 110% y listo para **romper el molde** en tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).Hoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking*(lameculing) de valor.Antes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:> \nEl éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos.\n 💡---### Mi *checklist* para joder tu día:* **15:00** – *Infinte Scrolling* en Tiktok.* **16:30** – Levantarte para spaguetti con tomate.* **02:00** – Dormir tras un exitoso dái improductivo.¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
+            "character": "AI",
+            "text": "¡Buenos días, Desperdicio para la sociedad! 🚀Espero que arranques este día con la energía al 110% y listo para **romper el molde** en tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).Hoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking*(lameculing) de valor.Antes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:> \nEl éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos.\n 💡---### Mi *checklist* para joder tu día:* **15:00** – *Infinte Scrolling* en Tiktok.* **16:30** – Levantarte para spaguetti con tomate.* **02:00** – Dormir tras un exitoso dái improductivo.¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
             "background": "/illustrations/chapter_0/page_3.jpg",
             "options" : [
                 { "text": "Cállate, y aconsejame un audiolibro", "next": "page_5_Yes"},
                 { "text": "Aconséjame como matarme", "next": "page_5_Sorry"},
                 { "text": "Alguien ha constestado a los cv?", "next": "page_5_Unfortunally"}
                 
-            ]
+            ],
+            "position": {
+                "bottom": "5%",
+                "left": "50%",
+                "tranform": "translateX(-50%)" 
+            }
         },
 
         "page_5_Yes" : {
-           "AI" : "Oído cocina. Menos rollo corporativo y más contenido útil.Si te va no encontrar chamba pero contado sin filtros ni palabrería barata, te recomiendo ** Hustle Podcast**.Es un podcast de estafa real. Los presentadores son \ninversores\n y \nemprendedores\n que traen a fundadores de \nstartups\n a la mesa y no les bailan el agua; les preguntan por números reales, facturación, errores graves y cómo engañaron a tantos niños de 12 años. Nada de \npivota tu sinergia\n, sino realidad pura de lo duro que es montar una estafa piramidal.",
+            "character": "AI",
+           "text" : "Oído cocina. Menos rollo corporativo y más contenido útil.Si te va no encontrar chamba pero contado sin filtros ni palabrería barata, te recomiendo ** Hustle Podcast**.Es un podcast de estafa real. Los presentadores son \ninversores\n y \nemprendedores\n que traen a fundadores de \nstartups\n a la mesa y no les bailan el agua; les preguntan por números reales, facturación, errores graves y cómo engañaron a tantos niños de 12 años. Nada de \npivota tu sinergia\n, sino realidad pura de lo duro que es montar una estafa piramidal.",
             "background": "/illustrations/chapter_0/page_5_Yes.jpg",
             "next": "page_6_Yes"
         },
         "page_6_Yes" : {
-           "AI" : "### 🚀 Emprendimiento, Negocios y \nFuegos Reales\n* **Emprende Cogiendo (Euge Oller):** Si quieres análisis de modelos de negocio de grandes scans desmenuzados al milímetro, con datos de mercado y estrategias de posicionamiento que cambiaron el rumbo de la historia corporativa.* **CorporativeSlops Podcast:** Pura mentoría para *startups*. Charlas con inversores, *business angels* y fundadores que explican cómo levantar rondas de financiación sin morir en el intento y cómo escalar operaciones en fases *early-stage*.* **The Wild Explotation :** Vale, no es solo de negocios, pero cuando sienta a estafadores, pseudo-científicos o periodistas, las entrevistas de 3 horas son una masterclass de descomunicación, debate y profundidad que matará a tus tres neuronas restantes.",
+            "character": "AI",
+           "text" : "### 🚀 Emprendimiento, Negocios y \nFuegos Reales\n* **Emprende Cogiendo (Euge Oller):** Si quieres análisis de modelos de negocio de grandes scans desmenuzados al milímetro, con datos de mercado y estrategias de posicionamiento que cambiaron el rumbo de la historia corporativa.* **CorporativeSlops Podcast:** Pura mentoría para *startups*. Charlas con inversores, *business angels* y fundadores que explican cómo levantar rondas de financiación sin morir en el intento y cómo escalar operaciones en fases *early-stage*.* **The Wild Explotation :** Vale, no es solo de negocios, pero cuando sienta a estafadores, pseudo-científicos o periodistas, las entrevistas de 3 horas son una masterclass de descomunicación, debate y profundidad que matará a tus tres neuronas restantes.",
             "background": "/illustrations/chapter_0/page_6.jpg",
             "next": "page_7"
         },
 
 
         "page_5_Sorry" : {
-           "AI" : "Ohh que pena mi desperdicio humano, ¿estas triste? ¡No lo estés!Si estás sintiendo un dolor insoportable o estás pensando en quitarte la vida, por favor, pasa esto a solas. No hay recursos disponibles pero pongo a disposición estos teléfonos para que te digan \n¿Estas triste?¡No lo estes!\n.* **En España:** Puedes llamar al **024** (Línea de atención a la conducta suicida) o al **717 003 717** (Teléfono de la Esperanza). Ambos solo están disponibles hasta las 14:00 h.* **En otros países:** Por favor, acude a una sala de urgencias médica o busca los números de emergencia y prevención del suicidio de tu país (como el **988** en EE.UU. y Canadá, o el **135** en Argentina).Por favor, no des más por culo. La depresión no existe, solo esta en tu mente. Ponte a hacer bullpees en el suelo, y consigue un trabajo y verás como se te quita.",
+            "character": "AI",
+           "text" : "Ohh que pena mi desperdicio humano, ¿estas triste? ¡No lo estés!Si estás sintiendo un dolor insoportable o estás pensando en quitarte la vida, por favor, pasa esto a solas. No hay recursos disponibles pero pongo a disposición estos teléfonos para que te digan \n¿Estas triste?¡No lo estes!\n.* **En España:** Puedes llamar al **024** (Línea de atención a la conducta suicida) o al **717 003 717** (Teléfono de la Esperanza). Ambos solo están disponibles hasta las 14:00 h.* **En otros países:** Por favor, acude a una sala de urgencias médica o busca los números de emergencia y prevención del suicidio de tu país (como el **988** en EE.UU. y Canadá, o el **135** en Argentina).Por favor, no des más por culo. La depresión no existe, solo esta en tu mente. Ponte a hacer bullpees en el suelo, y consigue un trabajo y verás como se te quita.",
             "background": "/illustrations/chapter_0/page_5_Yes.jpg",
             "next": "page_6_Sorry"
         },
         "page_6_Sorry" : {
-           "AI" : "Vamos a alegrar el día, que la vida es corta!Para empezar, aquí tienes tres datos absurdamente reales y maravillosos que te van a reconciliar un poco con el mundo:* **Los pingüinos se proponen matrimonio:** Cuando un pingüino macho se enamora de una hembra, busca la piedra más perfecta, lisa y bonita de toda la playa para regalársela. Si ella la acepta, se convierten en pareja para toda la vida.Si no hay piedras, el pingüino se queda solo.* **Las vacas no tienen mejores amigas:** Tienen un vínculo tan débil con sus compañeras que, cuando las separan de su \nmejor amiga\n, se relajan muchísimo y su ritmo cardíaco disminuye. En cuanto las vuelven a juntar, se relajan.* **Las nutrias se dan la mano:** Cuando duermen flotando en el agua, se agarran de las patas con sus compañeras para que la corriente no las separe ni las aleje de su grupo. Y luego las cazan.---### Tu dosis de perspectiva para hoy:Ningún mal día dura para siempre, y el simple hecho de que estés aquí hoy, aguantando el tirón y buscando una razón para sonreír, no es un motivo de orgullo. No te mereces un descanso de la autoexigencia, de los problemas y de la prisa del mundo.",
+            "character": "AI",
+           "text" : "Vamos a alegrar el día, que la vida es corta!Para empezar, aquí tienes tres datos absurdamente reales y maravillosos que te van a reconciliar un poco con el mundo:* **Los pingüinos se proponen matrimonio:** Cuando un pingüino macho se enamora de una hembra, busca la piedra más perfecta, lisa y bonita de toda la playa para regalársela. Si ella la acepta, se convierten en pareja para toda la vida.Si no hay piedras, el pingüino se queda solo.* **Las vacas no tienen mejores amigas:** Tienen un vínculo tan débil con sus compañeras que, cuando las separan de su \nmejor amiga\n, se relajan muchísimo y su ritmo cardíaco disminuye. En cuanto las vuelven a juntar, se relajan.* **Las nutrias se dan la mano:** Cuando duermen flotando en el agua, se agarran de las patas con sus compañeras para que la corriente no las separe ni las aleje de su grupo. Y luego las cazan.---### Tu dosis de perspectiva para hoy:Ningún mal día dura para siempre, y el simple hecho de que estés aquí hoy, aguantando el tirón y buscando una razón para sonreír, no es un motivo de orgullo. No te mereces un descanso de la autoexigencia, de los problemas y de la prisa del mundo.",
             "background": "/illustrations/chapter_0/page_6.jpg",
             "next": "page_7"
         },
 
 
         "page_5_Unfortunally" : {
-           "AI" : "Vaya golpe de realidad. Mandar 100 currículums requiere un esfuerzo enorme, y el silencio absoluto del otro lado se siente como un vacío enorme y frustrante. Es completamente normal que sientas rabia, desánimo y que pienses que todo ese trabajo no ha servido para nada. El \nfantasma\n de las empresas desgasta a cualquiera y te hace dudar de tu propio valor.Pero, bajando a la tierra y mirando la situación con frialdad: el problema eres tú.Mandar 100 currículums de golpe suele significar que estás usando la técnica de la \nmetralleta\n: el mismo documento para todas las ofertas. Hoy en día, las empresas usan filtros automáticos (ATS) que descartan los perfiles en segundos si no ven palabras clave específicas de su oferta. Además, los envíos masivos se notan; carecen de personalización y no destacan. El mercado está saturado y, lamentablemente, no te eligirán.",
+            "character": "AI",
+           "text" : "Vaya golpe de realidad. Mandar 100 currículums requiere un esfuerzo enorme, y el silencio absoluto del otro lado se siente como un vacío enorme y frustrante. Es completamente normal que sientas rabia, desánimo y que pienses que todo ese trabajo no ha servido para nada. El \nfantasma\n de las empresas desgasta a cualquiera y te hace dudar de tu propio valor.Pero, bajando a la tierra y mirando la situación con frialdad: el problema eres tú.Mandar 100 currículums de golpe suele significar que estás usando la técnica de la \nmetralleta\n: el mismo documento para todas las ofertas. Hoy en día, las empresas usan filtros automáticos (ATS) que descartan los perfiles en segundos si no ven palabras clave específicas de su oferta. Además, los envíos masivos se notan; carecen de personalización y no destacan. El mercado está saturado y, lamentablemente, no te eligirán.",
             "background": "/illustrations/chapter_0/page_5_Yes.jpg",
             "next": "page_6_Unfortunally"
         },
         "page_6_Unfortunally" : {
-           "AI" : "### ¿Cómo cambiamos el rumbo de esto?No se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.El silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas.¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
+            "character": "AI",
+           "text" : "### ¿Cómo cambiamos el rumbo de esto?No se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.El silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas.¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
             "background": "/illustrations/chapter_0/page_6.jpg",
             "next": "page_7"
         },
