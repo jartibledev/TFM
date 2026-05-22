@@ -5,15 +5,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const locales = ['es', 'en', 'fr', 'de'];
 
@@ -36,7 +27,7 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={`${dmMono.variable}${GeistMono.variable}${cascadiaMono.variable}${fragmentMono.variable}${cultiveMono.variable}`}>
+      <body >
         {/* 4. Aseguramos que el Client Provider reciba tanto los mensajes como el locale actual */}
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}

@@ -7,7 +7,7 @@ export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
   const [initialized, setInitialized ] = useState(false);
   const [lastDecition, setLastDecition] = useState('');
-  const t = useTranslations('VisualNovel.chapter_0');
+  const t = useTranslations('VisualNovel.introduction');
  
   useEffect(() => {
     const saveGame = localStorage.getItem( 'actual_page');
@@ -52,15 +52,15 @@ export default function GameEngine() {
     transform: 'translateX(-50%)'
   }
   const styleBox = pageDates.position 
-  ? { position: 'abosulute', ...pageDates.position}
+  ? { position: 'absolute', ...pageDates.position}
   : { position: 'absolute', ...positionDefault}
 
   return (
-    <div className="contenedor" style={{ backgroundImage: `url(${pageDates.fondo})` }}>
+    <div className="contenedor-libre" style={{ backgroundImage: `url(${pageDates.fondo})` }}>
       
       <div className="caja-dialogo"
       style={styleBox}
-      onClick={(e) => e.isPropagationStopped()}
+      onClick={(e) => e.stopPropagation()}
       >
 
         <h3>{pageDates.personaje}</h3>
