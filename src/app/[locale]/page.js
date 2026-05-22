@@ -46,13 +46,25 @@ export default function GameEngine() {
     finalText = pageDates.variants_text[lastDecition] || pageDates.text;
   }
 
+  const positionDefault = {
+    bottom: ' 40px',
+    left: '50%',
+    transform: 'translateX(-50%)'
+  }
+  const styleBox = pageDates.position 
+  ? { position: 'abosulute', ...pageDates.position}
+  : { position: 'absolute', ...positionDefault}
+
   return (
     <div className="contenedor" style={{ backgroundImage: `url(${pageDates.fondo})` }}>
-      {pageDates.avatar && <img src={pageDates.avatar} alt="Personaje" />}
       
-      <div className="caja-dialogo">
+      <div className="caja-dialogo"
+      style={styleBox}
+      onClick={(e) => e.isPropagationStopped()}
+      >
+
         <h3>{pageDates.personaje}</h3>
-        <p>{finalText}</p> {/* Renderiza el text dinámico */}
+        <p>{pageDates.text}</p> {/* Renderiza el text dinámico */}
 
         {/* Si la página tiene opciones */}
         {pageDates.opciones && pageDates.opciones.map((opcion, i) => (
