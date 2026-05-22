@@ -1,48 +1,71 @@
-import React, { useState } from 'react';
+'use client'
+
+import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-export default function MotorJuego() {
-  const [paginaActual, setPaginaActual] = useState('pregunta_examen');
-  // Guardamos un historial de las elecciones del jugador
-  const [ultimaDecision, setUltimaDecision] = useState('');
+export default function GameEngine() {
+  const [actualPage, setActualPage] = useState('start');
+  const [initialized, setInitialized ] = useState(false);
 
-  const t = useTranslations('NovelaVisual.capitulo_1');
-  const datosPagina = t.raw(paginaActual);
+  const [lastDecition, setLastDecition] = useState('');
+  const t = useTranslations('VisualNovel.chapter_0');
+ 
 
-  const avanzarPagina = (siguienteClave, decisionTomada) => {
-    if (decisionTomada) {
-      setUltimaDecision(decisionTomada); // Guardamos "estudio" o "no_estudio"
+  useEffect(() => {
+    const saveGame = localStorage.getItem( 'actual_page');
+    if (saveGame){
+      setActualPage(saveGame);
     }
-    setPaginaActual(siguienteClave);
+    setInitialized(true);
+  }, []);
+
+  useEffect (() => {
+    if (initialized) {
+      localStorage.setItem('actual_page', actualPage)
+    }
+  }, [actualPage, initialized]);
+
+
+  if (!initialized) {
+    return <div style={{color: 'white'}}>Loading Story...</div>
+  }
+
+   const pageDates = t.raw(actualPage);
+
+  const advancePage = (nextKey, decitionTaken) => {
+    if (decitionTaken) {
+      setLastDecition(decitionTaken); // Guardamos "estudio" o "no_estudio"
+    }
+    setActualPage(nextKey);
   };
 
-  // LÓGICA CLAVE: ¿El texto es fijo o depende de una decisión?
-  let textoFinal = datosPagina.texto;
-  if (datosPagina.textos_variantes) {
-    textoFinal = datosPagina.textos_variantes[ultimaDecision];
+  // LÓGICA CLAVE: ¿El text es fijo o depende de una decisión?
+  let finalText = pageDates.text;
+  if (pageDates.variants_text) {
+    finalText = pageDates.variants_text[lastDecition];
   }
 
   return (
-    <div className="contenedor" style={{ backgroundImage: `url(${datosPagina.fondo})` }}>
-      {datosPagina.avatar && <img src={datosPagina.avatar} alt="Personaje" />}
+    <div className="contenedor" style={{ backgroundImage: `url(${pageDates.fondo})` }}>
+      {pageDates.avatar && <img src={pageDates.avatar} alt="Personaje" />}
       
       <div className="caja-dialogo">
-        <h3>{datosPagina.personaje}</h3>
-        <p>{textoFinal}</p> {/* Renderiza el texto dinámico */}
+        <h3>{pageDates.personaje}</h3>
+        <p>{finalText}</p> {/* Renderiza el text dinámico */}
 
         {/* Si la página tiene opciones */}
-        {datosPagina.opciones && datosPagina.opciones.map((opcion, i) => (
+        {pageDates.opciones && pageDates.opciones.map((opcion, i) => (
           <button 
             key={i} 
-            onClick={() => avanzarPagina(opcion.siguiente, opcion.decision)}
+            onClick={() => advancePage(opcion.siguiente, opcion.decision)}
           >
-            {opcion.texto}
+            {opcion.text}
           </button>
         ))}
 
         {/* Si es una página de continuación lineal */}
-        {datosPagina.siguiente && (
-          <button onClick={() => avanzarPagina(datosPagina.siguiente)}>
+        {pageDates.siguiente && (
+          <button onClick={() => advancePage(pageDates.siguiente)}>
             Continuar...
           </button>
         )}
