@@ -4,17 +4,19 @@ import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function GameEngine() {
-  const [actualPage, setActualPage] = useState('start');
+  const [actualPage, setActualPage] = useState('page_1');
   const [initialized, setInitialized ] = useState(false);
-
   const [lastDecition, setLastDecition] = useState('');
   const t = useTranslations('VisualNovel.chapter_0');
  
-
   useEffect(() => {
     const saveGame = localStorage.getItem( 'actual_page');
+    const saveDecition = localStorage.getItem('last_decition');
     if (saveGame){
       setActualPage(saveGame);
+    }
+    if (saveDecition) {
+      setLastDecition(saveDecition)
     }
     setInitialized(true);
   }, []);
@@ -22,27 +24,26 @@ export default function GameEngine() {
   useEffect (() => {
     if (initialized) {
       localStorage.setItem('actual_page', actualPage)
+      localStorage.setItem('last_decition', lastDecition);
     }
   }, [actualPage, initialized]);
-
 
   if (!initialized) {
     return <div style={{color: 'white'}}>Loading Story...</div>
   }
 
-   const pageDates = t.raw(actualPage);
+  const pageDates = t.raw(actualPage);
 
   const advancePage = (nextKey, decitionTaken) => {
     if (decitionTaken) {
-      setLastDecition(decitionTaken); // Guardamos "estudio" o "no_estudio"
+      setLastDecition(decitionTaken);
     }
     setActualPage(nextKey);
   };
 
-  // LÓGICA CLAVE: ¿El text es fijo o depende de una decisión?
   let finalText = pageDates.text;
   if (pageDates.variants_text) {
-    finalText = pageDates.variants_text[lastDecition];
+    finalText = pageDates.variants_text[lastDecition] || pageDates.text;
   }
 
   return (
