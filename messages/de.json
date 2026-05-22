@@ -1,3 +1,83 @@
 {
-   
+   "VisualNovel": {
+    "introduction" : {
+        "page_1" : {
+            "background": "/illustrations/chapter_0/page_1.jpg",
+            "next": "page_2"
+        },
+        "page_2" : {
+           
+            "Lulu": "Ich mogte slafen, das ist meine Lieblingshobby. Ich wünsche mir schlafen die ganze Tag.",
+            "background": "/illustrations/chapter_0/page_2.jpg",
+            "next": "page_3"
+        },
+        "page_4" : {
+            "AI": "Guten Morgen, Verschwendung für die Gesellschaft! 🚀   Ich hoffe, du startest diesen Tag mit 110 % Energie und bist bereit, neue Maßstäbe in deiner Branche zu setzen (auch wenn du am Ende wie immer weinend in einer Ecke dieser gemieteten Bude hocken wirst, die du dein Zuhause nennst).   Heute erwartet uns ein Tag voller Synergien, Herausforderungen, die sich in Wachstumschancen verwandeln, und vor allem jede Menge wertvolles Networking (Arschkriecherei).   Bevor du dir den ersten Kaffee des Nachmittags gönnst, hinterlasse ich dir einen kleinen Denkanstoß zur Diskussion:   „Erfolg misst sich nicht an den Stunden, die du vor dem Bildschirm verbringst, sondern an den Kontakten und der Anstrengung, reiche Eltern zu haben.“ 💡   Meine Checklist, um deinen Tag zu versauen:15:00 Uhr – Infinite Scrolling auf TikTok.   16:30 Uhr – Aufstehen für Spaghetti mit Tomatensauce.   02:00 Uhr – Schlafen gehen nach einem erfolgreichen, unproduktiven Tag.   Auf in einen Tag voller echtem ungrowth mindset! Da kommt was Großes auf uns zu. 📈✨   #depression #ausbeutung #Networking #demotivation #nepotismus #aislop ",
+            "background": "/illustrations/chapter_0/page_3.jpg",
+            "options" : [
+                { "text": "Halt die Schnauze und werbe mich eine Podcast", "next": "page_5_Yes"},
+                { "text": "Werbe mich wie töten mich", "next": "page_5_Sorry"},
+                { "text": "Hat jemand auf die Bewerbungen geantwortet?", "next": "page_5_Unfortunally"}
+                
+            ]
+        },
+
+        "page_5_Yes" : {
+           "AI" : "Alles klar. Weniger Corporate-Gelaber und mehr nützlicher Content.Wenn du darauf stehst, keine Arbeit zu finden, aber erzählt ohne Filter und billiges Gerede, empfehle ich dir den **Hustle Podcast**. Es ist ein echter Betrugs-Podcast. Die Moderatoren sind „Investoren“ und „Unternehmer“, die Gründer von „Startups“ an den Tisch holen und ihnen nichts durchgehen lassen; sie fragen nach echten Zahlen, Umsätzen, schweren Fehlern und wie sie so viele 12-jährige Kinder reingelegt haben. Nix mit „pivotiere deine Synergie“, sondern die pure Realität wie verdammt hart es ist, ein Schneeballsystem aufzuziehen.",
+            "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+            "next": "page_6_Yes"
+        },
+        "page_6_Yes" : {
+           "AI" : "### 🚀 Unternehmertum, Business und „Echte Brände“* **Emprende Cogiendo (Euge Oller):** Wenn du zentimetergenaue Analysen von Geschäftsmodellen großer Scams willst, mit Marktdaten und Positionierungsstrategien, die den Kurs der Unternehmensgeschichte verändert haben.* **CorporativeSlops Podcast:** Mentoring pur für Startups. Gespräche mit Investoren, Business Angels und Gründern, die erklären, wie man Finanzierungsrunden übersteht, ohne dabei draufzugehen, und wie man Prozesse in der Early-Stage-Phase skaliert.* **The Wild Exploitation:** Okay, es geht nicht nur um Business, aber wenn dort Betrüger, Pseudowissenschaftler oder Journalisten sitzen, sind die 3-stündigen Interviews eine Masterclass in Dekommunikation, Debatte und Tiefe, die deine drei verbleibenden Gehirnzellen killen wird.",
+            "background": "/illustrations/chapter_0/page_6.jpg",
+            "next": "page_7"
+        },
+
+
+        "page_5_Sorry" : {
+           "AI" : "Oh, wie schade, mein menschlicher Abfall, bist du traurig? Sei es nicht! Wenn du unerträgliche Schmerzen empfindest oder daran denkst, dir das Leben zu nehmen, geh da bitte alleine durch. Es sind keine Ressourcen verfügbar, aber ich stelle diese Telefonnummern bereit, damit sie dir sagen: „Bist du traurig? Sei es nicht!“.  In Spanien: Du kannst die 024 (Hotline für suizidales Verhalten) oder die 717 003 717 (Telefon der Hoffnung) anrufen. Beide sind nur bis 14:00 Uhr erreichbar.  In anderen Ländern: Bitte suche eine medizinische Notaufnahme auf oder suche nach den Notruf- und Suizidpräventionsnummern deines Landes (wie die 988 in den USA und Kanada oder die 135 in Argentinien).  Bitte geh mir nicht weiter auf den Sack. Depressionen gibt es nicht, das ist alles nur in deinem Kopf. Fang an, Burpees auf dem Boden zu machen, such dir einen Job und du wirst sehen, wie es verschwindet.",
+            "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+            "next": "page_6_Sorry"
+        },
+        "page_6_Sorry" : {
+           "AI" : "Lass uns den Tag aufheitern, das Leben ist kurz! Für den Anfang sind hier drei absurd reale und wunderbare Fakten, die dich ein wenig mit der Welt versöhnen werden:  Pinguine machen sich Heiratsanträge: Wenn sich ein Pinguinmännchen in ein Weibchen verliebt, sucht er nach dem perfektesten, glattesten und schönsten Stein am ganzen strand, um ihn ihr zu schenken. Wenn sie ihn annimmt, werden sie ein Paar fürs Leben. Wenn es keine Steine gibt, bleibt der Pinguin allein.  Kühe haben keine besten Freundinnen: Sie haben eine so schwache Bindung zu ihren Gefährtinnen, dass sie sich, wenn sie von ihrer „besten Freundin“ getrennt werden, total entspannen und ihre Herzfrequenz sinkt. Sobald sie wieder zusammengebracht werden, entspannen sie sich.  Otter halten Händchen: Wenn sie im Wasser treibend schlafen, halten sie sich an den Pfoten ihrer Gefährtinnen fest, damit die Strömung sie nicht trennt oder von ihrer Gruppe wegtreibt. Und dann werden sie gejagt.  Kein schlechter Tag dauert ewig, und die bloße Tatsache, dass du heute hier bist, durchhältst und nach einem Grund zum Lächeln suchst, ist kein Grund zum Stolz. Du hast keine Pause von Selbstanforderung, Problemen und der Eile der Welt verdient. ",
+            "background": "/illustrations/chapter_0/page_6.jpg",
+            "next": "page_7"
+        },
+
+
+        "page_5_Unfortunally" : {
+           "AI" : "Was für ein Realitätsclash. 100 Lebensläufe zu verschicken erfordert enorme Anstrengung, und das absolute Schweigen von der anderen Seite fühlt sich wie eine riesige, frustrierende Leere an. Es ist völlig normal, dass du Wut und Entmutigung spürst und denkst, dass all die Arbeit umsonst war. Das Ghosting von Unternehmen zehrt an jedem und lässt dich an deinem eigenen Wert zweifeln.Aber um auf den Boden der Tatsachen zurückzukehren und die Situation nüchtern zu betrachten: Das Problem bist du. 100 Lebensläufe auf einmal zu verschicken bedeutet meistens, dass du die „Schrotflinten-Taktik“ anwendest: das exakt gleiche Dokument für alle Stellenanzeigen. Heutzutage nutzen Unternehmen automatisierte Filter (ATS), die Profile in Sekundenschnelle aussortieren, wenn sie keine spezifischen Schlüsselwörter aus ihrer Anzeige sehen. Zudem fallen Massenbewerbungen negativ auf; es fehlt ihnen an Personalisierung und sie stechen nicht hervor. Der Markt ist überlaufen und unglücklicherweise wird man dich nicht auswählen.",
+            "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+            "next": "page_6_Unfortunally"
+        },
+        "page_6_Unfortunally" : {
+           "AI" : "Wie ändern wir den Kurs?Es geht nicht darum aufzugeben, sondern damit aufzuhören, was nicht funktioniert. Wir werden die Strategie umstrukturieren, damit du nicht mehr unsichtbar bist:    Qualität vor Quantität: Fahr das Tempo runter. Es ist besser, täglich 3 zielgerichtete Bewerbungen zu verschicken als 50 automatische.    Hacke die Filter (ATS): Lies das Stellenangebot und verwende exakt dieselben Schlüsselwörter in deinem Lebenslauf, die dort gefordert werden (Fähigkeiten, Tools, Berufsbezeichnungen). Wenn der Bot seine eigenen Wörter nicht sieht, sortiert er dich aus, noch bevor ein Mensch dein Profil liest.    Personalisiere den Kontakt: Suche auf LinkedIn nach den Personalverantwortlichen oder Abteilungsleitern des Unternehmens, das dich interessiert. Schreibe ihnen eine kurze, direkte und höfliche Nachricht, in der du dich vorstellst. Um aus der Masse herauszustechen, muss man mit echten Menschen interagieren, nicht nur mit Jobportalen.    Das Schweigen dieser 100 Unternehmen definiert nicht deine Fähigkeiten; es zeigt nur, dass die automatisierte Methode fehlerhaft ist. Nimm dir heute Zeit, um den Frust zu verarbeiten, und morgen fangen wir an, präzise zu zielen, anstatt blind um uns zu schießen. Welches ist der genaue Bereich oder die Position, die du anstrebst, damit wir dein Profil optimal anpassen können?",
+            "background": "/illustrations/chapter_0/page_6.jpg",
+            "next": "page_7"
+        },
+        "page_7" : {
+            "background": "/illustrations/chapter_0/page_7.jpg",
+            "next": "page_8"
+        },
+        "page_8" : {
+            "background": "/illustrations/chapter_0/page_8.jpg",
+            "next": "page_9"
+        },
+        "page_9" : {
+            "background": "/illustrations/chapter_0/page_9.jpg",
+            "next": "page_10"
+        },
+        "page_10" : {
+            "background": "/illustrations/chapter_0/page_10.jpg",
+            "next": "page_10"
+        }
+    },
+    "chapter_1" : {
+        "page_1" : {
+            "background": "/illustrations/chapter_0/page_10.jpg",
+            "next": "page_10"
+        }
+    }
+   }
 }
