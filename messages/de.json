@@ -2,6 +2,8 @@
    "VisualNovel": {
     "introduction" : {
         "page_1" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_1.jpg",
             "next": "page_2"
         },
@@ -17,8 +19,10 @@
             }
         },
         "page_3" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_2.jpg",
-            "next": "page_3"
+            "next": "page_4"
         },
         "page_4" : {
             "character": "AI",
@@ -108,24 +112,34 @@
             }
         },
         "page_7" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_7.jpg",
             "next": "page_8"
         },
         "page_8" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_8.jpg",
             "next": "page_9"
         },
         "page_9" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_9.jpg",
             "next": "page_10"
         },
         "page_10" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_10.jpg",
             "next": "page_10"
         }
     },
     "chapter_1" : {
         "page_1" : {
+            "character": "",
+            "text": "",
             "background": "/illustrations/chapter_0/page_10.jpg",
             "next": "page_10"
         }
