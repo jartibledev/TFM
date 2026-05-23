@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
+import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
+import { Character, TextCharacter } from '@/styles/Paragraph.styles';
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -18,6 +20,8 @@ export default function GameEngine() {
     }
     if (saveDecition) {
       setLastDecition(saveDecition)
+    }else{
+      setLastDecition("");
     }
     setInitialized(true);
   }, []);
@@ -27,7 +31,7 @@ export default function GameEngine() {
       localStorage.setItem('actual_page', actualPage)
       localStorage.setItem('last_decition', lastDecition);
     }
-  }, [actualPage, initialized]);
+  }, [actualPage,lastDecition, initialized, ]);
 
   if (!initialized) {
     return <div style={{color: 'white'}}>Loading Story...</div>
@@ -44,7 +48,7 @@ export default function GameEngine() {
 
   let finalText = pageDates.text;
   if (pageDates.variants_text) {
-    finalText = pageDates.variants_text[lastDecision] || pageDates.text;
+    finalText = pageDates.variants_text[lastDecition] || pageDates.text;
   }
 
   const positionDefault = {
@@ -57,32 +61,30 @@ export default function GameEngine() {
   : { position: 'absolute', ...positionDefault}
 
   return (
-    <div className="contenedor-libre" style={{ backgroundImage: `url(${pageDates.background})` }}>
+    <ArticleComponent >
+      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
       <MenuConfiguracion></MenuConfiguracion>
-      <div className="caja-dialogo"
-      style={styleBox}
-      onClick={(e) => e.stopPropagation()}
-      >
-
-        <h3>{pageDates.character}</h3>
-        <p>{finalText}</p> 
-
+      <Box style={styleBox}
+      onClick={(e) => e.stopPropagation()}>
+      <Character>{pageDates.character}</Character>
+      <TextCharacter>{finalText}</TextCharacter>
+      </Box>
         {pageDates.options && pageDates.options.map((option, i) => (
-          <button 
+          <ButtonComponent 
             key={i} 
             onClick={() => advancePage(option.next, option.decition)}
           >
             {option.text}
-          </button>
+          </ButtonComponent>
         ))}
 
 
         {pageDates.next && !pageDates.options && (
-          <button onClick={() => advancePage(pageDates.next)}>
+          <ButtonComponent onClick={() => advancePage(pageDates.next)}>
             Next page
-          </button>
+          </ButtonComponent>
         )}
-      </div>
-    </div>
+      </ContainerIllustrations>
+    </ArticleComponent>
   );
 }
