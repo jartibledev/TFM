@@ -2,23 +2,6 @@
 import  { keyframes, styled, css } from "styled-components";
 
 
-const scaleAnimation = keyframes`
-  0% { transform: scale(1); }
-  50% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-`;
-const animationEntryBlured = keyframes`
- from {
-    opacity: 0;
-    
-    
-  }
-  to {
-    opacity: 1;
-    
-  }
-`;
-
 export const ArticleComponent = styled.article`
     display: flex;
     width: 100%;
@@ -64,9 +47,10 @@ export const toLeft = keyframes`
   }
 `;
 
+
 const colorBorder = 'rgba(255, 255, 255, 1)';
 const colorBackground = 'rgba(41, 41, 41, 0.5)';
-const colorFont = 'rgba(255, 255, 255, 1);'
+const colorFont = 'rgba(255, 255, 255, 1)';
 const colorBorderNegative = ' rgba(31, 31, 31, 0.63)';
 const colorBackgroundNegative = 'rgba(255, 255, 255, 0.68)';
 const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
@@ -87,6 +71,7 @@ export const Box = styled.div`
   border-color:  ${props => props.$bordercolorhover || colorBorderNegative};
 }
 `;
+
 export const ButtonComponent = styled.button`
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
@@ -163,7 +148,7 @@ export const AnimatedSection = styled.div`
     visibility 0.8s;
   transition-delay: ${props => props.$delay};
   margin-right: ${props => props.$marginright || "5%"};
-  margin-left: ${props => props.$margginleft || "5%"};
+  margin-left: ${props => props.$marginleft || "5%"};
   
   /* 3. ESTADO VISIBLE */
   ${({ $isVisible }) => $isVisible && css`
@@ -216,7 +201,7 @@ export const RectangleComponent = styled.div`
     grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
     
     border: ${props => props.border || '1.2rem solid black'} ;
-    border-radius: ${props => props.$borderradius || ' border-radius: 0px'};
+    border-radius: ${props => props.$borderradius || '0px'};
     cursor: ${props => props.$cursor || ' pointer'};
     filter:  ${props => props.$filter || ' none'};
     backdrop-filter:  ${props => props.$backdropfilter || ' none'};
@@ -224,7 +209,7 @@ export const RectangleComponent = styled.div`
     transform: translateZ(0);  
     &:hover {
         transform: translateY(-2px);
-        filter:${props => props.$filterhover || ' blur(9px'};
+        filter:${props => props.$filterhover || ' blur(9px)'};
         backdrop-filter: ${props => props.$backdropfilterhover || 'blur(9px)'};
     }
     &:active{
