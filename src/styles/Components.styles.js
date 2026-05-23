@@ -64,6 +64,15 @@ export const toLeft = keyframes`
   }
 `;
 
+export const Box = styled.div`
+  border: 3px solid rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  background-color: rgba(41, 41, 41, 0.5);
+  color: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+`;
+
 export const SectionComponent = styled.section`
     width: ${props => props.$width || "100%"} ;
     height: ${props => props.$height || " 80vh"} ;
