@@ -67,6 +67,9 @@ export const toLeft = keyframes`
 const colorBorder = 'rgba(255, 255, 255, 1)';
 const colorBackground = 'rgba(41, 41, 41, 0.5)';
 const colorFont = 'rgba(255, 255, 255, 1);'
+const colorBorderNegative = ' rgba(31, 31, 31, 0.63)';
+const colorBackgroundNegative = 'rgba(255, 255, 255, 0.68)';
+const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
 export const Box = styled.div`
   border-width : ${props => props.$borderwidth || "3px"};
@@ -77,8 +80,14 @@ export const Box = styled.div`
   color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+
+  &:hover {
+  background-color: ${props => props.$backgroundcolorhover || colorBackgroundNegative};
+  color: ${props => props.$colorhover || colorFontNegative};
+  border-color:  ${props => props.$bordercolorhover || colorBorderNegative};
+}
 `;
-export const ButtonBox = styled.button`
+export const ButtonComponent = styled.button`
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
   border-color: ${props => props.$bordercolor || colorBorder};
@@ -87,6 +96,19 @@ export const ButtonBox = styled.button`
   color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+
+  &:hover {
+    background-color: ${props => props.$backgroundcolorhover || colorBackgroundNegative};
+    color: ${props => props.$colorhover || colorFontNegative};
+    border-color:  ${props => props.$bordercolorhover || colorBorderNegative};
+}
+
+  ${({ isclicked }) =>
+    isclicked &&
+    css`
+      transform: scale(0.95);
+      color: ${props => props.$colorhoverclick || colorFont};
+    `} 
 `;
 
 export const SectionComponent = styled.section`
@@ -100,42 +122,6 @@ export const SectionComponent = styled.section`
     padding-bottom: ${props => props.$paddingbottom || "5%"};
 `;
 
-export const TextComponent = styled.div`
-    width:  ${props => props.$width || "100%"};
-    display: ${props => props.$display || "flex"};
-    flex-direction: ${props => props.$flexdirection || "column"};
-    margin-left: ${props => props.$margginleft || "5%"};
-    margin-right: ${props => props.$margginright || "5%"};
-    margin-bottom: ${props => props.$margginbottom || "5%"};
-    text-align: ${props => props.$textalign || "start"} 
-`;
-
-export const GalleryComponent = styled.div`
-    width:  ${props => props.$width || "100%"};
-    min-widht: ${props => props.$minwidth || "20vh"};
-    display: ${props => props.$display || "flex"};
-    flex-direction: ${props => props.$flexdirection || "column"};
-    padding-bottom: ${props => props.$paddingbottom || "5%"};
-    padding-top: ${props => props.$paddingtop || "5%"};
-
-`;
-
-export const FooterPictureComponent = styled.div`
-    width:  ${props => props.$width || "100%"};
-    flex: ${props => props.$flex || "1"};
-    display: ${props => props.$display || "flex"};
-    flex-direction: ${props => props.$flexdirection || "row"};
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;  
-    cursor: ${props => props.$cursor || "pointer"};
-    filter: ${props => props.$filter || "none"};
-    backdrop-filter:  ${props => props.$backdropfilter || "none"};
-    padding-top:  ${props => props.$paddingtop || "1em"};
-    padding-bottom: ${props => props.$paddingbottom || "1em"};  
-    justify-content: ${props => props.$paddingbottom || "space-between"};
-    
-    
-`;
-
 export const IconComponent = styled.div`
     width:  ${props => props.$width || "100%"};
     height: ${props => props.$height || "auto"};
@@ -143,100 +129,9 @@ export const IconComponent = styled.div`
     display: block;
     position: relative;
     overflow:  ${props => props.$overflow || "hidden"};
-    border-radius:${props => props.$borderradius || "16px"};
-    
-        
-    
-    
+    border-radius:${props => props.$borderradius || "16px"};   
 `;
 
-export const PictureComponent = styled.div`
-    width:  ${props => props.$width || "100%"};
-    height: ${props => props.$height || "auto"};
-    min-height: ${props => props.$minheight || "250px"};
-    min-width: ${props => props.$minwidth || "250px"};
-    display: block;
-    position:${props => props.$position || "relative"};;
-    overflow:  ${props => props.$overflow || "hidden"};
-    border-radius:${props => props.$borderradius || "16px"};
-    cursor: ${props => props.$cursor || "pointer"};
-   
-    filter: ${props => props.$filter || "blur(16px)"};
-    backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-    
-    transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
-
-    isolation: isolate;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-
-    img {
-        /* Esto obliga a la imagen a seguir la opacidad del ScrollReveal */
-        opacity: inherit !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
-        transition: transform 0.4s ease-out;
-    }
-`;
-
-export const ProjectSinopsis = styled.div`
-  display: block;
-  position: absolute;
-  opacity:0;
-  visibility: hidden;
-  top: 0;
-  width:${props => props.$width || "100%"}; 
-  left: ${props => props.$left || "auto"}; 
-  right: ${props => props.$right || "auto"}; 
-  white-space: nowrap;
-  margin-left:  ${props => props.$marginleft || "5%"};
-  margin-right:  ${props => props.$marginright || "5%"};
-  filter: ${props => props.$filter || "blur(16px)"};
-  backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-  transition: filter 300ms ease-out, backdrop-filter 300ms ease-out ;
-
-  
-  & * {
-    text-align: ${props => props.$textalign || "blur(9px)"}
-  }
-`;
-
-export const ContainerPictureComponent = styled.div`
-    width:  ${props => props.$width || "100%"};
-    height: ${props => props.$height || "100%"};
-    display: ${props => props.$display || "flex"};
-    flex-direction: ${props => props.$flexdirection || "column"};
-    margin-left:  ${props => props.$marginleft || "5%"};
-    margin-right:  ${props => props.$marginright || "5%"};
-
-    &:hover ${PictureComponent} {
-                filter: none;
-            } 
-    
-    &:hover ${FooterPictureComponent} {
-        filter:blur(9px);
-        backdrop-filter: blur(9px);   
-        } 
-    
-    &:hover ${ProjectSinopsis} {
-        filter: ${props => props.$filter || "none"};
-        backdrop-filter: ${props => props.$backdropfilter || "none"};
-        opacity:1;
-        visibility: visible;
-        } 
-
-    img{
-       opacity: inherit !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
-        transition: transform 0.4s ease-out;
-    }
-    
-     
-`;
 export const AnimatedSection = styled.div`
   width: 100%;
   display: flex;
@@ -315,9 +210,7 @@ export const ProgressBarComponent = styled.div`
     background-color: black;
 `;
 
-export const BlankSpaceComponent = styled.div`
-    padding: 2em ;
-`;
+
 export const RectangleComponent = styled.div`
     display: ${props => props.$display || 'grid'};
     grid-template-columns: ${props => props.$gridtemplatecolumns || 'auto auto auto'} ;
@@ -339,64 +232,8 @@ export const RectangleComponent = styled.div`
     }
 `;
 
-export const FooterComponent = styled.footer`
-    width: ${props => props.$width || "100%"};
-    display: ${props => props.$display || 'flex'};
-    flex-direction: ${props => props.$flexdirection || "row"};
-    justify-content: ${props => props.$justifyContent || "center"};
-    padding-left: ${props => props.$paddingleft || "25%"};
-    padding-right: ${props => props.$paddingright || "25%"};
-    padding-top:  ${props => props.$paddingtop || "2%"};
-    padding-bottom: ${props => props.$paddingbottom || "2%"}
 
-  
-  `;
-
-  export const SliderContainer = styled.div`
-  width: ${props => props.$width || "100%"}; /* Asegúrate de que tenga valor */
-  height:  ${props => props.$height || "300px"};
-  margin: auto;
-  overflow: hidden; 
-  position: relative;
-  background: white;
-  display: block;
-
-
-  /* Gradientes a los lados para efecto de desvanecido (opcional) */
-  &::before, &::after {
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-  }
-  &::before {  left: 0; background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%); }
-  &::after {  right: 0; background: linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%); }
-`;
-
-export const SliderTrack = styled.div`
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  
-  /* 18 imágenes (9 + 9) * 250px = 4500px */
-  width: 4500px !important; 
-  
-  /* Animación */
-  animation:   ${props => props.$animation || scroll } 25s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-`;
-export const Slide = styled.div`
-  width: 250px;
-  flex-shrink: 0; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-export const ButtonComponent = styled.button`
+export const ButtonComponentReference = styled.button`
   display: ${props => props.$display || 'block'};
   border: ${props => props.$border || 'none'};
   padding: ${props => props.$padding || "0"};
