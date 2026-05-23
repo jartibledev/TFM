@@ -64,13 +64,29 @@ export const toLeft = keyframes`
   }
 `;
 
+const colorBorder = 'rgba(255, 255, 255, 1)';
+const colorBackground = 'rgba(41, 41, 41, 0.5)';
+const colorFont = 'rgba(255, 255, 255, 1);'
+
 export const Box = styled.div`
-  border: 3px solid rgba(255, 255, 255, 1);
-  border-radius: 8px;
-  background-color: rgba(41, 41, 41, 0.5);
-  color: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  border-width : ${props => props.$borderwidth || "3px"};
+  border-style : ${props => props.$borderstyle || "solid"};
+  border-color: ${props => props.$bordercolor || colorBorder};
+  border-radius: ${props => props.$borderradius || "8px"};
+  background-color: ${props => props.$backgroundcolor || colorBackground};
+  color: ${props => props.$color || colorFont};
+  backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+  -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+`;
+export const ButtonBox = styled.button`
+  border-width : ${props => props.$borderwidth || "3px"};
+  border-style : ${props => props.$borderstyle || "solid"};
+  border-color: ${props => props.$bordercolor || colorBorder};
+  border-radius: ${props => props.$borderradius || "8px"};
+  background-color: ${props => props.$backgroundcolor || colorBackground};
+  color: ${props => props.$color || colorFont};
+  backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+  -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
 `;
 
 export const SectionComponent = styled.section`
