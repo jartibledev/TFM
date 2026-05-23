@@ -77,10 +77,6 @@ export const Box = styled.div`
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   padding: ${props => props.$borderradius || "0.5em"};
-  &:hover {
-  background-color: ${props => props.$backgroundcolorhover || colorBackgroundNegative};
-  color: ${props => props.$colorhover || colorFontNegative};
-  border-color:  ${props => props.$bordercolorhover || colorBorderNegative};
 }
 `;
 
