@@ -31,7 +31,7 @@ export default function GameEngine() {
       localStorage.setItem('actual_page', actualPage)
       localStorage.setItem('last_decition', lastDecition);
     }
-  }, [actualPage,lastDecition, initialized, ]);
+  }, [actualPage,lastDecition, initialized ]);
 
   if (!initialized) {
     return <div style={{color: 'white'}}>Loading Story...</div>
@@ -68,8 +68,7 @@ export default function GameEngine() {
       onClick={(e) => e.stopPropagation()}>
       <Character>{pageDates.character}</Character>
       <TextCharacter>{finalText}</TextCharacter>
-      </Box>
-        {pageDates.options && pageDates.options.map((option, i) => (
+      {pageDates.options && pageDates.options.map((option, i) => (
           <ButtonComponent 
             key={i} 
             onClick={() => advancePage(option.next, option.decition)}
@@ -84,6 +83,8 @@ export default function GameEngine() {
             Next page
           </ButtonComponent>
         )}
+      </Box>
+        
       </ContainerIllustrations>
     </ArticleComponent>
   );
