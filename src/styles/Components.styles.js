@@ -77,7 +77,7 @@ export const Box = styled.div`
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   padding: ${props => props.$borderradius || "0.5em"};
-}
+
 `;
 
 export const ButtonComponent = styled.button`
@@ -89,6 +89,15 @@ export const ButtonComponent = styled.button`
   color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
+
+  transition: 
+    background-color 337ms ease-out, 
+    color 300ms ease-out, 
+    border 300ms ease-out, 
+    border-radius 300ms ease-out;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
 
   &:hover {
     background-color: ${props => props.$backgroundcolorhover || colorBackgroundNegative};
