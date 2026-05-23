@@ -2,14 +2,7 @@
 import  { keyframes, styled, css } from "styled-components";
 
 
-export const ArticleComponent = styled.article`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
 
-`;
 
 const animationBottom = keyframes`
  from {
@@ -54,6 +47,25 @@ const colorFont = 'rgba(255, 255, 255, 1)';
 const colorBorderNegative = ' rgba(31, 31, 31, 0.63)';
 const colorBackgroundNegative = 'rgba(255, 255, 255, 0.68)';
 const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
+
+export const ArticleComponent = styled.article`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+`;
+
+export const ContainerIllustrations = styled.div`
+position: ${props => props.$position || "relative"};
+width: ${props => props.$width || "100%"} ;
+height: ${props => props.$height || " 100%"} ;      
+background-size:  ${props => props.$backgroundsize || "cover"};     
+background-size:  ${props => props.$backgroundposition || "center"};     
+background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
+border-color: ${props => props.$bordercolor || "black"};  
+overflow: ${props => props.$overflow || "hidden"};
+`;
 
 export const Box = styled.div`
   border-width : ${props => props.$borderwidth || "3px"};
