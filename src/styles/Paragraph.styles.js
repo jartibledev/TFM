@@ -1,10 +1,12 @@
 import styled from "styled-components";
   
 const characterTypo = 'monospace';
+const colorFont = 'rgba(255, 255, 255, 1);'
+const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
 export const Character = styled.h3`
     margin-bottom: ${props => props.$marginbottom || "0.9em"}; 
-    color: ${props => props.$color || "black"};
+    color: ${props => props.$color || colorFontNegative},
     font-size: ${props => props.$fontsize || "1.3rem"};
     font-family: ${characterTypo}; 
     text-transform: uppercase;    
@@ -12,7 +14,7 @@ export const Character = styled.h3`
 
 export const TextCharacter = styled.p`
     margin: ${props => props.$margin || "0"}; 
-    color: ${props => props.$color || "black"},
+    color: ${props => props.$color || colorFont},
     font-size: ${props => props.$fontsize || "1.2rem"};
     font-family: ${characterTypo};
     line-height: ${props => props.$lineheight || "1.6"};
@@ -20,15 +22,13 @@ export const TextCharacter = styled.p`
 `;
 
 export const TextNarrator = styled.p`
-    font-style: ${props => props.$fontstyle || "normal"}; 
+    font-style: ${props => props.$fontstyle || "normal"};
+    color: ${props => props.$color || colorFont}, 
     font-variant: ${props => props.$fontvariant || "normal"}; 
     font-size: ${props => props.$fontsize || "1.5rem"};
     font-family: ${characterTypo};
-    line-height: ${props => props.$lineheight || '1.6'};
-    letter-spacing: ${props => props.$letterspacing || "10px"};
+    line-height: ${props => props.$lineheight || "1.6"};
+    letter-spacing: ${props => props.$lettersparcing || "10px"};;
 `;
-
-
-
 
 
