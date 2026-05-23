@@ -50,7 +50,7 @@ const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
 export const ArticleComponent = styled.article`
     display: flex;
-    width: 100%;
+    width: 60vh;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
@@ -59,9 +59,9 @@ export const ArticleComponent = styled.article`
 export const ContainerIllustrations = styled.div`
 position: ${props => props.$position || "relative"};
 width: ${props => props.$width || "100%"} ;
-height: ${props => props.$height || " 100%"} ;      
+height: ${props => props.$height || " 100vh"} ;      
 background-size:  ${props => props.$backgroundsize || "cover"};     
-background-size:  ${props => props.$backgroundposition || "center"};     
+background-position:  ${props => props.$backgroundposition || "center"};     
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
 border-color: ${props => props.$bordercolor || "black"};  
 overflow: ${props => props.$overflow || "hidden"};
@@ -76,7 +76,7 @@ export const Box = styled.div`
   color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-
+  padding: ${props => props.$borderradius || "0.5em"};
   &:hover {
   background-color: ${props => props.$backgroundcolorhover || colorBackgroundNegative};
   color: ${props => props.$colorhover || colorFontNegative};
