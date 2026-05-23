@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import MenuConfiguracion from '@/styles/menu';
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -57,16 +58,15 @@ export default function GameEngine() {
 
   return (
     <div className="contenedor-libre" style={{ backgroundImage: `url(${pageDates.background})` }}>
-      
+      <MenuConfiguracion></MenuConfiguracion>
       <div className="caja-dialogo"
       style={styleBox}
       onClick={(e) => e.stopPropagation()}
       >
 
         <h3>{pageDates.character}</h3>
-        <p>{finalText}</p> {/* Renderiza el text dinámico */}
+        <p>{finalText}</p> 
 
-        {/* Si la página tiene opciones */}
         {pageDates.options && pageDates.options.map((option, i) => (
           <button 
             key={i} 
@@ -76,10 +76,10 @@ export default function GameEngine() {
           </button>
         ))}
 
-        {/* Si es una página de continuación lineal */}
+
         {pageDates.next && !pageDates.options && (
           <button onClick={() => advancePage(pageDates.next)}>
-            Next...
+            Next page
           </button>
         )}
       </div>

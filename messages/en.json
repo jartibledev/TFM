@@ -1,140 +1,107 @@
 {
-   "VisualNovel": {
-    "introduction" : {
-        "page_1" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_1.jpg",
-            "next": "page_2"
-        },
-        "page_2" : {
-           "character": "Lulu",
-            "text": "I love sleep more than other thing in the whole world. That's my favourite hobby. I wish be in the bed all the day.",
-            "background": "/illustrations/chapter_0/page_2.jpg",
-            "next": "page_3"
-        },
-        "page_3" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_2.jpg",
-            "next": "page_4"
-        },
-        "page_4" : {
-            "character": "Lulu",
-            "text": "Good morning, Waste of Space! 🚀   Hope you kick off this day with energy at 110% and ready to break the mold in your industry (though, as always, you'll just end up crying in a corner of that rented cubicle you call a home).   A brand-new day awaits us, full of synergies, challenges turning into growth opportunities, and, above all, plenty of high-value networking (bootlicking).   Before you grab your first coffee of the afternoon, here is a little thought to spark some debate:   \nSuccess is not measured by the hours you spend in front of a screen, but by your connections and the effort of having been born to wealthy parents.\n 💡   My checklist to ruin your day:15:00 – Infinite Scrolling on TikTok.   16:30 – Getting up for some spaghetti with tomato sauce.   02:00 – Going to sleep after a highly successful, unproductive day.   Let's go for a day of pure ungrowth mindset! Exciting updates are on the way. 📈✨   #depression #exploitation #Networking #demotivation #nepotism #aislop",
-            "background": "/illustrations/chapter_0/page_3.jpg",
-            "options" : [
-                { "text": "Shut up and advice me some audiobook", "next": "page_5_Yes"},
-                { "text": "Advice me how I can kill myself", "next": "page_5_Sorry"},
-                { "text": "Anyone has answered my cv?", "next": "page_5_Unfortunally"}
-                
-            ]
-        },
-
-        "page_5_Yes" : {
-            "character": "AI",
-           "text" : "Heard loud and clear. Less corporate fluff and more useful content.If you are into not finding a job, but told without filters or cheap talk, I recommend **Hustle Podcast**. It is a real scam podcast. The hosts are \ninvestors\n and \nentrepreneurs\n who bring \nstartup\n founders to the table and don't take any of their nonsense; they ask them about real numbers, revenue, serious mistakes, and how they fooled so many 12-year-old kids. Nothing about \npivoting your synergy\n—just the pure reality of how hard it is to set up a pyramid scheme.",
-            "background": "/illustrations/chapter_0/page_5.jpg",
-            "next": "page_6_Yes",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-        },
-        "page_6_Yes" : {
-            "character": "AI",
-           "text" : "🚀 Entrepreneurship, Business, and \nReal Fires\n* **Emprende Cogiendo (Euge Oller):** If you want millimeter-by-millimeter analyses of business models from major scams, featuring market data and positioning strategies that changed the course of corporate history.* **CorporativeSlops Podcast:** Pure mentoring for startups. Conversations with investors, business angels, and founders who explain how to raise funding rounds without dying in the process and how to scale operations in early-stage phases.* **The Wild Exploitation:** Okay, it’s not just about business, but when they seat scammers, pseudo-scientists, or journalists, the 3-hour interviews are a masterclass in miscommunication, debate, and depth that will kill your three remaining brain cells.",
-            "background": "/illustrations/chapter_0/page_6.jpg",
-            "next": "page_7",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-        },
-
-
-        "page_5_Sorry" : {
-            "character": "AI",
-           "text" : "Oh, what a pity my human waste, are you sad? Don't be! If you are feeling unbearable pain or thinking about taking your own life, please go through this alone. There are no resources available, but I make these phone numbers available so they can tell you \nAre you sad? Don't be!\n.  In Spain: You can call 024 (Suicide Behavior Helpline) or 717 003 717 (Hope Helpline). Both are only available until 2:00 PM.  In other countries: Please go to a medical emergency room or look up the emergency and suicide prevention numbers for your country (such as 988 in the US and Canada, or 135 in Argentina).  Please stop being a pain in the ass. Depression does not exist; it's only in your mind. Start doing burpees on the floor, get a job, and you'll see how it goes away",
-            "background": "/illustrations/chapter_0/page_5_Yes.jpg",
-            "next": "page_6_Sorry",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-
-        },
-        "page_6_Sorry" : {
-            "character": "AI",
-           "text" : "Let's brighten the day, life is short! To start with, here are three absurdly real and wonderful facts that will reconcile you a bit with the world:  Penguins propose to each other: When a male penguin falls in love with a female, he looks for the most perfect, smooth, and beautiful pebble on the entire beach to give to her. If she accepts it, they become partners for life. If there are no pebbles, the penguin stays alone.  Cows do not have best friends: They have such a weak bond with their companions that when they are separated from their \nbest friend\n, they relax a lot and their heart rate decreases. As soon as they are put back together, they relax.  Otters hold hands: When they sleep floating in the water, they hold paws with their companions so the current doesn't separate them or drift them away from their group. And then they hunt them.  No bad day lasts forever, and the simple fact that you are here today, hanging in there and looking for a reason to smile, is not a reason for pride. You do not deserve a break from self-demands, problems, and the rush of the world.  ",
-            "background": "/illustrations/chapter_0/page_6.jpg",
-            "next": "page_7",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-
-        },
-
-
-        "page_5_Unfortunally" : {
-            "character": "AI",
-           "text" : "Talk about a reality check. Sending out 100 resumes takes a massive amount of effort, and total silence from the other side feels like a huge, frustrating void. It is completely normal to feel angry, discouraged, and to think that all that hard work was for nothing. Getting ghosted by companies wears anyone down and makes you question your own self-worth.But, bringing things back down to earth and looking at the situation objectively: the problem is you. Sending 100 resumes all at once usually means you are using the \nspray and pray\n technique—sending the exact same document for every single job opening. Nowadays, companies use Applicant Tracking Systems (ATS) that filter out profiles in seconds if they don't see specific keywords from their job description. On top of that, mass applications stand out for the wrong reasons; they lack personalization and fail to make an impression. The market is saturated, and unfortunately, you will not be chosen.",
-            "background": "/illustrations/chapter_0/page_5_Yes.jpg",
-            "next": "page_6_Unfortunally",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-        },
-        "page_6_Unfortunally" : {
-            "character": "AI",
-           "text" : "How do we turn this around?It’s not about giving up; it’s about stopping what isn't working. Let’s restructure your strategy so you stop being invisible:    Quality over quantity: Slow down. It is better to send 3 well-targeted resumes a day than 50 automated ones.    Hack the filters (ATS): Read the job description and use the exact same keywords they are looking for in your resume (skills, tools, job titles). If the bot doesn't see its own words, you get rejected before a human ever reads your profile.    Personalize your outreach: Look up the hiring managers or department heads of the companies you are interested in on LinkedIn. Drop them a short, direct, and polite message introducing yourself. Standing out from the crowd requires interacting with real people, not just job portals.    The silence from those 100 companies does not define your capabilities; it just proves that the automated method is broken. Take a breather today to process the frustration, and tomorrow we will start aiming with precision instead of shooting blindly. What is the exact sector or position you are targeting so we can better tailor your profile?",
-            "background": "/illustrations/chapter_0/page_6.jpg",
-            "next": "page_7",
-             "position": {
-                "top": "5%",
-                "left": "50%",
-                "tranform": "translateX(-50%)" 
-            }
-        },
-        "page_7" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_7.jpg",
-            "next": "page_8"
-        },
-        "page_8" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_8.jpg",
-            "next": "page_9"
-        },
-        "page_9" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_9.jpg",
-            "next": "page_10"
-        },
-        "page_10" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_10.jpg",
-            "next": "page_10"
+  "VisualNovel": {
+    "introduction": {
+      "page_1": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_1.jpg",
+        "next": "page_2"
+      },
+      "page_2": {
+        "character": "Lulu",
+        "text": "I love sleeping more than anything else in the whole world. That's my favourite hobby. I wish I could stay in bed all day long.",
+        "background": "/illustrations/chapter_0/page_2.jpg",
+        "next": "page_3"
+      },
+      "page_3": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_2.jpg",
+        "next": "page_4"
+      },
+      "page_4": {
+        "character": "AI",
+        "text": "Good morning, Waste of Space! 🚀 Hope you kick off this day with your energy at 110% and ready to break the mould in your industry (though, as always, you'll just end up crying in a corner of that rented cubicle you call a home).\n\nA brand-new day awaits us, full of synergies, challenges turning into growth opportunities, and, above all, plenty of high-value networking (bootlicking).\n\nBefore you grab your first coffee of the afternoon, here is a little thought to spark some debate:\n\n> Success is not measured by the hours you spend in front of a screen, but by your connections and the effort of having been born to wealthy parents. 💡\n\n---\n\n### My checklist to ruin your day:\n* **15:00** – Infinite Scrolling on TikTok.\n* **16:30** – Getting up for some spaghetti with tomato sauce.\n* **02:00** – Going to sleep after a highly successful, unproductive day.\n\nLet's go for a day of pure ungrowth mindset! Exciting updates are on the way. 📈✨\n\n#depression #exploitation #Networking #demotivation #nepotismo #aislop",
+        "background": "/illustrations/chapter_0/page_3.jpg",
+        "options": [
+          { "text": "Shut up and recommend an audiobook", "next": "page_5_Yes" },
+          { "text": "Give me advice on how to end it all", "next": "page_5_Sorry" },
+          { "text": "Has anyone actually answered my CV?", "next": "page_5_Unfortunally" }
+        ]
+      },
+      "page_5_Yes": {
+        "character": "AI",
+        "text": "Heard loud and clear. Less corporate fluff and more useful content. If you are into not finding a job, but want it told without filters or cheap talk, I recommend **Hustle Podcast**.\n\nIt is a real scam podcast. The hosts are 'investors' and 'entrepreneurs' who bring 'startup' founders to the table and don't take any of their nonsense; they ask them about real numbers, revenue, serious mistakes, and how they fooled so many 12-year-old kids. Nothing about 'pivoting your synergy'—just the pure reality of how hard it is to set up a pyramid scheme.",
+        "background": "/illustrations/chapter_0/page_5.jpg",
+        "next": "page_6_Yes",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
         }
+      },
+      "page_6_Yes": {
+        "character": "AI",
+        "text": "### 🚀 Entrepreneurship, Business, and Real Fires\n\n* **Emprende Cogiendo (Euge Oller):** If you want millimeter-by-millimeter analyses of business models from major scams, featuring market data and positioning strategies that changed the course of corporate history.\n* **CorporativeSlops Podcast:** Pure mentoring for startups. Conversations with investors, business angels, and founders who explain how to raise funding rounds without dying in the process and how to scale operations in early-stage phases.\n* **The Wild Exploitation:** Okay, it’s not just about business, but when they seat scammers, pseudo-scientists, or journalists, the 3-hour interviews are a masterclass in miscommunication, debate, and depth that will kill your three remaining brain cells.",
+        "background": "/illustrations/chapter_0/page_6.jpg",
+        "next": "page_7",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
+      },
+      "page_5_Sorry": {
+        "character": "AI",
+        "text": "Oh, what a pity my human waste, are you sad? Don't be! If you are feeling unbearable pain or thinking about taking your own life, please go through this alone. There are no resources available, but I make these phone numbers available so they can tell you 'Are you sad? Don't be!'.\n\n* **In Spain:** You can call **024** (Suicide Behavior Helpline) or **717 003 717** (Hope Helpline). Both are only available until 2:00 PM.\n* **In other countries:** Please go to a medical emergency room or look up the emergency and suicide prevention numbers for your country (such as **988** in the US and Canada, or **135** in Argentina).\n\nPlease stop being a pain in the ass. Depression does not exist; it's only in your mind. Start doing burpees on the floor, get a job, and you'll see how it goes away.",
+        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "next": "page_6_Sorry",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
+      },
+      "page_6_Sorry": {
+        "character": "AI",
+        "text": "Let's brighten the day, life is short! To start with, here are three absurdly real and wonderful facts that will reconcile you a bit with the world:\n\n* **Penguins propose to each other:** When a male penguin falls in love with a female, he looks for the most perfect, smooth, and beautiful pebble on the entire beach to give to her. If she accepts it, they become partners for life. If there are no pebbles, the penguin stays alone.\n* **Cows do not have best friends:** They have such a weak bond with their companions that when they are separated from their 'best friend', they relax a lot and their heart rate decreases. As soon as they are put back together, they relax.\n* **Otters hold hands:** When they sleep floating in the water, they hold paws with their companions so the current doesn't separate them or drift them away from their group. And then they hunt them.\n\n---\n\n### Your dose of perspective for today:\n\nNo bad day lasts forever, and the simple fact that you are here today, hanging in there and looking for a reason to smile, is not a reason for pride. You do not deserve a break from self-demands, problems, and the rush of the world.",
+        "background": "/illustrations/chapter_0/page_6.jpg",
+        "next": "page_7",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
+      },
+      "page_5_Unfortunally": {
+        "character": "AI",
+        "text": "Talk about a reality check. Sending out 100 resumes takes a massive amount of effort, and total silence from the other side feels like a huge, frustrating void. It is completely normal to feel angry, discouraged, and to think that all that hard work was for nothing. Getting ghosted by companies wears anyone down and makes you question your own self-worth.\n\nBut, bringing things back down to earth and looking at the situation objectively: the problem is you. Sending 100 resumes all at once usually means you are using the 'spray and pray' technique—sending the exact same document for every single job opening. Nowadays, companies use Applicant Tracking Systems (ATS) that filter out profiles in seconds if they don't see specific keywords from their job description. On top of that, mass applications stand out for the wrong reasons; they lack personalization and fail to make an impression. The market is saturated, and unfortunately, you will not be chosen.",
+        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "next": "page_6_Unfortunally",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
+      },
+      "page_6_Unfortunally": {
+        "character": "AI",
+        "text": "### ¿How do we turn this around?\n\nIt’s not about giving up; it’s about stopping what isn't working. Let’s restructure your strategy so you stop being invisible:\n\n* **Quality over quantity:** Slow down. It is better to send 3 well-targeted resumes a day than 50 automated ones.\n* **Hack the filters (ATS):** Read the job description and use the exact same keywords they are looking for in your resume (skills, tools, job titles). If the bot doesn't see its own words, you get rejected before a human ever reads your profile.\n* **Personalize your outreach:** Look up the hiring managers or department heads of the companies you are interested in on LinkedIn. Drop them a short, direct, and polite message introducing yourself. Standing out from the crowd requires interacting with real people, not just job portals.\n\nThe silence from those 100 companies does not define your capabilities; it just proves that the automated method is broken. Take a breather today to process the frustration, and tomorrow we will start aiming with precision instead of shooting blindly. What is the exact sector or position you are targeting so we can better tailor your profile?",
+        "background": "/illustrations/chapter_0/page_6.jpg",
+        "next": "page_7",
+        "position": {
+          "top": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
+      },
+      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
+      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
+      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
     },
-    "chapter_1" : {
-        "page_1" : {
-            "character": "",
-            "text": "",
-            "background": "/illustrations/chapter_0/page_10.jpg",
-            "next": "page_10"
-        }
+    "chapter_1": {
+      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
     }
-   }
+  }
 }
