@@ -21,13 +21,13 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4"
       },
       "page_4": {
         "character": "AI",
         "text": "¡Buenos días, Desperdicio para la sociedad! 🚀 Espero que arranques este día con la energía al 110% y listo para **romper el molde** en tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).\n\nHoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking* (lameculing) de valor.\n\nAntes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:\n\n> El éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos. 💡\n\n---\n\n### Mi *checklist* para joder tu día:\n* **15:00** – *Infinite Scrolling* en Tiktok.\n* **16:30** – Levantarte para spaghetti con tomate.\n* **02:00** – Dormir tras un exitoso día improductivo.\n\n¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨\n\n#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_4.jpg",
         "options": [
           { "text": "Cállate, y aconsejame un audiolibro", "next": "page_5_Yes" },
           { "text": "Aconséjame como matarme", "next": "page_5_Sorry" },
@@ -64,7 +64,7 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Ohh que pena mi desperdicio humano, ¿estás triste? ¡No lo estés!\n\nSi estás sintiendo un dolor insoportable o estás pensando en quitarte la vida, por favor, pasa esto a solas. No hay recursos disponibles pero pongo a disposición estos teléfonos para que te digan '¿Estás triste? ¡No lo estés!'.\n\n* **En España:** Puedes llamar al **024** (Línea de atención a la conducta suicida) o al **717 003 717** (Teléfono de la Esperanza). Ambos solo están disponibles hasta las 14:00 h.\n* **En otros países:** Por favor, acude a una sala de urgencias médica o busca los números de emergencia y prevención del suicidio de tu país (como el **988** en EE.UU. y Canadá, o el **135** en Argentina).\n\nPor favor, no des más por culo. La depression no existe, solo está en tu mente. Ponte a hacer burpees en el suelo, consigue un trabajo y verás cómo se te quita.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Sorry",
         "position": {
           "top": "5%",
@@ -86,7 +86,7 @@
       "page_5_Unfortunally": {
         "character": "AI",
         "text": "Vaya golpe de realidad. Mandar 100 currículums requiere un esfuerzo enorme, y el silencio absoluto del otro lado se siente como un vacío enorme y frustrante. Es completamente normal que sientas rabia, desánimo y que pienses que todo ese trabajo no ha servido para nada. El 'ghosting' de las empresas desgasta a cualquiera y te hace dudar de tu propio valor.\n\nPero, bajando a la tierra y mirando la situación con frialdad: el problema eres tú. Mandar 100 currículums de golpe suele significar que estás usando la técnica de la 'metralleta': el mismo documento para todas las ofertas. Hoy en día, las empresas usan filtros automáticos (ATS) que descartan los perfiles en segundos si no ven palabras clave específicas de su oferta. Además, los envíos masivos se notan; carecen de personalización y no destacan. El mercado está saturado y, lamentablemente, no te elegirán.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Unfortunally",
         "position": {
           "top": "5%",
@@ -122,7 +122,14 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_10.jpg",
-        "next": "page_10"
+        "next": "page_11"
+      }
+    },
+      "page_11": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_11.jpg",
+        "next": "chapter_1"
       }
     },
     "chapter_1": {
@@ -133,5 +140,4 @@
         "next": "page_10"
       }
     }
-  }
 }

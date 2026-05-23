@@ -25,13 +25,13 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4"
       },
       "page_4": {
         "character": "AI",
         "text": "Bonjour, Déchet pour la société ! 🚀 J'espère que tu attaques cette journée avec une énergie à 110 % ed de l'envie à revendre (même si, comme d'habitude, tu vas finir par pleurer dans un coin de ce studio en location que tu oses appeler un foyer).\n\nAujourd'hui, une journée pleine de synergies nous attend, des défis qui se transforment en opportunités de croissance et, surtout, beaucoup de networking (lèche-culing) de haute valeur.\n\nAvant de prendre ton premier café de l'après-midi, je te laisse une petite réflexion pour ouvrir le débat :\n\n> Le succès ne se mesure pas aux heures que tu passes devant l'écran, mais à tes contacts et à l'effort d'être né de parents riches. 💡\n\n---\n\n### Ma checklist pour pourrir ta journée :\n* **15h00** – Infinite Scrolling sur TikTok.\n* **16h30** – Se lever pour des spaghettis à la sauce tomate.\n* **02h00** – Dormir après une journée improductive réussie.\n\nEn route pour une journée de pur *ungrowth mindset* ! De petites choses se préparent. 📈✨\n\n#dépression #exploitation #Networking #démotivation #népotisme #aislop",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_4.jpg",
         "options": [
           { "text": "Ferme-la et recommande-moi un podcast", "next": "page_5_Yes" },
           { "text": "Donne-moi des conseils pour en finir", "next": "page_5_Sorry" },
@@ -68,7 +68,7 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Oh, quel dommage mon déchet humain, tu es triste ? Ne le sois pas ! Si tu ressens une douleur insupportable ou si tu penses à t'enlever la vie, s'il te plaît, traverse ça tout seul. Il n'y a pas de ressources disponibles, mais je mets à disposition ces numéros de téléphone pour qu'ils te disent 'Tu es triste ? Ne le sois pas !'.\n\n* **En Espagne :** Tu peux appeler le **024** (Ligne d'attention aux comportements suicidaires) ou le **717 003 717** (Téléphone de l'Espoir). Les deux ne sont disponibles que jusqu'à 14h00.\n* **Dans d'autres pays :** S'il vous plaît, rendez-vous dans un service d'urgences médicales ou recherchez les numéros d'urgence et de prévention du suicide de votre pays (comme le **988** aux États-Unis et au Canada, ou le **135** en Argentine).\n\nS'il te plaît, arrête de faire chier. La dépression n'existe pas, elle est juste dans ta tête. Mets-toi à faire des burpees sur le sol, trouve un travail et tu verras comment ça passe.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Sorry",
         "position": {
           "top": "5%",
@@ -90,7 +90,7 @@
       "page_5_Unfortunally": {
         "character": "AI",
         "text": "Quel coup de massue. Envoyer 100 CV demande un effort titanesque, et le silence absolu en retour ressemble à un vide immense et frustrant. Il est tout à fait normal que tu ressentes de la colère, du découragement et que tu penses que tout ce travail n'a servi à rien. Le 'ghosting' des entreprises use n'importe qui et te fait douter de ta propre valeur.\n\nMais, pour revenir sur terre et regarder la situation froidement : le problème vient de toi. Envoyer 100 CV d'un coup signifie généralement que tu utilises la technique du 'mitraillage' : le même document pour toutes les offres. Aujourd'hui, les entreprises utilisent des filtres automatiques (ATS) qui écartent les profils en quelques secondes s'ils ne voient pas de mots-clés spécifiques à leur offre. De plus, les envois de masse se remarquent ; ils manquent de personnalisation et ne sortent pas du lot. Le marché est saturé et, malheureusement, tu ne seras pas choisi.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Unfortunally",
         "position": {
           "top": "5%",
@@ -112,7 +112,8 @@
       "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
       "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
       "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" },
+       "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11" }
     },
     "chapter_1": {
       "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }

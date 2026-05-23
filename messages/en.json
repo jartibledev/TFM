@@ -16,13 +16,13 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4"
       },
       "page_4": {
         "character": "AI",
         "text": "Good morning, Waste of Space! 🚀 Hope you kick off this day with your energy at 110% and ready to break the mould in your industry (though, as always, you'll just end up crying in a corner of that rented cubicle you call a home).\n\nA brand-new day awaits us, full of synergies, challenges turning into growth opportunities, and, above all, plenty of high-value networking (bootlicking).\n\nBefore you grab your first coffee of the afternoon, here is a little thought to spark some debate:\n\n> Success is not measured by the hours you spend in front of a screen, but by your connections and the effort of having been born to wealthy parents. 💡\n\n---\n\n### My checklist to ruin your day:\n* **15:00** – Infinite Scrolling on TikTok.\n* **16:30** – Getting up for some spaghetti with tomato sauce.\n* **02:00** – Going to sleep after a highly successful, unproductive day.\n\nLet's go for a day of pure ungrowth mindset! Exciting updates are on the way. 📈✨\n\n#depression #exploitation #Networking #demotivation #nepotismo #aislop",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_4.jpg",
         "options": [
           { "text": "Shut up and recommend an audiobook", "next": "page_5_Yes" },
           { "text": "Give me advice on how to end it all", "next": "page_5_Sorry" },
@@ -54,7 +54,7 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Oh, what a pity my human waste, are you sad? Don't be! If you are feeling unbearable pain or thinking about taking your own life, please go through this alone. There are no resources available, but I make these phone numbers available so they can tell you 'Are you sad? Don't be!'.\n\n* **In Spain:** You can call **024** (Suicide Behavior Helpline) or **717 003 717** (Hope Helpline). Both are only available until 2:00 PM.\n* **In other countries:** Please go to a medical emergency room or look up the emergency and suicide prevention numbers for your country (such as **988** in the US and Canada, or **135** in Argentina).\n\nPlease stop being a pain in the ass. Depression does not exist; it's only in your mind. Start doing burpees on the floor, get a job, and you'll see how it goes away.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Sorry",
         "position": {
           "top": "5%",
@@ -76,7 +76,7 @@
       "page_5_Unfortunally": {
         "character": "AI",
         "text": "Talk about a reality check. Sending out 100 resumes takes a massive amount of effort, and total silence from the other side feels like a huge, frustrating void. It is completely normal to feel angry, discouraged, and to think that all that hard work was for nothing. Getting ghosted by companies wears anyone down and makes you question your own self-worth.\n\nBut, bringing things back down to earth and looking at the situation objectively: the problem is you. Sending 100 resumes all at once usually means you are using the 'spray and pray' technique—sending the exact same document for every single job opening. Nowadays, companies use Applicant Tracking Systems (ATS) that filter out profiles in seconds if they don't see specific keywords from their job description. On top of that, mass applications stand out for the wrong reasons; they lack personalization and fail to make an impression. The market is saturated, and unfortunately, you will not be chosen.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Unfortunally",
         "position": {
           "top": "5%",
@@ -98,7 +98,8 @@
       "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
       "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
       "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" },
+      "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11" }
     },
     "chapter_1": {
       "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }

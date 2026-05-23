@@ -21,13 +21,13 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4"
       },
       "page_4": {
         "character": "AI",
         "text": "Guten Morgen, Verschwendung für die Gesellschaft! 🚀 Ich hoffe, du startest diesen Tag mit 110 % Energie und bist bereit, neue Maßstäbe in deiner Branche zu setzen (auch wenn du am Ende wie immer weinend in einer Ecke dieser gemieteten Bude hocken wirst, die du dein Zuhause nennst).\n\nHeute erwartet uns ein Tag voller Synergien, Herausforderungen, die sich in Wachstumschancen verwandeln, und vor allem jede Menge wertvolles Networking (Arschkriecherei).\n\nBevor du dir den ersten Kaffee des Nachmittags gönnst, hinterlasse ich dir einen kleinen Denkanstoß zur Diskussion:\n\n> Erfolg misst sich nicht an den Stunden, die du vor dem Bildschirm verbringst, sondern an den Kontakten und der Anstrengung, reiche Eltern zu haben. 💡\n\n---\n\n### Meine Checklist, um deinen Tag zu versauen:\n* **15:00 Uhr** – Infinite Scrolling auf TikTok.\n* **16:30 Uhr** – Aufstehen für Spaghetti mit Tomatensauce.\n* **02:00 Uhr** – Schlafen gehen nach einem erfolgreichen, unproduktiven Tag.\n\nAuf in einen Tag voller echtem *ungrowth mindset*! Da kommt was Großes auf uns zu. 📈✨\n\n#depression #ausbeutung #Networking #demotivation #nepotismus #aislop",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_4.jpg",
         "options": [
           { "text": "Halt die Schnauze und empfiehl mir einen Hörbuch/Podcast", "next": "page_5_Yes" },
           { "text": "Gib mir Tipps, wie ich mich umbringen kann", "next": "page_5_Sorry" },
@@ -64,7 +64,7 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Oh, wie schade, mein menschlicher Abfall, bist du traurig? Sei es nicht! Wenn du unerträgliche Schmerzen empfindest oder daran denkst, dir das Leben zu nehmen, geh da bitte alleine durch. Es sind keine Ressourcen verfügbar, aber ich stelle diese Telefonnummern bereit, damit sie dir sagen: 'Bist du traurig? Sei es nicht!'.\n\n* **In Spanien:** Du kannst die **024** (Hotline für suizidales Verhalten) oder die **717 003 717** (Telefon der Hoffnung) anrufen. Beide sind nur bis 14:00 Uhr erreichbar.\n* **In anderen Ländern:** Bitte suche eine medizinische Notaufnahme auf oder suche nach den Notruf- und Suizidpräventionsnummern deines Landes (wie die **988** in den USA und Kanada oder die **135** in Argentinien).\n\nBitte geh mir nicht weiter auf den Sack. Depressionen gibt es nicht, das ist alles nur in deinem Kopf. Fang an, Burpees auf dem Boden zu machen, such dir einen Job und du wirst sehen, wie es verschwindet.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Sorry",
         "position": {
           "top": "5%",
@@ -86,7 +86,7 @@
       "page_5_Unfortunally": {
         "character": "AI",
         "text": "Was für ein Realitätsclash. 100 Lebensläufe zu verschicken erfordert enorme Anstrengung, und das absolute Schweigen von der anderen Seite fühlt sich wie eine riesige, frustrierende Leere an. Es ist völlig normal, dass du Wut und Entmutigung spürst und denkst, dass all die Arbeit umsonst war. Das Ghosting von Unternehmen zehrt an jedem und lässt dich an deinem eigenen Wert zweifeln.\n\nAber um auf den Boden der Tatsachen zurückzukehren und die Situation nüchtern zu betrachten: Das Problem bist du. 100 Lebensläufe auf einmal zu verschicken bedeutet meistens, dass du die 'Schrotflinten-Taktik' anwendest: das exakt gleiche Dokument für alle Stellenanzeigen. Heutzutage nutzen Unternehmen automatisierte Filter (ATS), die Profile in Sekundenschnelle aussortieren, wenn sie keine spezifischen Schlüsselwörter aus ihrer Anzeige sehen. Zudem fallen Massenbewerbungen negativ auf; es fehlt ihnen an Personalisierung und sie stechen nicht hervor. Der Markt ist überlaufen und unglücklicherweise wird man dich nicht auswählen.",
-        "background": "/illustrations/chapter_0/page_5_Yes.jpg",
+        "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Unfortunally",
         "position": {
           "top": "5%",
@@ -108,7 +108,8 @@
       "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
       "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
       "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" },
+       "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11" }
     },
     "chapter_1": {
       "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
