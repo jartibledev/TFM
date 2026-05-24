@@ -84,12 +84,14 @@ export const ButtonComponent = styled.button`
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
   border-color: ${props => props.$bordercolor || colorBorder};
-  border-radius: ${props => props.$borderradius || "8px"};
+  border-radius: ${props => props.$borderradius || "5px"};
   background-color: ${props => props.$backgroundcolor || colorBackground};
   color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-
+  margin-top: ${props => props.$margintop || "0.5em" };
+  margin-bottom: ${props => props.$margintop || "0.5em" };
+  padding: ${props => props.$padding || "5%"};
   transition: 
     background-color 337ms ease-out, 
     color 300ms ease-out, 

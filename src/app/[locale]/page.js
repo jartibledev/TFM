@@ -95,18 +95,16 @@ export default function GameEngine() {
       <Character>{pageDates.character}</Character>
       <TextCharacter>{currentTextChunk}</TextCharacter>
 
-      {!isEndOfText && (
-      <ButtonComponent onClick={handleNextClick}>
-        Continue...
-      </ButtonComponent>
-        )}
-
         {isEndOfText && pageDates.next && !pageDates.options && (
           <ButtonComponent onClick={handleNextClick}>
-            Continue
+            Next
           </ButtonComponent>
         )}
-      
+        {!isEndOfText && (
+        <ButtonComponent onClick={handleNextClick}>
+          Continue...
+        </ButtonComponent>
+          )}
       {isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
         <ButtonComponent 
           key={i} 
