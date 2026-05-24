@@ -9,7 +9,8 @@
         "position": {
           "top": "10%",
           "left": "5%"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_2": {
         "character": "Lulu",
@@ -20,13 +21,15 @@
           "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_3": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_3.jpg",
-        "next": "page_4"
+        "next": "page_4",
+        "bgm" : "song_1"
       },
       "page_4": {
         "character": "AI",
@@ -41,7 +44,8 @@
           "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Yes": {
         "character": "AI",
@@ -52,7 +56,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Yes": {
         "character": "AI",
@@ -63,7 +68,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Sorry": {
         "character": "AI",
@@ -74,7 +80,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Sorry": {
         "character": "AI",
@@ -85,7 +92,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Unfortunally": {
         "character": "AI",
@@ -96,7 +104,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Unfortunally": {
         "character": "AI",
@@ -107,16 +116,17 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
-      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
-      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
-      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" },
-       "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11" }
+      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8", "bgm" : "song_1" },
+      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9", "bgm" : "song_1" },
+      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10", "bgm" : "song_1" },
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10", "bgm" : "song_1" },
+       "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11", "bgm" : "song_1" }
     },
     "chapter_1": {
-      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
+      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10", "bgm" : "song_1" }
     }
   }
 }

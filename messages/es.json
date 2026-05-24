@@ -5,7 +5,8 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_1.jpg",
-        "next": "page_2"
+        "next": "page_2",
+        "bgm" : "song_1"
       },
       "page_2": {
         "character": "Lulu",
@@ -16,13 +17,16 @@
           "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
+
       },
       "page_3": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_3.jpg",
-        "next": "page_4"
+        "next": "page_4",
+        "bgm" : "song_1"
       },
       "page_4": {
         "character": "AI",
@@ -37,7 +41,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Yes": {
         "character": "AI",
@@ -48,7 +53,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Yes": {
         "character": "AI",
@@ -59,7 +65,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Sorry": {
         "character": "AI",
@@ -70,7 +77,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Sorry": {
         "character": "AI",
@@ -81,7 +89,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Unfortunally": {
         "character": "AI",
@@ -92,44 +101,51 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Unfortunally": {
         "character": "AI",
         "text": "### ¿Cómo cambiamos el rumbo de esto?\n\nNo se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:\n\n* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.\n* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.\n* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.\n\nEl silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas. ¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
         "background": "/illustrations/chapter_0/page_6.jpg",
-        "next": "page_7"
+        "next": "page_7",
+        "bgm" : "song_1"
       },
       "page_7": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_7.jpg",
-        "next": "page_8"
+        "next": "page_8",
+        "bgm" : "song_1"
       },
       "page_8": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_8.jpg",
-        "next": "page_9"
+        "next": "page_9",
+        "bgm" : "song_1"
       },
       "page_9": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_9.jpg",
-        "next": "page_10"
+        "next": "page_10",
+        "bgm" : "song_1"
       },
       "page_10": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_10.jpg",
-        "next": "page_11"
+        "next": "page_11",
+        "bgm" : "song_1"
       }
     },
       "page_11": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_11.jpg",
-        "next": "chapter_1"
+        "next": "chapter_1",
+        "bgm" : "song_1"
       }
     },
     "chapter_1": {
@@ -137,7 +153,8 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_10.jpg",
-        "next": "page_10"
+        "next": "page_10",
+        "bgm" : "song_1"
       }
     }
 }

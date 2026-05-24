@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState  } from 'react';
-import { mainTheme } from '../../public/music/song_1';
+import { song1 } from '../../public/music/song_1';
 
 const MusicContext = createContext(null);
 
@@ -7,7 +7,7 @@ export function MusicProvider({ children }) {
     const [strudel, setStrudel] = useState(null);
     const [isPlaying, setIsPlaying ] = useState(false);
     const songs = {
-        main_theme: mainTheme, 
+        song1: song1, 
     };
     
     useEffect(() => {
@@ -31,7 +31,7 @@ export function MusicProvider({ children }) {
             }
 
             setIsPlaying(true);
-            
+
         }catch (error) {
             console.error("Error loading Strudel:", error);
         }

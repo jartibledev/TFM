@@ -5,19 +5,22 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_1.jpg",
-        "next": "page_2"
+        "next": "page_2",
+        "bgm" : "song_1"
       },
       "page_2": {
         "character": "Lulu",
         "text": "I love sleeping more than anything else in the whole world. That's my favourite hobby. I wish I could stay in bed all day long.",
         "background": "/illustrations/chapter_0/page_2.jpg",
-        "next": "page_3"
+        "next": "page_3",
+        "bgm" : "song_1"
       },
       "page_3": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_3.jpg",
-        "next": "page_4"
+        "next": "page_4",
+        "bgm" : "song_1"
       },
       "page_4": {
         "character": "AI",
@@ -27,7 +30,8 @@
           { "text": "Shut up and recommend an audiobook", "next": "page_5_Yes" },
           { "text": "Give me advice on how to end it all", "next": "page_5_Sorry" },
           { "text": "Has anyone actually answered my CV?", "next": "page_5_Unfortunally" }
-        ]
+        ],
+        "bgm" : "song_1"
       },
       "page_5_Yes": {
         "character": "AI",
@@ -38,7 +42,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Yes": {
         "character": "AI",
@@ -49,7 +54,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Sorry": {
         "character": "AI",
@@ -60,7 +66,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Sorry": {
         "character": "AI",
@@ -71,7 +78,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_5_Unfortunally": {
         "character": "AI",
@@ -82,7 +90,8 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
       "page_6_Unfortunally": {
         "character": "AI",
@@ -93,16 +102,17 @@
           "top": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "bgm" : "song_1"
       },
-      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8" },
-      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9" },
-      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" },
-      "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11" }
+      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8","bgm" : "song_1" },
+      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9","bgm" : "song_1" },
+      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10","bgm" : "song_1" },
+      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10","bgm" : "song_1" },
+      "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11","bgm" : "song_1" }
     },
     "chapter_1": {
-      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10" }
+      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10","bgm" : "song_1" }
     }
   }
 }

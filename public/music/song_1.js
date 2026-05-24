@@ -1,5 +1,5 @@
 
-export const mainTheme = (strudel) => {
+export const song_1 = (strudel) => {
 const chorus ={
 A0 : "a e c",
 A1 : "g e b",
