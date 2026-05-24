@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
 import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
+import { useMusic } from '@/context/MusicContext';
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -12,6 +13,15 @@ export default function GameEngine() {
   const [initialized, setInitialized ] = useState(false);
   const [lastDecition, setLastDecition] = useState('');
   const t = useTranslations('VisualNovel.introduction');
+  const { playPattern, stopMusic } = useMusic();
+
+useEffect(() => {
+  if (initialized && pageDates.bgm) {
+    playPattern(pageDates.bgm);
+  }
+
+  return () => stopMusic();
+}, [actualPage, initialized]); 
  
   useEffect(() => {
     const saveGame = localStorage.getItem( 'actual_page');
