@@ -10,6 +10,10 @@ export function MusicProvider({ children }) {
     const timeoutsRef = useRef([]);
     const activeSongRef = useRef(null);
 
+    // Canal dedicado para archivos de audio largos (.wav)
+    const bgmSourceRef = useRef(null);
+    const activeBgmUrlRef = useRef(null);
+
     const songs = { song_1 };
 
     // 📥 Cargamos el script oficial de Strudel en el navegador (si no está ya cargado)
@@ -27,20 +31,85 @@ export function MusicProvider({ children }) {
         document.head.appendChild(script);
     }, []);
 
-    const playPattern = async (songKey) => {
-        if (typeof window === 'undefined') return;
-
-        // Si la canción ya está sonando, no hacemos nada
-        if (activeSongRef.current === songKey && isPlaying) return; 
-
-        // Inicializamos el contexto de audio del navegador ligado al clic
+    // Inicializador seguro del AudioContext (reutiliza el mismo para síntesis y .wav)
+    const initAudioContext = async () => {
         if (!audioCtxRef.current) {
             audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
         }
         if (audioCtxRef.current.state === 'suspended') {
             await audioCtxRef.current.resume();
         }
+        return audioCtxRef.current;
+    };
 
+    // 🔀 EL ENRUTADOR INTELIGENTE: Elige automáticamente según lo que venga en el JSON de mensajes
+    const play = async (audioKeyOrUrl) => {
+        if (typeof window === 'undefined' || !audioKeyOrUrl) return;
+        
+        await initAudioContext();
+
+        // CASO A: Es un archivo .wav de música grabada completo
+        if (audioKeyOrUrl.endsWith('.wav')) {
+            if (activeBgmUrlRef.current === audioKeyOrUrl) return; // Ya está sonando esta misma canción
+            
+            stopMusic(); // Detiene síntesis si estuviera activa
+            stopBGM();   // Detiene el .wav anterior
+            
+            console.log(`🎵 Cargando y reproduciendo archivo de audio WAV: ${audioKeyOrUrl}`);
+            await playWav(audioKeyOrUrl);
+        } 
+        // CASO B: Es una clave de canción para sintetizar con código/Strudel
+        else {
+            if (activeSongRef.current === audioKeyOrUrl && isPlaying) return; // Ya está sonando
+            
+            stopBGM();   // Detiene el .wav si estuviera activo
+            // playPattern ya ejecuta su propio stopMusic() dentro
+            
+            await playPattern(audioKeyOrUrl);
+        }
+    };
+
+    // --- SUB-MOTOR A: Reproductor de archivos .wav largos ---
+    const playWav = async (url) => {
+        try {
+            const ctx = audioCtxRef.current;
+            const response = await fetch(url);
+            const arrayBuffer = await response.arrayBuffer();
+            const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+
+            const source = ctx.createBufferSource();
+            source.buffer = audioBuffer;
+            source.loop = true; // Para que la canción de fondo no se corte al terminar
+            source.connect(ctx.destination);
+            source.start(0);
+
+            bgmSourceRef.current = source;
+            activeBgmUrlRef.current = url;
+            setIsPlaying(true);
+        } catch (error) {
+            console.error("Error cargando o decodificando el archivo .wav:", error);
+        }
+    };
+
+    const stopBGM = () => {
+        if (bgmSourceRef.current) {
+            try {
+                bgmSourceRef.current.stop();
+            } catch (e) {
+                // Previene errores si el nodo ya se detuvo
+            }
+            bgmSourceRef.current = null;
+            activeBgmUrlRef.current = null;
+        }
+    };
+
+    // --- SUB-MOTOR B: Tu secuenciador original de Strudel / Síntesis ---
+    const playPattern = async (songKey) => {
+        if (typeof window === 'undefined') return;
+
+        if (activeSongRef.current === songKey && isPlaying) return; 
+
+        await initAudioContext();
         stopMusic(); 
 
         const songData = songs[songKey]?.();
@@ -62,29 +131,26 @@ export function MusicProvider({ children }) {
             let localOffset = currentOffset;
 
             // 🎹 SECUENCIACIÓN USANDO EL MOTOR ACÚSTICO DE STRUDEL
-            // Accedemos a las funciones de modelado de onda nativas que Strudel expone en el entorno global
             songData.melodia.forEach((nota) => {
                 const time = now + localOffset;
                 const duration = beatDuration * 0.8;
 
-                // Si el script de Strudel terminó de cargar, usamos sus nodos de sonido balanceados
                 if (window.strudel && typeof window.strudel.playTone === 'function') {
                     window.strudel.playTone({
                         note: nota,
                         time: time,
                         duration: duration,
-                        sound: 'triangle', // Usando el timbre nativo de Strudel
-                        cutoff: 900,       // Filtro de brillo de Strudel
+                        sound: 'triangle',
+                        cutoff: 900,
                         resonance: 4
                     });
                 } else {
-                    // Salvavidas clásico si el script tarda un milisegundo en responder
                     fallbackPlay(nota, time, duration, 'triangle', 0.15);
                 }
                 localOffset += beatDuration;
             });
 
-            // Capa de Bajos con el sonido denso ("sawtooth") original de Strudel
+            // Capa de Bajos
             let bajoOffset = currentOffset;
             songData.bajos.forEach((bajo) => {
                 const time = now + bajoOffset;
@@ -95,8 +161,8 @@ export function MusicProvider({ children }) {
                         note: bajo,
                         time: time,
                         duration: duration,
-                        sound: 'sawtooth', // Tu sonido de sierra original
-                        cutoff: 350,       // Filtro grave analógico
+                        sound: 'sawtooth',
+                        cutoff: 350,
                         gain: 0.12
                     });
                 } else {
@@ -118,7 +184,7 @@ export function MusicProvider({ children }) {
         scheduleLoop();
     };
 
-    // Generador de ondas básico por si el script de la CDN no ha terminado de bajarse del todo
+    // Generador de ondas básico de emergencia
     const fallbackPlay = (noteName, startTime, duration, type, volume) => {
         const freqs = { 'a2': 110, 'e2': 82.41, 'd2': 73.42, 'a3': 220, 'e3': 164.81, 'c3': 130.81, 'g3': 196, 'f#3': 185, 'c#3': 138.59 };
         const freq = freqs[noteName] || 220;
@@ -135,6 +201,13 @@ export function MusicProvider({ children }) {
         osc.stop(startTime + duration);
     };
 
+    // Función de parada absoluta
+    const stopAll = () => {
+        stopMusic();
+        stopBGM();
+        setIsPlaying(false);
+    };
+
     const stopMusic = () => {
         timeoutsRef.current.forEach(clearTimeout);
         timeoutsRef.current = [];
@@ -143,7 +216,7 @@ export function MusicProvider({ children }) {
     };
 
     return (
-        <MusicContext.Provider value={{ playPattern, stopMusic, isPlaying }}>
+        <MusicContext.Provider value={{ play, stopAll, isPlaying }}>
             {children}
         </MusicContext.Provider>
     );

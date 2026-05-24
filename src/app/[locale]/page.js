@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
 import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
-import { useMusic } from '@/styles/MusicContext';
+import { useMusic } from '@/styles/MusicContext'; // Mantiene la misma ruta
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -13,16 +13,19 @@ export default function GameEngine() {
   const [initialized, setInitialized] = useState(false);
   const [lastDecition, setLastDecition] = useState('');
   const t = useTranslations('VisualNovel.introduction');
-  const { playPattern, stopMusic } = useMusic();
+  
+  
+  const { play, stopAll } = useMusic();
 
   const pageDates = initialized ? t.raw(actualPage) : null;
 
+
   useEffect(() => {
     if (initialized && pageDates?.bgm) {
-      playPattern(pageDates.bgm);
+      play(pageDates.bgm); 
     }
     return () => {
-      if (!initialized) stopMusic();
+      if (!initialized) stopAll(); 
     };
   }, [pageDates?.bgm, initialized]); 
   
@@ -59,7 +62,6 @@ export default function GameEngine() {
     return <div style={{color: 'white'}}>Loading Story...</div>;
   }
 
- 
   let finalText = pageDates.text;
   if (pageDates.variants_text) {
     finalText = pageDates.variants_text[lastDecition] || pageDates.text;
@@ -71,7 +73,7 @@ export default function GameEngine() {
 
   const handleNextClick = () => {
     try {
-      if (pageDates.bgm) playPattern(pageDates.bgm);
+      if (pageDates.bgm) play(pageDates.bgm);
     } catch(e) {}
 
     if (subPage < textParagraphs.length - 1) {
@@ -87,7 +89,7 @@ export default function GameEngine() {
 
   const handleOptionClick = (nextKey, decitionTaken) => {
     try {
-      if (pageDates.bgm) playPattern(pageDates.bgm);
+      if (pageDates.bgm) play(pageDates.bgm);
     } catch(e) {}
 
     if (decitionTaken) setLastDecition(decitionTaken);
