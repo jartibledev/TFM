@@ -1,56 +1,54 @@
 'use client'
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { song_1 } from '@/music/song_1';
 
 const MusicContext = createContext(null);
 
 export function MusicProvider({ children }) {
-    const [strudelEngine, setStrudelEngine] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
     
     const songs = {
         song_1: song_1, 
     };
-
-    useEffect(() => {
-        // Inicializamos los módulos del lado del cliente de forma segura
-        // Evitamos crasheos en el servidor (SSR) y fallos de análisis estático en Turbopack
-        Promise.all([
-            import('@strudel/core'),
-            import('@strudel/webaudio')
-        ]).then(([core, webaudio]) => {
-            // Buscamos el inicializador o los controles nativos que expone el paquete de audio
-            const controls = webaudio.webAudioControls || webaudio.controls || webaudio;
-            if (controls) {
-                setStrudelEngine(controls);
-            }
-        }).catch(err => console.error("Error cargando librerías de Strudel:", err));
-    }, []);
     
     const playPattern = (songKey) => {
-        if (typeof window === 'undefined' || !strudelEngine) return;
+        if (typeof window === 'undefined' || !window.strudel) {
+            console.warn("Esperando a que Strudel cargue en el navegador...");
+            return;
+        }
+
+        const sEngine = window.strudel;
 
         try {
-            // 1. Despertamos el AudioContext nativo
-            if (typeof strudelEngine.initWebAudio === 'function') {
-                strudelEngine.initWebAudio();
-            } else if (typeof strudelEngine.initAudio === 'function') {
-                strudelEngine.initAudio();
+          
+            if (typeof sEngine.init === 'function') {
+                sEngine.init();
+            } else if (typeof sEngine.initAudio === 'function') {
+                sEngine.initAudio();
             }
             
-            // 2. Limpiamos cualquier pista que estuviera sonando
-            if (typeof strudelEngine.stop === 'function') {
-                strudelEngine.stop();
+           
+            if (window.AudioContext || window.webkitAudioContext) {
+                const ctx = sEngine.context || sEngine.audioContext;
+                if (ctx && ctx.state === 'suspended') {
+                    ctx.resume();
+                }
             }
 
+            sEngine.stop();
+
             if (songs[songKey]) {
-                // 3. Evaluamos de manera segura tu estructura de array multipista
-                strudelEngine.play(() => {
-                    return songs[songKey](strudelEngine);
-                });
-                console.log(`🎶 Reproduciendo de forma segura: ${songKey}`);
+                
+                const syncronizedTracks = songs[songKey](sEngine);
+                if (Array.isArray(syncronizedTracks)) {
+                    sEngine.play(sEngine.stack(...syncronizedTracks));
+                } else {
+                    sEngine.play(syncronizedTracks);
+                }
+                
+                console.log(`🎶 Reproduciendo con éxito: ${songKey}`);
             } else {
-                strudelEngine.play(songKey);
+                sEngine.play(songKey);
             }
 
             setIsPlaying(true);
@@ -58,10 +56,9 @@ export function MusicProvider({ children }) {
             console.error("Error al reproducir en Strudel:", error);
         }
     };
-
     const stopMusic = () => {
-        if (typeof window !== 'undefined' && strudelEngine && typeof strudelEngine.stop === 'function') {
-            strudelEngine.stop();
+        if (typeof window !== 'undefined' && window.strudel) {
+            window.strudel.stop();
             setIsPlaying(false);
         }
     };

@@ -573,7 +573,7 @@
   dependencies:
     "@strudel/core" "1.2.6"
 
-"@strudel/mini@1.2.6":
+"@strudel/mini@1.2.6", "@strudel/mini@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@strudel/mini/-/mini-1.2.6.tgz#9d493831249c4c25e7d787b4a8c0f57978f1a8b4"
   integrity sha512-I5GFPLHI3TPcJuD2RdDcurA+lTogaSQ0TB+EimKTgEtSAbU6ZMEkSUOXZIFO5eaAcJcMucgKaBcmTKpD4oZjPA==

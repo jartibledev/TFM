@@ -1,5 +1,6 @@
 import { DM_Mono, Geist_Mono, Cascadia_Mono , Fragment_Mono, Cutive_Mono, Inter  } from "next/font/google";
 import "./globals.css";
+import Script from 'next/script';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -15,21 +16,19 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children, params }) {
-  // 1. Desestructuramos el parámetro 'locale' de forma asíncrona (Obligatorio en Next.js 16)
   const { locale } = await params;
-
-  // 2. Validación de seguridad para idiomas soportados
   if (!locales.includes(locale)) {
     notFound();
   }
-
-  // 3. 🔥 CORRECCIÓN CLAVE: Pasamos el locale de forma explícita a getMessages para que next-intl cargue el JSON correcto
   const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
       <body >
-        {/* 4. Aseguramos que el Client Provider reciba tanto los mensajes como el locale actual */}
+        <Script 
+        src="https://unpkg.com/@strudel/embed@latest/dist/strudel-embed.js"
+        strategy="beforeInteractive"
+        />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <MusicProvider>
           {children}
