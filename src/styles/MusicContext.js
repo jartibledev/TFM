@@ -8,6 +8,7 @@ export function MusicProvider({ children }) {
     const [isPlaying, setIsPlaying] = useState(false);
     const audioCtxRef = useRef(null);
     const timeoutsRef = useRef([]);
+    const activeSongRef = useRef(null);
 
     const songs = { song_1 };
 
@@ -42,76 +43,85 @@ export function MusicProvider({ children }) {
     };
 
     const playPattern = async (songKey) => {
-        if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return;
 
-        // 1. Inicializar el contexto de audio real ligado al clic del usuario
-        if (!audioCtxRef.current) {
-            audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        
-        if (audioCtxRef.current.state === 'suspended') {
-            await audioCtxRef.current.resume();
-        }
+    // 🔥 LA GUARDA CONTROLADORA: 
+    // Si la canción que pides YA ESTÁ sonando, salimos de la función inmediatamente.
+    // Esto evita que se reinicie el bucle al avanzar de página.
+    if (activeSongRef.current === songKey && isPlaying) {
+        console.log(`🎵 ${songKey} ya está sonando de fondo. Continuamos sin reiniciar.`);
+        return; 
+    }
 
-        stopMusic(); // Limpiar secuencias anteriores
+    // Inicializar el contexto de audio real ligado al clic del usuario si no existe
+    if (!audioCtxRef.current) {
+        audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    
+    if (audioCtxRef.current.state === 'suspended') {
+        await audioCtxRef.current.resume();
+    }
+
+    // Si es una canción nueva o todo estaba parado, limpiamos lo anterior
+    stopMusic();
 
         const songData = songs[songKey]?.();
-        if (!songData) return;
+    if (!songData) return;
 
-        setIsPlaying(true);
-        console.log(`🔊 Ejecutando secuenciador polifónico nativo para: ${songKey}`);
+    // 🔥 Guardamos la canción actual como la activa
+    activeSongRef.current = songKey;
+    setIsPlaying(true);
+    console.log(`🔊 Iniciando secuencia nueva para: ${songKey}`);
 
-        const tempo = 120; // BPM
-        const beatDuration = 60 / tempo; // Duración de 1 tiempo en segundos
-        const now = audioCtxRef.current.currentTime;
+    const tempo = 120; // BPM
+    const beatDuration = 60 / tempo; 
+    const now = audioCtxRef.current.currentTime;
 
-        // --- MOTOR DE SECUENCIACIÓN EN TIEMPO REAL ---
-        let currentOffset = 0;
+    let currentOffset = 0;
 
-        // Bucle para repetir la estructura musical (Looping)
-        const scheduleLoop = (loopStartIndex) => {
-            let localOffset = currentOffset;
+    const scheduleLoop = () => {
+        // Comprobación de seguridad: si el usuario paró la música o cambió de tema, rompemos el bucle
+        if (activeSongRef.current !== songKey) return;
 
-            // Secuenciar la Melodía (Pista Principal)
-            songData.melodia.forEach((nota) => {
-                const time = now + localOffset;
-                const duration = beatDuration * 0.8;
-                
-                // Programamos el disparo del oscilador en el reloj de la tarjeta de sonido
-                playNote(nota, time, duration, 'triangle', 0.15);
-                localOffset += beatDuration;
-            });
+        let localOffset = currentOffset;
 
-            // Secuenciar el Bajo en paralelo (dispara en cada bloque)
-            let bajoOffset = currentOffset;
-            songData.bajos.forEach((bajo) => {
-                const time = now + bajoOffset;
-                const duration = beatDuration * 4; // Notas largas
-                playNote(bajo, time, duration, 'sawtooth', 0.08);
-                bajoOffset += (beatDuration * 4);
-            });
+        // Secuenciar la Melodía
+        songData.melodia.forEach((nota) => {
+            const time = now + localOffset;
+            const duration = beatDuration * 0.8;
+            playNote(nota, time, duration, 'triangle', 0.15);
+            localOffset += beatDuration;
+        });
 
-            // Duración total de esta vuelta del bucle
-            const totalLoopTime = localOffset - currentOffset;
-            currentOffset += totalLoopTime;
+        // Secuenciar el Bajo
+        let bajoOffset = currentOffset;
+        songData.bajos.forEach((bajo) => {
+            const time = now + bajoOffset;
+            const duration = beatDuration * 4;
+            playNote(bajo, time, duration, 'sawtooth', 0.08);
+            bajoOffset += (beatDuration * 4);
+        });
 
-            // Programamos la siguiente vuelta un poco antes de que termine la actual
-            const timeoutId = setTimeout(() => {
-                scheduleLoop();
-            }, totalLoopTime * 1000 - 100);
+        const totalLoopTime = localOffset - currentOffset;
+        currentOffset += totalLoopTime;
 
-            timeoutsRef.current.push(timeoutId);
-        };
+        const timeoutId = setTimeout(() => {
+            scheduleLoop();
+        }, totalLoopTime * 1000 - 100);
 
-        scheduleLoop();
+        timeoutsRef.current.push(timeoutId);
     };
 
-    const stopMusic = () => {
-        // Cancelar todos los temporizadores activos
-        timeoutsRef.current.forEach(clearTimeout);
-        timeoutsRef.current = [];
-        setIsPlaying(false);
-    };
+    scheduleLoop();
+};
+
+// 2. Acuérdate de limpiar también la referencia en tu función stopMusic():
+const stopMusic = () => {
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
+    activeSongRef.current = null; // 🔥 Reseteamos la canción activa
+    setIsPlaying(false);
+};
 
     return (
         <MusicContext.Provider value={{ playPattern, stopMusic, isPlaying }}>

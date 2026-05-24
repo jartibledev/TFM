@@ -126,7 +126,8 @@
        "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11", "bgm" : "song_1" }
     },
     "chapter_1": {
-      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10", "bgm" : "song_1" }
+      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_12.jpg", "next": "page_13", "bgm" : "song_1" },
+      "page_2": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_12.jpg", "next": "page_13", "bgm" : "song_1" }
     }
   }
 }
