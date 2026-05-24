@@ -2,13 +2,14 @@
 import { useRouter, usePathname } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import { ButtonComponent } from './Components.styles';
 
 const container = {
     display: 'flex', 
     gap: '10px', 
     padding: '10px', 
-    width: '300px', 
-    height: '150px',
+    width: '250px', 
+    height: '70px',
     position: 'fixed',
     top: '20px', /* Distancia desde la parte inferior */
     right: '20px',  /* Distancia desde la parte derecha */
@@ -48,7 +49,7 @@ export default function LanguageSelector() {
 
   return createPortal (
     <div style={container}>
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('es')} 
         className="tu-boton-idioma-style"
       > <img src="/icons/leanguages/Spanish_flag.svg"
@@ -57,9 +58,9 @@ export default function LanguageSelector() {
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
       
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('en')} 
         className="tu-boton-idioma-style"
       >
@@ -69,9 +70,9 @@ export default function LanguageSelector() {
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
 
-      <button 
+      <ButtonComponent 
         onClick={() => ChangeLanguage('fr')} 
         className="tu-boton-idioma-style"
       >
@@ -81,8 +82,8 @@ export default function LanguageSelector() {
                                           style = {styleImage}
 
                                           ></img>
-      </button>
-      <button 
+      </ButtonComponent>
+      <ButtonComponent 
         onClick={() => ChangeLanguage('de')} 
         className="tu-boton-idioma-style"
       >
@@ -92,7 +93,7 @@ export default function LanguageSelector() {
                                           style = {styleImage}
 
                                           ></img>
-      </button>
+      </ButtonComponent>
     </div>,
      document.body
   );

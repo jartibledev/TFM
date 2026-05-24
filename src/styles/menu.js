@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LanguageSelector from './LanguageSelector';
 import { useMusic } from './MusicContext';
-
+import { Box, ButtonComponent } from '@/styles/Components.styles'
 export default function MenuConfiguracion() {
   const { isMuted, toggleMute } = useMusic();
     const [isOpen, setIsOpen] = useState(false);
@@ -18,25 +18,25 @@ export default function MenuConfiguracion() {
   }, []);
 
   return (
-    <div>
-        <button onClick={() => setIsOpen(!isOpen)}>
+    <div style={{zIndex: '999'}}>
+    <Box>
+        <ButtonComponent onClick={() => setIsOpen(!isOpen)}>
             Settings
-        </button>
+        </ButtonComponent>
         {isOpen && (
             <div>
                 <div>
                     <div>
-                        <span>iconos</span>
-                        <button onClick={toggleMute} >
+                        <ButtonComponent onClick={toggleMute} >
                         {isMuted ? 'Muted' : 'Sound' }
-                        </button>
+                        </ButtonComponent>
                     </div>
                  </div>
                  <LanguageSelector></LanguageSelector>
                  </div>
 
         )}
-    </div>
+    </Box></div>
   )
 
 
