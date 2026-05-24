@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
 import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
-import { useMusic } from '@/context/MusicContext';
+import { useMusic } from '@/styles/MusicContext';
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -69,6 +69,10 @@ useEffect(() => {
   const currentTextChunk = textParagraphs[subPage] || textParagraphs[0];
 
   const handleNextClick = () => {
+    try {
+      playPattern(pageDates.bgm);
+    }catch(e){}
+
     if (subPage < textParagraphs.length -1){
       setSubPage(prev => prev + 1 );
     } else {
@@ -80,6 +84,10 @@ useEffect(() => {
   };
 
   const handleOptionClick = (nextKey, decitionTaken) => {
+    try{
+      playPattern(pageDates.bgm);
+    }catch(e){}
+    
     if (decitionTaken) setLastDecition(decitionTaken);
     setActualPage(nextKey);
     setSubPage(0);

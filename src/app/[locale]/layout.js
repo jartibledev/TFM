@@ -4,7 +4,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { MusicProvider } from '@/context/MusicContext';
+import { MusicProvider } from '@/styles/MusicContext';
 
 
 const locales = ['es', 'en', 'fr', 'de'];
