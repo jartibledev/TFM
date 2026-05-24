@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
 import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
-import { useMusic } from '@/styles/MusicContext'; // Mantiene la misma ruta
+import { useMusic } from '@/styles/MusicContext';
 
 export default function GameEngine() {
   const [actualPage, setActualPage] = useState('page_1');
@@ -14,22 +14,34 @@ export default function GameEngine() {
   const [lastDecition, setLastDecition] = useState('');
   const t = useTranslations('VisualNovel.introduction');
   
-  
   const { play, stopAll } = useMusic();
 
   const pageDates = initialized ? t.raw(actualPage) : null;
+  const currentBgmString = pageDates?.bgm || null;
 
-
+  // 🛡️ CONTROL DE AUDIO ANTI-REINICIO POR IDIOMA
   useEffect(() => {
-    if (initialized && pageDates?.bgm) {
-      play(pageDates.bgm); 
-    }
-    return () => {
-      if (!initialized) stopAll(); 
-    };
-  }, [pageDates?.bgm, initialized]); 
-  
+    if (initialized && currentBgmString) {
+      // 🔍 Comprobación de seguridad directa con la ventana del navegador antes de llamar a play
+      const sys = typeof window !== 'undefined' ? window.__AUDIO_SYSTEM__ : null;
+      
+      // Si el sistema ya está reproduciendo esta misma canción algorítmica, bloqueamos la llamada
+      if (sys && sys.sequencerInterval && sys.activeSong === currentBgmString) {
+        return; 
+      }
+      
+      // Si es un .wav y ya está sonando, también la bloqueamos
+      if (sys && sys.bgmSource && sys.activeBgmUrl === currentBgmString) {
+        return;
+      }
 
+      // Solo si es una canción distinta o el motor estaba apagado, le damos permiso para sonar
+      play(currentBgmString); 
+    }
+  }, [currentBgmString, initialized]); // Vigilancia limpia
+
+
+  // Carga inicial del LocalStorage
   useEffect(() => {
     const saveGame = localStorage.getItem('actual_page');
     const saveDecition = localStorage.getItem('last_decition');
@@ -49,7 +61,7 @@ export default function GameEngine() {
     setInitialized(true);
   }, []);
 
-
+  // Guardado automático en LocalStorage
   useEffect(() => {
     if (initialized) {
       localStorage.setItem('actual_page', actualPage);
@@ -70,12 +82,7 @@ export default function GameEngine() {
   const textParagraphs = finalText.split('\n\n').filter(p => p.trim() != "");
   const currentTextChunk = textParagraphs[subPage] || textParagraphs[0];
 
-
   const handleNextClick = () => {
-    try {
-      if (pageDates.bgm) play(pageDates.bgm);
-    } catch(e) {}
-
     if (subPage < textParagraphs.length - 1) {
       setSubPage(prev => prev + 1);
     } else {
@@ -86,17 +93,11 @@ export default function GameEngine() {
     }
   };
 
-
   const handleOptionClick = (nextKey, decitionTaken) => {
-    try {
-      if (pageDates.bgm) play(pageDates.bgm);
-    } catch(e) {}
-
     if (decitionTaken) setLastDecition(decitionTaken);
     setActualPage(nextKey);
     setSubPage(0);
   };
-
 
   const positionDefault = {
     bottom: '40px',

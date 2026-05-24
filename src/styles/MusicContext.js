@@ -1,235 +1,217 @@
 'use client'
-import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { song_1 } from '@/music/song_1';
-
 
 const MusicContext = createContext(null);
 
-export function MusicProvider({ children }) {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const audioCtxRef = useRef(null);
-    const timeoutsRef = useRef([]);
-    const activeSongRef = useRef(null);
-    const masterGainRef = useRef(null);
-    const [isMuted, setIsMuted ] = useState(false);
-
-    // Canal dedicado para archivos de audio largos (.wav)
-    const bgmSourceRef = useRef(null);
-    const activeBgmUrlRef = useRef(null);
-
-    const songs = { song_1 };
-
-    const toggleMute = () => {
-        const newState = !isMuted;
-        setIsMuted (newState);
-
-    const ctx = audioCtxRef.current;
-    if (!ctx || !masterGainRef.current) return;
-    if (newState) {
-            masterGainRef.current.gain.setValueAtTime(0, ctx.currentTime);
-        } else {
-        masterGainRef.current.gain.setValueAtTime(1, ctx.currentTime);
+// Purga radical de hilos en la pestaña del navegador
+const purgeAllWebIntervals = () => {
+    if (typeof window === 'undefined') return;
+    const highestIntervalId = setInterval(() => {}, 1000);
+    for (let i = 0; i <= highestIntervalId; i++) {
+        window.clearInterval(i);
     }
 };
-    // 📥 Cargamos el script oficial de Strudel en el navegador (si no está ya cargado)
-    useEffect(() => {
-        if (typeof window === 'undefined') return;
-        if (document.getElementById('strudel-core-script')) return;
 
-        const script = document.createElement('script');
-        script.id = 'strudel-core-script';
-        script.src = 'https://unpkg.com/@strudel/embed@latest/dist/strudel-embed.js';
-        script.async = true;
-        script.onload = () => {
-            console.log("🎛️ Catálogo de sintetizadores de Strudel inyectado en el navegador.");
+const getAudioSystem = () => {
+    if (typeof window === 'undefined') return null;
+    
+    if (!window.__AUDIO_SYSTEM__) {
+        window.__AUDIO_SYSTEM__ = {
+            ctx: null,
+            masterGain: null,
+            activeSong: null,
+            activeBgmUrl: null,
+            bgmSource: null,
+            hasActiveInterval: false // 🟢 Rastreador real de si el bucle está vivo o apagado
         };
-        document.head.appendChild(script);
+    }
+    return window.__AUDIO_SYSTEM__;
+};
+
+export function MusicProvider({ children }) {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isMuted, setIsMuted] = useState(false);
+    const songs = { song_1 };
+
+    // Limpieza inicial al cambiar de idioma
+    useEffect(() => {
+        const sys = getAudioSystem();
+        if (sys) {
+            if (sys.ctx) {
+                try { sys.ctx.close(); } catch(e) {}
+                sys.ctx = null;
+                sys.masterGain = null;
+            }
+            sys.hasActiveInterval = false; // Al purgar, marcamos el motor como vacío
+        }
+        purgeAllWebIntervals();
     }, []);
 
-    // Inicializador seguro del AudioContext (reutiliza el mismo para síntesis y .wav)
+    const toggleMute = () => {
+        const sys = getAudioSystem();
+        if (!sys) return;
+
+        const newState = !isMuted;
+        setIsMuted(newState);
+
+        if (!sys.ctx || !sys.masterGain) return;
+
+        if (newState) {
+            sys.masterGain.gain.setValueAtTime(0, sys.ctx.currentTime);
+        } else {
+            sys.masterGain.gain.setValueAtTime(1, sys.ctx.currentTime);
+        }
+    };
+
     const initAudioContext = async () => {
+        const sys = getAudioSystem();
+        if (!sys) return null;
+
+        if (!sys.ctx) {
+            sys.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            sys.masterGain = sys.ctx.createGain();
+            sys.masterGain.connect(sys.ctx.destination);
+        }
         
-        if (!audioCtxRef.current) {
-            audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
-            masterGainRef.current = audioCtxRef.current.createGain();
-            masterGainRef.current.connect(audioCtxRef.current.destination);
+        if (isMuted) {
+            sys.masterGain.gain.setValueAtTime(0, sys.ctx.currentTime);
+        } else {
+            sys.masterGain.gain.setValueAtTime(1, sys.ctx.currentTime);
         }
-        if (audioCtxRef.current.state === 'suspended') {
-            await audioCtxRef.current.resume();
+
+        if (sys.ctx.state === 'suspended') {
+            await sys.ctx.resume();
         }
-        return audioCtxRef.current;
+        return sys.ctx;
     };
 
-    // 🔀 EL ENRUTADOR INTELIGENTE: Elige automáticamente según lo que venga en el JSON de mensajes
     const play = async (audioKeyOrUrl) => {
-        if (typeof window === 'undefined' || !audioKeyOrUrl) return;
-        
-        await initAudioContext();
+        const sys = getAudioSystem();
+        if (!sys || !audioKeyOrUrl) return;
 
-        // CASO A: Es un archivo .wav de música grabada completo
-        if (audioKeyOrUrl.endsWith('.wav')) {
-            if (activeBgmUrlRef.current === audioKeyOrUrl) return; // Ya está sonando esta misma canción
-            
-            stopMusic(); // Detiene síntesis si estuviera activa
-            stopBGM();   // Detiene el .wav anterior
-            
-            console.log(`🎵 Cargando y reproduciendo archivo de audio WAV: ${audioKeyOrUrl}`);
-            await playWav(audioKeyOrUrl);
-        } 
-        // CASO B: Es una clave de canción para sintetizar con código/Strudel
-        else {
-            if (activeSongRef.current === audioKeyOrUrl && isPlaying) return; // Ya está sonando
-            
-            stopBGM();   // Detiene el .wav si estuviera activo
-            // playPattern ya ejecuta su propio stopMusic() dentro
-            
-            await playPattern(audioKeyOrUrl);
+        // 🛑 NUEVO FRENO INTELIGENTE:
+        // Solo bloqueamos el play si el string coincide Y ADEMÁS el bucle físico está sonando de verdad.
+        if (audioKeyOrUrl.endsWith('.wav') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
+        if (!audioKeyOrUrl.endsWith('.wav') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
+
+        // Si la música se purgó por el idioma, "sys.hasActiveInterval" será false, saltándose el freno
+        // y permitiendo que la música vuelva a nacer sin solapar nada.
+        purgeAllWebIntervals();
+        sys.hasActiveInterval = false;
+
+        try {
+            await initAudioContext();
+
+            if (sys.bgmSource) {
+                try { sys.bgmSource.stop(); } catch(e){}
+                sys.bgmSource = null;
+            }
+
+            if (audioKeyOrUrl.endsWith('.wav')) {
+                sys.activeSong = null;
+                await playWav(audioKeyOrUrl);
+            } else {
+                sys.activeBgmUrl = null;
+                await playPattern(audioKeyOrUrl);
+            }
+        } catch (error) {
+            console.error("Error en play:", error);
         }
     };
 
-    // --- SUB-MOTOR A: Reproductor de archivos .wav largos ---
     const playWav = async (url) => {
+        const sys = getAudioSystem();
         try {
-            const ctx = audioCtxRef.current;
             const response = await fetch(url);
             const arrayBuffer = await response.arrayBuffer();
-            const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+            const audioBuffer = await sys.ctx.decodeAudioData(arrayBuffer);
 
-            const source = ctx.createBufferSource();
+            const source = sys.ctx.createBufferSource();
             source.buffer = audioBuffer;
-            source.loop = true; // Para que la canción de fondo no se corte al terminar
-            source.connect(masterGainRef.current);
+            source.loop = true; 
+            source.connect(sys.masterGain);
             source.start(0);
 
-            bgmSourceRef.current = source;
-            activeBgmUrlRef.current = url;
+            sys.bgmSource = source;
+            sys.activeBgmUrl = url;
             setIsPlaying(true);
         } catch (error) {
-            console.error("Error cargando o decodificando el archivo .wav:", error);
+            console.error("Error en playWav:", error);
         }
     };
 
-    const stopBGM = () => {
-        if (bgmSourceRef.current) {
-            try {
-                bgmSourceRef.current.stop();
-            } catch (e) {
-                // Previene errores si el nodo ya se detuvo
-            }
-            bgmSourceRef.current = null;
-            activeBgmUrlRef.current = null;
-        }
-    };
-
-    // --- SUB-MOTOR B: Tu secuenciador original de Strudel / Síntesis ---
     const playPattern = async (songKey) => {
-        if (typeof window === 'undefined') return;
-
-        if (activeSongRef.current === songKey && isPlaying) return; 
-
-        await initAudioContext();
-        stopMusic(); 
-
+        const sys = getAudioSystem();
         const songData = songs[songKey]?.();
         if (!songData) return;
 
-        activeSongRef.current = songKey;
+        sys.activeSong = songKey;
+        sys.hasActiveInterval = true; // El motor vuelve a estar ocupado
         setIsPlaying(true);
-        console.log(`🎶 Tocando con los sintetizadores reales de Strudel: ${songKey}`);
 
-        const tempo = 120; // BPM
+        const tempo = 120; 
         const beatDuration = 60 / tempo;
-        const now = audioCtxRef.current.currentTime;
+        const totalNotasMelodia = songData.melodia.length;
+        const loopDurationSeconds = totalNotasMelodia * beatDuration;
 
-        let currentOffset = 0;
+        const runSequence = () => {
+            if (sys.activeSong !== songKey) return;
+            const now = sys.ctx.currentTime;
 
-        const scheduleLoop = () => {
-            if (activeSongRef.current !== songKey) return;
-
-            let localOffset = currentOffset;
-
-            // 🎹 SECUENCIACIÓN USANDO EL MOTOR ACÚSTICO DE STRUDEL
-            songData.melodia.forEach((nota) => {
-                const time = now + localOffset;
+            songData.melodia.forEach((nota, index) => {
+                const time = now + (index * beatDuration);
                 const duration = beatDuration * 0.8;
-
-                if (window.strudel && typeof window.strudel.playTone === 'function') {
-                    window.strudel.playTone({
-                        note: nota,
-                        time: time,
-                        duration: duration,
-                        sound: 'triangle',
-                        cutoff: 900,
-                        resonance: 4
-                    });
-                } else {
-                    fallbackPlay(nota, time, duration, 'triangle', 0.15);
-                }
-                localOffset += beatDuration;
+                fallbackPlay(nota, time, duration, 'triangle', 0.15, songKey);
             });
 
-            // Capa de Bajos
-            let bajoOffset = currentOffset;
-            songData.bajos.forEach((bajo) => {
-                const time = now + bajoOffset;
+            songData.bajos.forEach((bajo, index) => {
+                const time = now + (index * beatDuration * 4);
                 const duration = beatDuration * 4;
-
-                if (window.strudel && typeof window.strudel.playTone === 'function') {
-                    window.strudel.playTone({
-                        note: bajo,
-                        time: time,
-                        duration: duration,
-                        sound: 'sawtooth',
-                        cutoff: 350,
-                        gain: 0.12
-                    });
-                } else {
-                    fallbackPlay(bajo, time, duration, 'sawtooth', 0.08);
-                }
-                bajoOffset += (beatDuration * 4);
+                fallbackPlay(bajo, time, duration, 'sawtooth', 0.08, songKey);
             });
-
-            const totalLoopTime = localOffset - currentOffset;
-            currentOffset += totalLoopTime;
-
-            const timeoutId = setTimeout(() => {
-                scheduleLoop();
-            }, totalLoopTime * 1000 - 100);
-
-            timeoutsRef.current.push(timeoutId);
         };
 
-        scheduleLoop();
+        runSequence();
+        setInterval(runSequence, loopDurationSeconds * 1000);
     };
 
-    // Generador de ondas básico de emergencia
-    const fallbackPlay = (noteName, startTime, duration, type, volume) => {
+    const fallbackPlay = (noteName, startTime, duration, type, volume, songKey) => {
+        const sys = getAudioSystem();
+        if (!sys || !sys.ctx || !sys.masterGain || sys.activeSong !== songKey) return;
+
         const freqs = { 'a2': 110, 'e2': 82.41, 'd2': 73.42, 'a3': 220, 'e3': 164.81, 'c3': 130.81, 'g3': 196, 'f#3': 185, 'c#3': 138.59 };
         const freq = freqs[noteName] || 220;
-        const ctx = audioCtxRef.current;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
+
+        const osc = sys.ctx.createOscillator();
+        const gain = sys.ctx.createGain();
+        
         osc.type = type === 'sawtooth' ? 'sawtooth' : 'triangle';
         osc.frequency.setValueAtTime(freq, startTime);
+        
         gain.gain.setValueAtTime(volume, startTime);
         gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+        
         osc.connect(gain);
-        gain.connect(masterGainRef.current);
+        gain.connect(sys.masterGain); 
+        
         osc.start(startTime);
         osc.stop(startTime + duration);
     };
 
-    // Función de parada absoluta
     const stopAll = () => {
-        stopMusic();
-        stopBGM();
-        setIsPlaying(false);
-    };
-
-    const stopMusic = () => {
-        timeoutsRef.current.forEach(clearTimeout);
-        timeoutsRef.current = [];
-        activeSongRef.current = null;
+        const sys = getAudioSystem();
+        purgeAllWebIntervals();
+        
+        if (sys && sys.bgmSource) {
+            try { sys.bgmSource.stop(); } catch(e){}
+            sys.bgmSource = null;
+        }
+        if (sys) {
+            sys.activeSong = null;
+            sys.activeBgmUrl = null;
+            sys.hasActiveInterval = false;
+        }
         setIsPlaying(false);
     };
 
