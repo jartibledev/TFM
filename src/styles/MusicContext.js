@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { song_1 } from '@/music/song_1';
 
+
 const MusicContext = createContext(null);
 
 export function MusicProvider({ children }) {

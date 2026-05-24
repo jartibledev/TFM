@@ -26,7 +26,7 @@
         "text": "",
         "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4",
-        "bgm" : "song_1"
+        "bgm" : "/music/audio_1.wav"
       },
       "page_4": {
         "character": "AI",
