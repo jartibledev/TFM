@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { MusicProvider } from '@/context/MusicContext';
 
 
 const locales = ['es', 'en', 'fr', 'de'];
@@ -30,7 +31,9 @@ export default async function RootLayout({ children, params }) {
       <body >
         {/* 4. Aseguramos que el Client Provider reciba tanto los mensajes como el locale actual */}
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <MusicProvider>
           {children}
+          </MusicProvider>
         </NextIntlClientProvider>
       </body>
     </html>
