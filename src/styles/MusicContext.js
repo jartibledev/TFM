@@ -10,6 +10,8 @@ export function MusicProvider({ children }) {
     const audioCtxRef = useRef(null);
     const timeoutsRef = useRef([]);
     const activeSongRef = useRef(null);
+    const masterGainRef = useRef(null);
+    const [isMuted, setIsMuted ] = useState(false);
 
     // Canal dedicado para archivos de audio largos (.wav)
     const bgmSourceRef = useRef(null);
@@ -17,6 +19,18 @@ export function MusicProvider({ children }) {
 
     const songs = { song_1 };
 
+    const toggleMute = () => {
+        const newState = !isMuted;
+        setIsMuted (newState);
+
+    const ctx = audioCtxRef.current;
+    if (!ctx || !masterGainRef.current) return;
+    if (newState) {
+            masterGainRef.current.gain.setValueAtTime(0, ctx.currentTime);
+        } else {
+        masterGainRef.current.gain.setValueAtTime(1, ctx.currentTime);
+    }
+};
     // 📥 Cargamos el script oficial de Strudel en el navegador (si no está ya cargado)
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -34,8 +48,11 @@ export function MusicProvider({ children }) {
 
     // Inicializador seguro del AudioContext (reutiliza el mismo para síntesis y .wav)
     const initAudioContext = async () => {
+        
         if (!audioCtxRef.current) {
             audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
+            masterGainRef.current = audioCtxRef.current.createGain();
+            masterGainRef.current.connect(audioCtxRef.current.destination);
         }
         if (audioCtxRef.current.state === 'suspended') {
             await audioCtxRef.current.resume();
@@ -81,7 +98,7 @@ export function MusicProvider({ children }) {
             const source = ctx.createBufferSource();
             source.buffer = audioBuffer;
             source.loop = true; // Para que la canción de fondo no se corte al terminar
-            source.connect(ctx.destination);
+            source.connect(masterGainRef.current);
             source.start(0);
 
             bgmSourceRef.current = source;
@@ -197,7 +214,7 @@ export function MusicProvider({ children }) {
         gain.gain.setValueAtTime(volume, startTime);
         gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
         osc.connect(gain);
-        gain.connect(ctx.destination);
+        gain.connect(masterGainRef.current);
         osc.start(startTime);
         osc.stop(startTime + duration);
     };
@@ -217,7 +234,7 @@ export function MusicProvider({ children }) {
     };
 
     return (
-        <MusicContext.Provider value={{ play, stopAll, isPlaying }}>
+        <MusicContext.Provider value={{ play, stopAll, isPlaying, isMuted, toggleMute }}>
             {children}
         </MusicContext.Provider>
     );

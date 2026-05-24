@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LanguageSelector from './LanguageSelector';
+import { useMusic } from './MusicContext';
 
 export default function MenuConfiguracion() {
+  const { isMuted, toggleMute } = useMusic();
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
 
@@ -23,14 +25,12 @@ export default function MenuConfiguracion() {
         {isOpen && (
             <div>
                 <div>
-                    <button>
-                   
                     <div>
                         <span>iconos</span>
-                        <span>Ambient music</span>
+                        <button onClick={toggleMute} >
+                        {isMuted ? 'Muted' : 'Sound' }
+                        </button>
                     </div>
-                    <span>On y of</span>
-                 </button>
                  </div>
                  <LanguageSelector></LanguageSelector>
                  </div>
