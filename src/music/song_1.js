@@ -1,35 +1,17 @@
+// src/music/song_1.js
 
-export const song_1 = (strudel) => {
-const chorus ={
-A0 : "a e c",
-A1 : "g e b",
-B0 : "f# d a",
-A0P : "a c# g a"
-};
-const verse = {
-  C0 : "c a!2 e",
-  C1 : "b e!2 a",
-  D0 : "f# a d!2",
-  C0P :"c# a g c#"
-};
-const refrain = {
-  R0 : "a/2 e c",
-  R1 : "g e/2 b",
-  F0 : "f# d a/2",
-  R0P : "a c# g a/2"
-};
+export const song_1 = () => {
+  // Desglosamos las notas de tu progresión melódica original
+  const chorus = ["a3", "e3", "c3", "g3", "e3", "b3", "f#3", "d3", "a3", "a3", "c#3", "g3", "a3"];
+  const verse  = ["c3", "a3", "a3", "e3", "b3", "e3", "e3", "a3", "f#3", "a3", "d3", "d3", "c#3", "a3", "g3", "c#3"];
+  const refrain = ["a3", "e3", "c3", "g3", "e3", "b3", "f#3", "d3", "a3", "a3", "c#3", "g3", "a3"];
 
-return [
-  strudel.chord("<Am Em D A7>").voicing().sound("sawtooth").cutoff(400),
-strudel.chord("<Am Em D A7>").voicing().sound("gm_electric_guitar_muted").room(.5),
+  // Línea de bajos de tus acordes originales: Am, Em, D, A7
+  const listaBajos = ["a2", "e2", "d2", "a2"];
 
-
-strudel.cat(chorus.A0, chorus.A1, chorus.B0, chorus.A0P,
-      chorus.A0, chorus.A1, chorus.B0, chorus.A0P,
-      verse.C0, verse.C1, verse.D0, verse.C0P,
-     refrain.R0,refrain.R1, refrain.F0, refrain.R0P )
-  .note()
-  .sound("piano,vibraphone_soft"),
-strudel.sound("sine <triangle square>*2")
-];
+  return {
+    // Unimos todas las secciones en un único flujo melódico continuo
+    melodia: [...chorus, ...chorus, ...verse, ...refrain],
+    bajos: listaBajos
+  };
 };

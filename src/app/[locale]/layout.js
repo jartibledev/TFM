@@ -25,10 +25,6 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body >
-        <Script 
-        src="https://unpkg.com/@strudel/embed@latest/dist/strudel-embed.js"
-        strategy="beforeInteractive"
-        />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <MusicProvider>
           {children}
