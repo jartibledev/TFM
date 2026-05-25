@@ -56,6 +56,9 @@ export const ArticleComponent = styled.article`
     align-items: center;
     overflow: hidden;
     padding: 5vh;
+    @media (max-width: 600px) {
+      padding: 0;
+    }
 `;
 
 export const ContainerIllustrations = styled.div`
@@ -67,6 +70,11 @@ background-position:  ${props => props.$backgroundposition || "center"};
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
 border-color: ${props => props.$bordercolor || "black"};  
 overflow: ${props => props.$overflow || "hidden"};
+@media (max-width: 600px) {
+      width: 100vw;
+      height: 100vh;
+
+    }
 `;
 
 export const Box = styled.div`
