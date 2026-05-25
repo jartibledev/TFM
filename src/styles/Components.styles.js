@@ -81,6 +81,8 @@ export const Box = styled.div`
 `;
 
 export const ButtonComponent = styled.button`
+  width: ${props => props.$width || "auto"} ;
+  height: ${props => props.$height || "auto"} ;
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
   border-color: ${props => props.$bordercolor || colorBorder};

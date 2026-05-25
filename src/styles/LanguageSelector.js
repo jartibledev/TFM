@@ -16,6 +16,15 @@ const container = {
     zIndex: '9999'  /* Asegura que esté por encima de otros elementos */ 
 
 }
+const menu = {
+    display: 'flex', 
+    gap: '10px', 
+    padding: '10px', 
+    width: '250px', 
+    height: '70px',
+
+
+}
 const styleImage ={
     objectFit: 'cover',
     objectPosition: ' center',
@@ -47,8 +56,8 @@ export default function LanguageSelector() {
   };
 
 
-  return createPortal (
-    <div style={container}>
+  return  (
+    <div style={menu}>
       <ButtonComponent 
         onClick={() => ChangeLanguage('es')} 
         className="tu-boton-idioma-style"
@@ -94,7 +103,7 @@ export default function LanguageSelector() {
 
                                           ></img>
       </ButtonComponent>
-    </div>,
-     document.body
+    </div>
+     
   );
 }
