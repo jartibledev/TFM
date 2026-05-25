@@ -63,7 +63,7 @@ export const ArticleComponent = styled.article`
 
 export const ContainerIllustrations = styled.div`
 position: ${props => props.$position || "relative"};
-width: ${props => props.$width || "60vw"} ;
+width: ${props => props.$width || "27vw"} ;
 height: ${props => props.$height || " 90vh"} ;      
 background-size:  ${props => props.$backgroundsize || "cover"};     
 background-position:  ${props => props.$backgroundposition || "center"};     
