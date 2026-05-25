@@ -7,7 +7,7 @@ const ambientCatalogue = {
     border: 20px double #000000;
 
     *{
-    font-family: var(--font-eater) !important;
+    font-weight: bold !important;
     color: #000000 !important;
     }
   `,
