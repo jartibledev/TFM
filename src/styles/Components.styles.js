@@ -1,7 +1,18 @@
 'use client';
 import  { keyframes, styled, css } from "styled-components";
 
-
+const ambientCatalogue = {
+  "terror": css`
+    background-color: rgba(139, 0, 0, 0.9);
+    border: 3px double #ff0000;
+    color: #000000;
+  `,
+  "misterio": css`
+    background-color: rgba(18, 24, 38, 0.85);
+    border: 2px dashed #4da6ff;
+    color: #e6f2ff;
+  `
+};
 
 
 const animationBottom = keyframes`
@@ -50,7 +61,7 @@ const size = {
   desktop: '2560px'
 }
 
-const device = {
+export const device = {
   mobileS: `(min-width: ${size.mobileS})`,
   mobileM: `(min-width: ${size.mobileM})`,
   mobileL: `(min-width: ${size.mobileL})`,
@@ -152,20 +163,47 @@ overflow: ${props => props.$overflow || "hidden"};
 `;
 
 export const Box = styled.div`
-  width: ${props => props.$width || "auto"} ;
-  height: ${props => props.$height || "auto"} ;
+  /* =================================================== */
+  /* 1. ESTILOS ESTRUCTURALES FIJOS (Siempre se ejecutan) */
+  /* =================================================== */
+  width: ${props => props.$width || "85%"};
+  height: ${props => props.$height || "auto"};
   display: ${props => props.$display || "flex"};
   flex-direction: ${props => props.$flexdirection || "column"};
-  border-width : ${props => props.$borderwidth || "3px"};
-  border-style : ${props => props.$borderstyle || "solid"};
-  border-color: ${props => props.$bordercolor || colorBorder};
+  border-width: ${props => props.$borderwidth || "3px"};
   border-radius: ${props => props.$borderradius || "8px"};
-  background-color: ${props => props.$backgroundcolor || colorBackground};
-  color: ${props => props.$color || colorFont};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
-  padding: ${props => props.$borderradius || "0.5em"};
+  padding: ${props => props.$padding || "1em"};
+  
+  /* =================================================== */
+  /* 2. LÓGICA DE COLOR DINÁMICA CON CONSOLE LOGS        */
+  /* =================================================== */
+  ${props => {
+    // 🔍 CHIVATO 1: Ver qué string exacto está llegando desde page.js
+    console.log("------- TESTEO DIÁLOGO BOX -------");
+    console.log("1. String recibido en props.$keystyle:", props.$keystyle);
+    console.log("2. Tipo de dato de la prop:", typeof props.$keystyle);
 
+    // Intentamos buscarlo en tu objeto
+    const estiloEncontrado = props.$keystyle ? ambientCatalogue[props.$keystyle] : null;
+    
+    // 🔍 CHIVATO 2: Ver si JavaScript ha emparejado el string con el catálogo
+    console.log("3. ¿Existe esa clave en ambientCatalogue?:", estiloEncontrado ? "SÍ ✅" : "NO ❌");
+
+    if (props.$keystyle && estiloEncontrado) {
+      console.log("-> RESULTADO: Aplicando estilo del CATÁLOGO");
+      return estiloEncontrado;
+    } else {
+      console.log("-> RESULTADO: Usando estilos por DEFAULT");
+      return css`
+        border-style: ${props.$borderstyle || "solid"};
+        border-color: ${props.$bordercolor || colorBorder};
+        background-color: ${props.$backgroundcolor || colorBackground};
+        color: ${props.$color || colorFont};
+      `;
+    }
+  }}
 `;
 
 export const ButtonComponent = styled.button`

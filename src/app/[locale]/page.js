@@ -119,7 +119,7 @@ export default function GameEngine() {
         <MenuConfiguracion />
 
     
-        <Box style={styleBox}
+        <Box $keystyle={pageDates.style} style={styleBox}
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>

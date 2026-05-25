@@ -6,7 +6,12 @@
         "text": "",
         "background": "/illustrations/chapter_0/page_1.jpg",
         "next": "page_2",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "position": {
+          "bottom": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
+        }
       },
       "page_2": {
         "character": "Lulu",
@@ -18,7 +23,8 @@
           "left": "50%",
           "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "terror"
 
       },
       "page_3": {
