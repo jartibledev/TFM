@@ -4,9 +4,6 @@ import { useMusic } from './MusicContext';
 import { Box, ButtonComponent } from '@/styles/Components.styles'
 
 const container = {
-  position: 'absolute',
-  top: '100%',
-  left: 0,
   display: 'flex',
   flexDirection: ' row',
   gap: '8px',
@@ -31,13 +28,13 @@ export default function MenuConfiguracion() {
 
   return (
     <div 
+    style={{zIndex: '999', display: 'flex', flexDirection: 'row', alignItems: 'center', width: 'auto'}}>
     
-    style={{zIndex: '999', display: 'flex', flexDirection: 'row', alignItems: 'center', width: '400px'}}>
-    <Box>
-        <ButtonComponent onClick={() => setIsOpen(!isOpen)}>
+        <ButtonComponent $padding= "1em"  onClick={() => setIsOpen(!isOpen)}>
             Settings
         </ButtonComponent>
         {isOpen && (
+          <Box $width= "100%" $height= "100%">
             <div style ={container}>
                
                         <ButtonComponent onClick={toggleMute} >
@@ -45,10 +42,10 @@ export default function MenuConfiguracion() {
                         </ButtonComponent>
                     
                  <LanguageSelector></LanguageSelector>
-                 </div>
+                 </div></Box>
 
         )}
-    </Box>
+    
     </div>
   )
 

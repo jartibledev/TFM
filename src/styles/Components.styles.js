@@ -152,6 +152,10 @@ overflow: ${props => props.$overflow || "hidden"};
 `;
 
 export const Box = styled.div`
+  width: ${props => props.$width || "auto"} ;
+  height: ${props => props.$height || "auto"} ;
+  display: ${props => props.$display || "flex"};
+  flex-direction: ${props => props.$flexdirection || "column"};
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
   border-color: ${props => props.$bordercolor || colorBorder};
@@ -192,7 +196,12 @@ export const ButtonComponent = styled.button`
     color: ${props => props.$colorhover || colorFontNegative};
     border-color:  ${props => props.$bordercolorhover || colorBorderNegative};
 }
-
+    &:active{
+    background-color: ${props => props.$backgroundcoloractive || colorBackground};
+    color: ${props => props.$coloractive || colorFont};
+    border-color:  ${props => props.$bordercoloractive || colorBorder};
+    transform:scale(0.50);
+    }
   ${({ isclicked }) =>
     isclicked &&
     css`
