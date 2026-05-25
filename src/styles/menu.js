@@ -5,12 +5,14 @@ import { Box, ButtonComponent } from '@/styles/Components.styles'
 
 const container = {
   display: 'flex',
-  flexDirection: ' row',
+  flexDirection: ' column',
   gap: '8px',
   padding: '10px',
   borderRadius : '4px',
-  width: '100%'
+  width: '180px'
 }
+
+
 export default function MenuConfiguracion() {
   const { isMuted, toggleMute } = useMusic();
     const [isOpen, setIsOpen] = useState(false);
@@ -28,21 +30,23 @@ export default function MenuConfiguracion() {
 
   return (
     <div 
-    style={{zIndex: '999', display: 'flex', flexDirection: 'row', alignItems: 'center', width: 'auto'}}>
+    style={{zIndex: '9999', display: 'inline-block',   position:'relative', width: '100%'}}>
     
         <ButtonComponent $padding= "1em"  onClick={() => setIsOpen(!isOpen)}>
             Settings
         </ButtonComponent>
         {isOpen && (
-          <Box $width= "100%" $height= "100%">
+          <Box $width= "100vw">
             <div style ={container}>
                
-                        <ButtonComponent onClick={toggleMute} >
+                        <ButtonComponent $width = "50%" onClick={toggleMute} >
                         {isMuted ? 'Muted' : 'Sound' }
                         </ButtonComponent>
                     
                  <LanguageSelector></LanguageSelector>
-                 </div></Box>
+                 </div>
+                 
+                 </Box>
 
         )}
     

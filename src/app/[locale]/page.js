@@ -118,18 +118,20 @@ export default function GameEngine() {
       <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
         <MenuConfiguracion />
 
-        <Box style={styleBox} onClick={(e) => e.stopPropagation()}>
+    
+        <Box style={styleBox}
+         onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
 
           {isEndOfText && pageDates.next && !pageDates.options && (
-            <ButtonComponent onClick={handleNextClick}>
+            <ButtonComponent $width="5em" $padding= "10%" onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
           
           {!isEndOfText &&  (
-            <ButtonComponent onClick={handleNextClick}>
+            <ButtonComponent  $width="5em" $padding= "10%" onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}

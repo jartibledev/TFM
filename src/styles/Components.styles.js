@@ -170,7 +170,9 @@ export const Box = styled.div`
 
 export const ButtonComponent = styled.button`
   width: ${props => props.$width || "auto"} ;
+  min-width: ${props => props.$minwidth || "50px"},
   height: ${props => props.$height || "auto"} ;
+  min-height: ${props => props.$minwidth || "30px"};
   border-width : ${props => props.$borderwidth || "3px"};
   border-style : ${props => props.$borderstyle || "solid"};
   border-color: ${props => props.$bordercolor || colorBorder};
@@ -182,6 +184,7 @@ export const ButtonComponent = styled.button`
   margin-top: ${props => props.$margintop || "0.5em" };
   margin-bottom: ${props => props.$margintop || "0.5em" };
   padding: ${props => props.$padding || "5%"};
+  white-space: 'nowrap';
   transition: 
     background-color 337ms ease-out, 
     color 300ms ease-out, 
