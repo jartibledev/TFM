@@ -109,6 +109,8 @@ export default function GameEngine() {
     ? { position: 'absolute', ...pageDates.position }
     : { position: 'absolute', ...positionDefault };
 
+ 
+  const noText = textParagraphs[subPage]?.trim() === "";  
   const isEndOfText = subPage === textParagraphs.length - 1;
 
   return (
@@ -126,9 +128,9 @@ export default function GameEngine() {
             </ButtonComponent>
           )}
           
-          {!isEndOfText && (
+          {!isEndOfText &&  (
             <ButtonComponent onClick={handleNextClick}>
-              Continue...
+              Next
             </ButtonComponent>
           )}
 

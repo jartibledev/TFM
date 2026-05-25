@@ -144,7 +144,7 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_11.jpg",
-        "next": "chapter_1",
+        "next": "end",
         "bgm" : "song_1"
       }
     },
