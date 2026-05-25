@@ -38,11 +38,12 @@ export default function MenuConfiguracion() {
         {isOpen && (
           <Box $width= "100vw">
             <div style ={container}>
-               
+                      
+                        <label>Activate/desactivate sound:</label>
                         <ButtonComponent $width = "50%" onClick={toggleMute} >
                         {isMuted ? 'Muted' : 'Sound' }
                         </ButtonComponent>
-                    
+                  <label>Change lenguage:</label>  
                  <LanguageSelector></LanguageSelector>
                  </div>
                  
