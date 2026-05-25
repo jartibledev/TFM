@@ -40,6 +40,26 @@ export const toLeft = keyframes`
   }
 `;
 
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopL: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+  desktopL: `(min-width: ${size.desktop})`
+};
 
 const colorBorder = 'rgba(255, 255, 255, 1)';
 const colorBackground = 'rgba(41, 41, 41, 0.5)';
@@ -55,24 +75,82 @@ export const ArticleComponent = styled.article`
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 5vh;
-    @media (max-width: 600px) {
+    
+    @media  ${device.mobileL} {
       padding: 0;
+    }
+    @media  ${device.mobileM} {
+      padding: 0;
+    }
+    @media  ${device.mobileL} {
+      padding: 0;
+    }
+    @media  ${device.tablet} {
+      padding: 0;
+    }
+    @media  ${device.laptop} {
+      padding: 5vh;
+    }
+    @media  ${device.laptopL} {
+      padding: 5vh;
+    }
+    @media  ${device.desktop} {
+      padding: 5vh;
+    }
+    @media  ${device.desktopL} {
+      padding: 5vh;
     }
 `;
 
+
+
+
 export const ContainerIllustrations = styled.div`
 position: ${props => props.$position || "relative"};
-width: ${props => props.$width || "60vw"} ;
-height: ${props => props.$height || " 90vh"} ;      
 background-size:  ${props => props.$backgroundsize || "cover"};     
 background-position:  ${props => props.$backgroundposition || "center"};     
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
 border-color: ${props => props.$bordercolor || "black"};  
 overflow: ${props => props.$overflow || "hidden"};
-@media (max-width: 600px) {
-      width: 100vw;
-      height: 100vh;
+@media ${device.mobileS} {
+    width: 100vw;
+    height: 100vh; 
+
+    }
+@media ${device.mobileS} {
+    width: 100vw;
+    height: 100vh; 
+
+    }
+@media ${device.mobileM} {
+    width: 100vw;
+    height: 100vh; 
+
+    }
+@media ${device.mobileL} {
+    width: 100vw;
+    height: 100vh; 
+
+    }
+@media ${device.laptop} {
+    width: 50vw;
+    height: 100vh; 
+
+    }
+@media ${device.laptopL} {
+    width: 50vw;
+    height: 100vh; 
+
+    }
+
+@media ${device.desktopL} {
+  width: 100vw;
+  height: 100vh; 
+
+    }
+@media ${device.desktop} {
+  width: 100vw;
+  height: 100vh; 
 
     }
 `;
