@@ -50,16 +50,18 @@ const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
 export const ArticleComponent = styled.article`
     display: flex;
-    width: 60vh;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
+    padding: 5vh;
 `;
 
 export const ContainerIllustrations = styled.div`
 position: ${props => props.$position || "relative"};
-width: ${props => props.$width || "100%"} ;
-height: ${props => props.$height || " 100vh"} ;      
+width: ${props => props.$width || "60vw"} ;
+height: ${props => props.$height || " 90vh"} ;      
 background-size:  ${props => props.$backgroundsize || "cover"};     
 background-position:  ${props => props.$backgroundposition || "center"};     
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
