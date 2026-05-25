@@ -2,10 +2,14 @@
 import  { keyframes, styled, css } from "styled-components";
 
 const ambientCatalogue = {
-  "terror": css`
-    background-color: rgba(139, 0, 0, 0.9);
-    border: 3px double #ff0000;
-    color: #000000;
+  "horror": css`
+    background-color: rgba(255, 0, 0, 0.9);
+    border: 20px double #000000;
+
+    *{
+    font-family: var(--font-eater) !important;
+    color: #000000 !important;
+    }
   `,
   "misterio": css`
     background-color: rgba(18, 24, 38, 0.85);

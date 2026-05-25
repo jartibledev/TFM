@@ -81,11 +81,12 @@
         "background": "/illustrations/chapter_0/page_5.jpg",
         "next": "page_6_Sorry",
         "position": {
-          "top": "5%",
+          "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "horror"
       },
       "page_6_Sorry": {
         "character": "AI",

@@ -1,4 +1,4 @@
-import { DM_Mono, Geist_Mono, Cascadia_Mono , Fragment_Mono, Cutive_Mono, Inter  } from "next/font/google";
+import { Eater  } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
 
@@ -7,6 +7,12 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { MusicProvider } from '@/styles/MusicContext';
 
+const eater = Eater({
+  weight: '400',               // 👈 ESTO ES LO QUE ARREGLA EL ERROR
+  subsets: ['latin'],
+  variable: '--font-eater',    // Tu variable inventada perfecta
+  display: 'swap',
+})
 
 const locales = ['es', 'en', 'fr', 'de'];
 
@@ -24,7 +30,7 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body >
+      <body className ={`${eater.variable}`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <MusicProvider>
           {children}
