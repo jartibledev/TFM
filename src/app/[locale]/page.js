@@ -16,7 +16,8 @@ export default function GameEngine() {
   
   const { play, stopAll } = useMusic();
 
-  const pageDates = initialized ? t.raw(actualPage) : null;
+  const pageDates = initialized && actualPage ? t.raw(actualPage) : null;
+  const ambienteActual = pageDates && pageDates.style ? pageDates.style : "default";
   const currentBgmString = pageDates?.bgm || null;
 
   // 🛡️ CONTROL DE AUDIO ANTI-REINICIO POR IDIOMA
@@ -119,7 +120,7 @@ export default function GameEngine() {
         <MenuConfiguracion />
 
     
-        <Box $keystyle={pageDates.style} style={styleBox}
+        <Box $keystyle="horror" style={styleBox}
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
