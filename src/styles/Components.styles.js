@@ -71,6 +71,7 @@ const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 export const ArticleComponent = styled.article`
     display: flex;
     width: 100%;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -133,24 +134,19 @@ overflow: ${props => props.$overflow || "hidden"};
 
     }
 @media ${device.laptop} {
-    width: 50vw;
-    height: 100vh; 
+    width: 40vw;
+    height: 90vh; 
 
     }
+
 @media ${device.laptopL} {
-    width: 50vw;
-    height: 100vh; 
-
-    }
-
-@media ${device.desktopL} {
-  width: 100vw;
-  height: 100vh; 
+  width: 40vw;
+  height: 90vh; 
 
     }
 @media ${device.desktop} {
-  width: 100vw;
-  height: 100vh; 
+  width: 40vw;
+  height: 90vh; 
 
     }
 `;
