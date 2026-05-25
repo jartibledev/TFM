@@ -166,7 +166,7 @@ export const Box = styled.div`
   /* =================================================== */
   /* 1. ESTILOS ESTRUCTURALES FIJOS (Siempre se ejecutan) */
   /* =================================================== */
-  width: ${props => props.$width || "85%"};
+  width: ${props => props.$width || "85%"}; /* Le damos un ancho por defecto sensato */
   height: ${props => props.$height || "auto"};
   display: ${props => props.$display || "flex"};
   flex-direction: ${props => props.$flexdirection || "column"};
@@ -177,33 +177,18 @@ export const Box = styled.div`
   padding: ${props => props.$padding || "1em"};
   
   /* =================================================== */
-  /* 2. LÓGICA DE COLOR DINÁMICA CON CONSOLE LOGS        */
+  /* 2. LÓGICA DE COLOR DINÁMICA (Ternario limpio)       */
   /* =================================================== */
-  ${props => {
-    // 🔍 CHIVATO 1: Ver qué string exacto está llegando desde page.js
-    console.log("------- TESTEO DIÁLOGO BOX -------");
-    console.log("1. String recibido en props.$keystyle:", props.$keystyle);
-    console.log("2. Tipo de dato de la prop:", typeof props.$keystyle);
-
-    // Intentamos buscarlo en tu objeto
-    const estiloEncontrado = props.$keystyle ? ambientCatalogue[props.$keystyle] : null;
-    
-    // 🔍 CHIVATO 2: Ver si JavaScript ha emparejado el string con el catálogo
-    console.log("3. ¿Existe esa clave en ambientCatalogue?:", estiloEncontrado ? "SÍ ✅" : "NO ❌");
-
-    if (props.$keystyle && estiloEncontrado) {
-      console.log("-> RESULTADO: Aplicando estilo del CATÁLOGO");
-      return estiloEncontrado;
-    } else {
-      console.log("-> RESULTADO: Usando estilos por DEFAULT");
-      return css`
+  ${props => props.$keystyle && ambientCatalogue[props.$keystyle] 
+    ? ambientCatalogue[props.$keystyle] // Si hay una clave válida en el catálogo, usa sus colores
+    : css`
+        /* Si no hay clave, usa los colores modulares por defecto */
         border-style: ${props.$borderstyle || "solid"};
         border-color: ${props.$bordercolor || colorBorder};
         background-color: ${props.$backgroundcolor || colorBackground};
         color: ${props.$color || colorFont};
-      `;
-    }
-  }}
+      `
+  }
 `;
 
 export const ButtonComponent = styled.button`

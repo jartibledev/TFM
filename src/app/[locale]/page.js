@@ -120,7 +120,7 @@ export default function GameEngine() {
         <MenuConfiguracion />
 
     
-        <Box $keystyle="horror" style={styleBox}
+        <Box $keystyle={ambienteActual} style={styleBox}
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
