@@ -23,7 +23,7 @@ const getAudioSystem = () => {
             activeSong: null,
             activeBgmUrl: null,
             bgmSource: null,
-            hasActiveInterval: false // 🟢 Rastreador real de si el bucle está vivo o apagado
+            hasActiveInterval: false 
         };
     }
     return window.__AUDIO_SYSTEM__;
@@ -34,7 +34,6 @@ export function MusicProvider({ children }) {
     const [isMuted, setIsMuted] = useState(false);
     const songs = { song_1 };
 
-    // Limpieza inicial al cambiar de idioma
     useEffect(() => {
         const sys = getAudioSystem();
         if (sys) {
@@ -43,7 +42,7 @@ export function MusicProvider({ children }) {
                 sys.ctx = null;
                 sys.masterGain = null;
             }
-            sys.hasActiveInterval = false; // Al purgar, marcamos el motor como vacío
+            sys.hasActiveInterval = false; 
         }
         purgeAllWebIntervals();
     }, []);
@@ -90,13 +89,11 @@ export function MusicProvider({ children }) {
         const sys = getAudioSystem();
         if (!sys || !audioKeyOrUrl) return;
 
-        // 🛑 NUEVO FRENO INTELIGENTE:
-        // Solo bloqueamos el play si el string coincide Y ADEMÁS el bucle físico está sonando de verdad.
+       
         if (audioKeyOrUrl.endsWith('.wav') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
         if (!audioKeyOrUrl.endsWith('.wav') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
 
-        // Si la música se purgó por el idioma, "sys.hasActiveInterval" será false, saltándose el freno
-        // y permitiendo que la música vuelva a nacer sin solapar nada.
+       
         purgeAllWebIntervals();
         sys.hasActiveInterval = false;
 
@@ -147,7 +144,7 @@ export function MusicProvider({ children }) {
         if (!songData) return;
 
         sys.activeSong = songKey;
-        sys.hasActiveInterval = true; // El motor vuelve a estar ocupado
+        sys.hasActiveInterval = true; 
         setIsPlaying(true);
 
         const tempo = 120; 
@@ -162,13 +159,13 @@ export function MusicProvider({ children }) {
             songData.melodia.forEach((nota, index) => {
                 const time = now + (index * beatDuration);
                 const duration = beatDuration * 0.8;
-                fallbackPlay(nota, time, duration, 'triangle', 0.15, songKey);
+                fallbackPlay(nota, time, duration, 'triangle', 0.40, songKey);
             });
 
             songData.bajos.forEach((bajo, index) => {
                 const time = now + (index * beatDuration * 4);
                 const duration = beatDuration * 4;
-                fallbackPlay(bajo, time, duration, 'sawtooth', 0.08, songKey);
+                fallbackPlay(bajo, time, duration, 'sawtooth', 0.25, songKey);
             });
         };
 
