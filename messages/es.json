@@ -11,7 +11,8 @@
           "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
-        }
+        },
+        "style" : "no_box"
       },
       "page_2": {
         "character": "Lulu",
@@ -23,8 +24,7 @@
           "left": "50%",
           "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1",
-        "style" : "terror"
+        "bgm" : "song_1"
 
       },
       "page_3": {
@@ -32,7 +32,8 @@
         "text": "",
         "background": "/illustrations/chapter_0/page_3.jpg",
         "next": "page_4",
-        "bgm" : "/music/audio_1.wav"
+        "bgm" : "/music/audio_1.wav",
+        "style" : "no_box"
       },
       "page_4": {
         "character": "AI",
@@ -44,7 +45,7 @@
           { "text": "Alguien ha contestado a los cv?", "next": "page_5_Unfortunally" }
         ],
         "position": {
-          "top": "5%",
+          "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },
@@ -122,28 +123,32 @@
         "text": "",
         "background": "/illustrations/chapter_0/page_7.jpg",
         "next": "page_8",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       },
       "page_8": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_8.jpg",
         "next": "page_9",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       },
       "page_9": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_9.jpg",
         "next": "page_10",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       },
       "page_10": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_10.jpg",
         "next": "page_11",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       }
     },
       "page_11": {
@@ -151,7 +156,8 @@
         "text": "",
         "background": "/illustrations/chapter_0/page_11.jpg",
         "next": "end",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       }
     },
     "chapter_1": {

@@ -126,13 +126,13 @@ export default function GameEngine() {
           <TextCharacter>{currentTextChunk}</TextCharacter>
 
           {isEndOfText && pageDates.next && !pageDates.options && (
-            <ButtonComponent $width="5em" $padding= "10%" onClick={handleNextClick}>
+            <ButtonComponent $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
           
           {!isEndOfText &&  (
-            <ButtonComponent  $width="5em" $padding= "10%" onClick={handleNextClick}>
+            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}

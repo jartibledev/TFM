@@ -11,6 +11,16 @@ const ambientCatalogue = {
     background-color: rgba(18, 24, 38, 0.85);
     border: 2px dashed #4da6ff;
     color: #e6f2ff;
+  `,
+  "no_box": css`
+  background: transparent !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Forzamos a que mantenga su alineación interna hacia abajo si es necesario */
+    justify-content: flex-end;
   `
 };
 
@@ -170,11 +180,13 @@ export const Box = styled.div`
   height: ${props => props.$height || "auto"};
   display: ${props => props.$display || "flex"};
   flex-direction: ${props => props.$flexdirection || "column"};
+  justify-content: ${props => props.$justifycontent || "center"}
   border-width: ${props => props.$borderwidth || "3px"};
   border-radius: ${props => props.$borderradius || "8px"};
   backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   -webkit-backdrop-filter: ${props => props.$backdropfilter || "blur(9px)"};
   padding: ${props => props.$padding || "1em"};
+  align-items: ${props => props.$alignitems || "center"};
   
   /* =================================================== */
   /* 2. LÓGICA DE COLOR DINÁMICA (Ternario limpio)       */
@@ -187,7 +199,9 @@ export const Box = styled.div`
         border-color: ${props.$bordercolor || colorBorder};
         background-color: ${props.$backgroundcolor || colorBackground};
         color: ${props.$color || colorFont};
-      `
+      
+      
+        `
   }
 `;
 
@@ -207,6 +221,7 @@ export const ButtonComponent = styled.button`
   margin-top: ${props => props.$margintop || "0.5em" };
   margin-bottom: ${props => props.$margintop || "0.5em" };
   padding: ${props => props.$padding || "5%"};
+  
   white-space: 'nowrap';
   transition: 
     background-color 337ms ease-out, 
