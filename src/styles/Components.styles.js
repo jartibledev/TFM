@@ -17,17 +17,25 @@ const ambientCatalogue = {
     color: #e6f2ff;
   `,
   "no_box": css`
-  background: transparent !important;
+    background: transparent !important;
     background-color: transparent !important;
     border-color: transparent !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    /* Forzamos a que mantenga su alineación interna hacia abajo si es necesario */
     justify-content: flex-end;
   `,
   "behind_png": css`
+      background: transparent !important;
+      background-color: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
       position: absolute;
+      overflow: hidden;
+      max-width: 100vw;
+      max-height: 25vh;
       top: 40%; 
       left: 50%;
       transform: translate(-50%, -50%);
@@ -104,9 +112,9 @@ const colorBackgroundNegative = 'rgba(255, 255, 255, 0.68)';
 const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
 export const ArticleComponent = styled.article`
-    display: flex;
-    width: 100%;
-    height: 100%;
+    display: block !important;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
