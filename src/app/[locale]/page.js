@@ -20,29 +20,22 @@ export default function GameEngine() {
   const ambienteActual = pageDates && pageDates.style ? pageDates.style : "default";
   const currentBgmString = pageDates?.bgm || null;
 
-  // 🛡️ CONTROL DE AUDIO ANTI-REINICIO POR IDIOMA
+  const [visibleBoxesCount, setVisibleBoxesCount ] = useState(1);
+
   useEffect(() => {
     if (initialized && currentBgmString) {
-      // 🔍 Comprobación de seguridad directa con la ventana del navegador antes de llamar a play
       const sys = typeof window !== 'undefined' ? window.__AUDIO_SYSTEM__ : null;
-      
-      // Si el sistema ya está reproduciendo esta misma canción algorítmica, bloqueamos la llamada
       if (sys && sys.sequencerInterval && sys.activeSong === currentBgmString) {
         return; 
       }
-      
-      // Si es un .wav y ya está sonando, también la bloqueamos
       if (sys && sys.bgmSource && sys.activeBgmUrl === currentBgmString) {
         return;
       }
-
-      // Solo si es una canción distinta o el motor estaba apagado, le damos permiso para sonar
       play(currentBgmString); 
     }
-  }, [currentBgmString, initialized]); // Vigilancia limpia
+  }, [currentBgmString, initialized]);
 
 
-  // Carga inicial del LocalStorage
   useEffect(() => {
     const saveGame = localStorage.getItem('actual_page');
     const saveDecition = localStorage.getItem('last_decition');
@@ -62,7 +55,6 @@ export default function GameEngine() {
     setInitialized(true);
   }, []);
 
-  // Guardado automático en LocalStorage
   useEffect(() => {
     if (initialized) {
       localStorage.setItem('actual_page', actualPage);
@@ -84,7 +76,18 @@ export default function GameEngine() {
   const currentTextChunk = textParagraphs[subPage] || textParagraphs[0];
 
   const handleNextClick = () => {
-    if (subPage < textParagraphs.length - 1) {
+    if (pageDates.compound && pageDates.boxes) {
+      if (visibleBoxesCount < pageDates.length){
+        setVisibleBoxesCount(prev => prev + 1 );
+      }else {
+        if ( pageDates.next){
+          setActualPage(pageDates.next);
+          setSubPage(0);
+          setVisibleBoxesCount(1);
+        }
+      }
+    }else{
+      if (subPage < textParagraphs.length - 1) {
       setSubPage(prev => prev + 1);
     } else {
       if (pageDates.next) {
@@ -92,6 +95,8 @@ export default function GameEngine() {
         setSubPage(0);
       }
     }
+  }
+    
   };
 
   const handleOptionClick = (nextKey, decitionTaken) => {
@@ -158,7 +163,7 @@ export default function GameEngine() {
         
       </ContainerIllustrations>
       {pageDates.page_png && (
-        <>
+      <div style={{zIndex:3, position: 'absolute', top: '5%', right: '20%' }}> 
         { isEndOfText && pageDates.next && !pageDates.options && (
             <ButtonComponent $width="5em"  onClick={handleNextClick}>
               Next
@@ -179,7 +184,8 @@ export default function GameEngine() {
               {option.text}
             </ButtonComponent>
           ))}
-      </>)}
+      </div>
+      )}
     </ArticleComponent>
   );
 }
