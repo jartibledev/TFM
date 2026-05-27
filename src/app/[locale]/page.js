@@ -121,27 +121,6 @@ export default function GameEngine() {
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
-
-          { isEndOfText && pageDates.next && !pageDates.options && (
-            <ButtonComponent $width="5em"  onClick={handleNextClick}>
-              Next
-            </ButtonComponent>
-          )}
-          
-          {!isEndOfText &&  (
-            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
-              Next
-            </ButtonComponent>
-          )}
-
-          { isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
-            <ButtonComponent 
-              key={i} 
-              onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
-            >
-              {option.text}
-            </ButtonComponent>
-          ))}
         </Box>
       )}
       <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
@@ -176,7 +155,31 @@ export default function GameEngine() {
           ))}
         </Box> )}
         
+        
       </ContainerIllustrations>
+      {pageDates.page_png && (
+        <>
+        { isEndOfText && pageDates.next && !pageDates.options && (
+            <ButtonComponent $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+          
+          {!isEndOfText &&  (
+            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+
+          { isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
+            <ButtonComponent 
+              key={i} 
+              onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
+            >
+              {option.text}
+            </ButtonComponent>
+          ))}
+      </>)}
     </ArticleComponent>
   );
 }
