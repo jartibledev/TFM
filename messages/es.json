@@ -25,7 +25,6 @@
           "transform": "translateX(-50%)"
         },
         "bgm" : "song_1"
-
       },
       "page_3": {
         "character": "",
@@ -37,7 +36,7 @@
       },
       "page_4": {
         "character": "AI",
-        "text": "¡Buenos días, Desperdicio para la sociedad! 🚀 Espero que arranques este día con la energía al 110% y listo para **romper el molde** en tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).\n\nHoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking* (lameculing) de valor.\n\nAntes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:\n\n> El éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos. 💡\n\n---\n\n### Mi *checklist* para joder tu día:\n* **15:00** – *Infinite Scrolling* en Tiktok.\n* **16:30** – Levantarte para spaghetti con tomate.\n* **02:00** – Dormir tras un exitoso día improductivo.\n\n¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨\n\n#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
+        "text": "¡Buenos días, Desperdicio para la sociedad! 🚀 Espero que arranques este día con la energía al 110% y listo para **romper el molde** in tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).\n\nHoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking* (lameculing) de valor.\n\nAntes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:\n\n> El éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos. 💡\n\n---\n\n### Mi *checklist* para joder tu día:\n* **15:00** – *Infinite Scrolling* en Tiktok.\n* **16:30** – Levantarte para spaghetti con tomate.\n* **02:00** – Dormir tras un exitoso día improductivo.\n\n¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨\n\n#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
         "background": "/illustrations/chapter_0/page_4.jpg",
         "options": [
           { "text": "Cállate, y aconsejame un audiolibro", "next": "page_5_Yes" },
@@ -53,7 +52,7 @@
       },
       "page_5_Yes": {
         "character": "AI",
-        "text": "Oído cocina. Menos rollo corporativo y más contenido útil. Si te va no encontrar chamba pero contado sin filtros ni palabrería barata, te recomiendo **Hustle Podcast**.\n\nEs un podcast de estafa real. Los presentadores son 'inversores' y 'emprendedores' que traen a fundadores de 'startups' a la mesa y no les bailan el agua; les preguntan por números reales, facturación, errores graves y cómo engañaron a tantos niños de 12 años. Nada de 'pivota tu sinergia', sino realidad pura de lo duro que es montar una estafa piramidal.",
+        "text": "Oído cocina. Menos rollo corporativo y más contenido útil. Si te va no encontrar chamba pero contado sin filtros ni palabrería barata, te recomiendo **Hustle Podcast**.\n\nEs un podcast de estafa real. Los presentadores son 'inversores' y 'emprendedores' que traen a fundadores de 'startups' a la mesa y no les bailan el agua; les preguntan por números reales, facturación, errores graves y cómo engañaron a tantos niños de 12 años. Nada de 'pivota tu sinergia', sino reality pura de lo duro que es montar una estafa piramidal.",
         "background": "/illustrations/chapter_0/page_5.png",
         "next": "page_6_Yes",
         "position": {
@@ -120,42 +119,42 @@
         "bgm" : "song_1",
         "compound": true,
         "boxes": [
-  {
-    "character": "AI",
-    "text": "¿Cómo cambiamos el rumbo de esto?\n\nNo se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 10vh)", "width":"20vw" }
-  },
-  {
-    "character": "",
-    "text": "* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(70vw, 10vh)","width":"35vw"  }
-  },
-  {
-    "character": "",
-    "text": "* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 35vh)", "width":"25vw" }
-  },
-  {
-    "character": "",
-    "text": "* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 30vh)", "width":"50vw" }
-  },
-  {
-    "character": "",
-    "text": "\n\nEl silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas. ¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 60vh)", "width":"50vw"  }
-  },
-  {
-    "character": "",
-    "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas (¿qué significa un 80% en trabajo en equipo?) y prioriza un diseño limpio, ordenado y que visualmente se pueda escanear en menos de 6 segundos.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 65vh)", "width":"50vw" }
-  },
-  {
-    "character": "",
-    "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas...",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 85vh)", "width":"90vw"  }
-  }
-],
+          {
+            "character": "AI",
+            "text": "¿Cómo cambiamos el rumbo de esto?\n\nNo se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 10vh)", "width":"20vw" }
+          },
+          {
+            "character": "",
+            "text": "* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(70vw, 10vh)","width":"35vw" }
+          },
+          {
+            "character": "",
+            "text": "* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 35vh)", "width":"25vw" }
+          },
+          {
+            "character": "",
+            "text": "* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 30vh)", "width":"50vw" }
+          },
+          {
+            "character": "",
+            "text": "\n\nEl silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas. ¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 60vh)", "width":"50vw" }
+          },
+          {
+            "character": "",
+            "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas (¿qué significa un 80% en trabajo en equipo?) y prioriza un diseño limpio, ordenado y que visualmente se pueda escanear en menos de 6 segundos.",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 65vh)", "width":"50vw" }
+          },
+          {
+            "character": "",
+            "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas...",
+            "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 85vh)", "width":"90vw" }
+          }
+        ],
         "style": "behind_png",
         "page_png": true
       },
@@ -190,13 +189,12 @@
         "next": "page_11",
         "bgm" : "song_1",
         "style" : "no_box"
-      }
-    ,
+      },
       "page_11": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_12.jpg",
-        "next": "end",
+        "next": "chapter_1.page_1", 
         "bgm" : "song_1",
         "style" : "no_box",
         "options": [
@@ -206,17 +204,15 @@
           }
         ]
       }
-
     },
-  "chapter_1": {
-    "page_1": {
-      "character": "",
-      "text": "",
-      "background": "/illustrations/chapter_0/page_10.jpg",
-      "next": "page_10",
-      "bgm" : "song_1"
+    "chapter_1": {
+      "page_1": {
+        "character": "",
+        "text": "¡Bienvenido al Capítulo 1!",
+        "background": "/illustrations/chapter_0/page_10.jpg",
+        "next": "end",
+        "bgm" : "song_1"
+      }
     }
   }
-  
-}
 }

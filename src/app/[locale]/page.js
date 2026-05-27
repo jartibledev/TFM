@@ -8,15 +8,18 @@ import { Character, TextCharacter } from '@/styles/Paragraph.styles';
 import { useMusic } from '@/styles/MusicContext';
 
 export default function GameEngine() {
+  const [actualChapter, setActualChapter] = useState('introduction');
   const [actualPage, setActualPage] = useState('page_1');
   const [subPage, setSubPage] = useState(0);
   const [initialized, setInitialized] = useState(false);
   const [lastDecition, setLastDecition] = useState('');
-  const t = useTranslations('VisualNovel.introduction');
+  const t = useTranslations('VisualNovel');
   
   const { play, stopAll } = useMusic();
 
-  const pageDates = initialized && actualPage ? t.raw(actualPage) : null;
+  const chapterData = initialized && actualChapter ? t.raw(actualChapter): null;
+  const pageDates = chapterData && actualPage ? chapterData[actualPage] : null;
+
   const actualAmbient = pageDates && pageDates.style ? pageDates.style : "default";
   const currentBgmString = pageDates?.bgm || null;
 
@@ -37,10 +40,13 @@ export default function GameEngine() {
 
 
   useEffect(() => {
+    const saveChapter = localStorage.getItem('actual_chapter');
     const saveGame = localStorage.getItem('actual_page');
     const saveDecition = localStorage.getItem('last_decition');
     const saveSubPage = localStorage.getItem('actual_sub_page');
     
+    if (saveChapter) setActualChapter(saveChapter);
+
     if (saveGame) {
       setActualPage(saveGame);
     }
@@ -57,11 +63,12 @@ export default function GameEngine() {
 
   useEffect(() => {
     if (initialized) {
+      localStorage.setItem('actual_chapter', actualChapter);
       localStorage.setItem('actual_page', actualPage);
       localStorage.setItem('last_decition', lastDecition);
       localStorage.setItem('actual_sub_page', subPage.toString());
     }
-  }, [actualPage, lastDecition, subPage, initialized]);
+  }, [actualChapter, actualPage, lastDecition, subPage, initialized]);
 
   if (!initialized || !pageDates) {
     return <div style={{color: 'white'}}>Loading Story...</div>;
@@ -75,7 +82,26 @@ export default function GameEngine() {
   const textParagraphs = finalText ? finalText.split('\n\n').filter(p => p.trim() != "") : [];
   const currentTextChunk = textParagraphs.length > 0 ? (textParagraphs[subPage] || textParagraphs[0]) : '';
 
+  const navigateToScenes = (targetKey) => {
+    if (!targetKey) return;
+    const targetStr = String(targetKey);
 
+    if (targetStr.includes('.')){
+      const parts = targetStr.split('.');
+      const nextChapter = parts[0];
+      const nextPage = parts[1];
+
+      if (nextChapter && nextPage){
+        setActualChapter(nextChapter);
+        setActualPage(nextPage);
+      }
+    } else {
+      setActualPage(targetStr);
+    }
+
+    setSubPage(0);
+    setVisibleBoxesCount(1);
+  }
   //let finalText = pageDates.text;
   //if (pageDates.variants_text) {
   //  finalText = pageDates.variants_text[lastDecition] || pageDates.text;
@@ -84,7 +110,7 @@ export default function GameEngine() {
   //const textParagraphs = finalText.split('\n\n').filter(p => p.trim() != "");
   //const currentTextChunk = textParagraphs[subPage] || textParagraphs[0];
 
-  const handleNextClick = () => {
+  /*const handleNextClick = () => {
     if (pageDates.compound && pageDates.boxes) {
       if (visibleBoxesCount < pageDates.boxes.length){
         setVisibleBoxesCount(prev => prev + 1 );
@@ -106,12 +132,27 @@ export default function GameEngine() {
     }
   }
     
+  };*/
+
+  const handleNextClick = () => {
+    if (pageDates.compound && pageDates.boxes) {
+      if (visibleBoxesCount < pageDates.boxes.length){
+        setVisibleBoxesCount(prev => prev + 1 );
+      }else {
+        navigateToScenes(pageDates.next);
+        }
+      }else {
+        if (subPage < textParagraphs.length - 1) {
+          setSubPage(prev => prev +  1);
+        } else {
+          navigateToScenes(pageDates.next);
+        }
+      }
   };
 
   const handleOptionClick = (nextKey, decitionTaken) => {
     if (decitionTaken) setLastDecition(decitionTaken);
-    setActualPage(nextKey);
-    setSubPage(0);
+    navigateToScenes(nextKey)
   };
 
   const positionDefault = {
