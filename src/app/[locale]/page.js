@@ -116,7 +116,13 @@ export default function GameEngine() {
 
   return (
     <ArticleComponent>
-      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})`, backgroundSize:`url(${pageDates.background})`, backgroundPosition:`url(${pageDates.background})`, backgroundRepeat:`url(${pageDates.background})`  }}>
+      {pageDates.page_png && (
+        <Box $keystyle={ambienteActual} style={styleBox}
+         onClick={(e) => e.stopPropagation()}>
+          {pageDates.text}
+        </Box>
+      )}
+      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
         <MenuConfiguracion />
 
     
@@ -125,19 +131,19 @@ export default function GameEngine() {
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
 
-          {isEndOfText && pageDates.next && !pageDates.options && (
+          {!pageDates.page_png && isEndOfText && pageDates.next && !pageDates.options && (
             <ButtonComponent $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
           
-          {!isEndOfText &&  (
+          {!pageDates.page_png && !isEndOfText &&  (
             <ButtonComponent  $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
 
-          {isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
+          {!pageDates.page_png && isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
             <ButtonComponent 
               key={i} 
               onClick={() => handleOptionClick(option.next, option.decision || option.decition)}

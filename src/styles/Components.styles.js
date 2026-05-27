@@ -25,7 +25,18 @@ const ambientCatalogue = {
     -webkit-backdrop-filter: none !important;
     /* Forzamos a que mantenga su alineación interna hacia abajo si es necesario */
     justify-content: flex-end;
-  `
+  `,
+  "behind_png": css`
+      position: absolute;
+      top: 40%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      z-index: 1; 
+      
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.3); /* Un poco transparente queda genial para este efecto */
+    `
 };
 
 
