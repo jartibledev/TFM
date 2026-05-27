@@ -194,6 +194,15 @@
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_12.jpg",
+        "next": "page_12", 
+        "bgm" : "song_1",
+        "style" : "no_box"
+        
+      },
+      "page_12": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/final_introduction.jpg",
         "next": "chapter_1.page_1", 
         "bgm" : "song_1",
         "style" : "no_box",
@@ -204,12 +213,13 @@
           }
         ]
       }
+            
     },
     "chapter_1": {
       "page_1": {
         "character": "",
-        "text": "¡Bienvenido al Capítulo 1!",
-        "background": "/illustrations/chapter_0/page_10.jpg",
+        "text": "Capítulo I",
+        "background": "/illustrations/chapter_1/page_1.jpg",
         "next": "end",
         "bgm" : "song_1"
       }
