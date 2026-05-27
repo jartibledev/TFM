@@ -133,7 +133,7 @@
   {
     "character": "",
     "text": "* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 35vh)", "width":"30vw" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 35vh)", "width":"25vw" }
   },
   {
     "character": "",
