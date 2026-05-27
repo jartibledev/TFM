@@ -191,23 +191,31 @@
         "bgm" : "song_1",
         "style" : "no_box"
       }
-    },
+    ,
       "page_11": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_0/page_12.jpg",
         "next": "end",
         "bgm" : "song_1",
-        "style" : "no_box"
+        "style" : "no_box",
+        "options": [
+          {
+            "text": "Volver al principio del capítulo",
+            "next": "page_1"
+          }
+        ]
       }
     },
-    "chapter_1": {
-      "page_1": {
-        "character": "",
-        "text": "",
-        "background": "/illustrations/chapter_0/page_10.jpg",
-        "next": "page_10",
-        "bgm" : "song_1"
-      }
+  "chapter_1": {
+    "page_1": {
+      "character": "",
+      "text": "",
+      "background": "/illustrations/chapter_0/page_10.jpg",
+      "next": "page_10",
+      "bgm" : "song_1"
     }
+  }
+  
+}
 }
