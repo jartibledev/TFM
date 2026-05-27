@@ -119,31 +119,22 @@ export default function GameEngine() {
       {pageDates.page_png && (
         <Box $keystyle={ambienteActual} style={styleBox}
          onClick={(e) => e.stopPropagation()}>
-          {pageDates.text}
-        </Box>
-      )}
-      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
-        <MenuConfiguracion />
-
-    
-        <Box $keystyle={ambienteActual} style={styleBox}
-         onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
 
-          {!pageDates.page_png && isEndOfText && pageDates.next && !pageDates.options && (
+          { isEndOfText && pageDates.next && !pageDates.options && (
             <ButtonComponent $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
           
-          {!pageDates.page_png && !isEndOfText &&  (
+          {!isEndOfText &&  (
             <ButtonComponent  $width="5em"  onClick={handleNextClick}>
               Next
             </ButtonComponent>
           )}
 
-          {!pageDates.page_png && isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
+          { isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
             <ButtonComponent 
               key={i} 
               onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
@@ -152,6 +143,39 @@ export default function GameEngine() {
             </ButtonComponent>
           ))}
         </Box>
+      )}
+      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
+        <MenuConfiguracion />
+
+      {!pageDates.page_png && (
+        
+        <Box $keystyle={ambienteActual} style={styleBox}
+         onClick={(e) => e.stopPropagation()}>
+          <Character>{pageDates.character}</Character>
+          <TextCharacter>{currentTextChunk}</TextCharacter>
+
+          { isEndOfText && pageDates.next && !pageDates.options && (
+            <ButtonComponent $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+          
+          {!isEndOfText &&  (
+            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+
+          { isEndOfText && pageDates.options && pageDates.options.map((option, i) => (
+            <ButtonComponent 
+              key={i} 
+              onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
+            >
+              {option.text}
+            </ButtonComponent>
+          ))}
+        </Box> )}
+        
       </ContainerIllustrations>
     </ArticleComponent>
   );

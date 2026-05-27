@@ -34,7 +34,6 @@ const ambientCatalogue = {
       
       z-index: 1; 
       
-      font-size: 3rem;
       color: rgba(255, 255, 255, 0.3); /* Un poco transparente queda genial para este efecto */
     `
 };
@@ -149,6 +148,7 @@ background-position:  ${props => props.$backgroundposition || "center"};
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
 border-color: ${props => props.$bordercolor || "black"};  
 overflow: ${props => props.$overflow || "hidden"};
+z-index: 2;
 @media ${device.mobileS} {
     width: 100vw;
     height: 100vh; 
