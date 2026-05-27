@@ -123,37 +123,37 @@
   {
     "character": "AI",
     "text": "¿Cómo cambiamos el rumbo de esto?\n\nNo se trata de rendirse, sino de dejar de hacer lo que no funciona. Vamos a reestructurar la estrategia para que dejes de ser invisible:",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(15vw, 2vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 10vh)", "width":"20vw" }
   },
   {
     "character": "",
     "text": "* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 15vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(70vw, 10vh)","width":"30vw"  }
   },
   {
     "character": "",
     "text": "* **Hackea los filtros (ATS):** Lee la oferta de empleo y usa exactamente las mismas palabras clave que ellos piden en tu currículum (habilidades, herramientas, nombres de puestos). Si el robot no ve sus propias palabras, te descarta antes de que te lea un humano.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(15vw, 26vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 35vh)", "width":"30vw" }
   },
   {
     "character": "",
     "text": "* **Personaliza el contacto:** Busca en LinkedIn a los responsables de recursos humanos o a los jefes del departamento de la empresa que te interesa. Escríbeles un mensaje corto, directo y educado presentándote. Destacar entre la multitud requiere interactuar con personas, no solo con portales de empleo.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 40vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 30vh)", "width":"50vw" }
   },
   {
     "character": "",
     "text": "\n\nEl silencio de esas 100 empresas no define tu capacidad, solo define que el método automático está roto. Tómate un respiro hoy para procesar la frustración, y mañana empezamos a apuntar con precisión en lugar de disparar a ciegas. ¿Cuál es el sector o el puesto exacto al que estás apuntando para que podamos adaptar mejor tu perfil?",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(15vw, 55vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(5vw, 60vh)", "width":"50vw"  }
   },
   {
     "character": "",
     "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas (¿qué significa un 80% en trabajo en equipo?) y prioriza un diseño limpio, ordenado y que visualmente se pueda escanear en menos de 6 segundos.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 72vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(50vw, 65vh)", "width":"50vw" }
   },
   {
     "character": "",
     "text": "Formato limpio y profesional: Diseña tu currículum pensando en la legibilidad. Evita barras de nivel de habilidad abstractas...",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(15vw, 85vh)" }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(1vw, 85vh)", "width":"90vw"  }
   }
 ],
         "style": "behind_png",
