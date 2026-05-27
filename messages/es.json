@@ -128,7 +128,7 @@
   {
     "character": "",
     "text": "* **Calidad sobre cantidad:** Reduce el ritmo. Es mejor enviar 3 currículums al día bien dirigidos que 50 automáticos.",
-    "position": { "top": "0px", "left": "0px", "transform": "translate(70vw, 10vh)","width":"30vw"  }
+    "position": { "top": "0px", "left": "0px", "transform": "translate(70vw, 10vh)","width":"35vw"  }
   },
   {
     "character": "",
@@ -201,11 +201,12 @@
         "style" : "no_box",
         "options": [
           {
-            "text": "Volver al principio del capítulo",
+            "text": "Volver al principio del capítulo", 
             "next": "page_1"
           }
         ]
       }
+
     },
   "chapter_1": {
     "page_1": {
