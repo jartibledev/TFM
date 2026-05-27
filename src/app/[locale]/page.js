@@ -116,7 +116,7 @@ export default function GameEngine() {
 
   return (
     <ArticleComponent>
-      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})` }}>
+      <ContainerIllustrations style={{ backgroundImage: `url(${pageDates.background})`, backgroundSize:`url(${pageDates.background})`, backgroundPosition:`url(${pageDates.background})`, backgroundRepeat:`url(${pageDates.background})`  }}>
         <MenuConfiguracion />
 
     
