@@ -106,7 +106,7 @@
         "background": "/illustrations/chapter_0/page_5.png",
         "next": "page_6_Unfortunally",
         "position": {
-          "top": "70%",
+          "top": "60%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },

@@ -147,6 +147,33 @@ export default function GameEngine() {
       );
     });
   };
+
+  const buttomsNext = () => {
+    return(
+    
+    <div style={{zIndex:3, position: 'absolute', bottom: '5%', right: '40%', transform: 'translateX(-10%)' }}> 
+        { isPageFinished && pageDates.next && !pageDates.options && (
+            <ButtonComponent $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+          
+          {!isPageFinished &&  (
+            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+
+          { isPageFinished && pageDates.options && pageDates.options.map((option, i) => (
+            <ButtonComponent 
+              key={i} 
+              onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
+            >
+              {option.text}
+            </ButtonComponent>
+          ))}
+      </div>)
+  }
   
   return (
     <ArticleComponent>
@@ -172,15 +199,7 @@ export default function GameEngine() {
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
           <TextCharacter>{currentTextChunk}</TextCharacter>
-        </Box>
-        )
-         )
-         }
-        
-        
-      </ContainerIllustrations>
-      {(pageDates.page_png || pageDates.compound) && (
-      <div style={{zIndex:3, position: 'absolute', top: '5%', right: '20%' }}> 
+          
         { isPageFinished && pageDates.next && !pageDates.options && (
             <ButtonComponent $width="5em"  onClick={handleNextClick}>
               Next
@@ -201,8 +220,38 @@ export default function GameEngine() {
               {option.text}
             </ButtonComponent>
           ))}
-      </div>
-      )}
+        </Box>
+        )
+         )
+         }
+        
+        
+      </ContainerIllustrations>
+    {pageDates.page_png && (
+      <div style={{zIndex:3, position: 'absolute', bottom: '5%', right: '40%', transform: 'translateX(-10%)' }}> 
+        { isPageFinished && pageDates.next && !pageDates.options && (
+            <ButtonComponent $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+          
+          {!isPageFinished &&  (
+            <ButtonComponent  $width="5em"  onClick={handleNextClick}>
+              Next
+            </ButtonComponent>
+          )}
+
+          { isPageFinished && pageDates.options && pageDates.options.map((option, i) => (
+            <ButtonComponent 
+              key={i} 
+              onClick={() => handleOptionClick(option.next, option.decision || option.decition)}
+            >
+              {option.text}
+            </ButtonComponent>
+          ))}
+      </div>)}
+      
+     
     </ArticleComponent>
   );
 }
