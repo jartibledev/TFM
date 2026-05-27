@@ -106,7 +106,7 @@
         "background": "/illustrations/chapter_0/page_5.png",
         "next": "page_6_Unfortunally",
         "position": {
-          "top": "5%",
+          "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },
@@ -122,7 +122,7 @@
       "page_7": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_7.png",
+        "background": "/illustrations/chapter_0/page_8.jpg",
         "next": "page_8",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -130,7 +130,7 @@
       "page_8": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_8.jpg",
+        "background": "/illustrations/chapter_0/page_9.jpg",
         "next": "page_9",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -138,7 +138,7 @@
       "page_9": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_9.jpg",
+        "background": "/illustrations/chapter_0/page_10.jpg",
         "next": "page_10",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -146,7 +146,7 @@
       "page_10": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_10.jpg",
+        "background": "/illustrations/chapter_0/page_11.jpg",
         "next": "page_11",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -155,7 +155,7 @@
       "page_11": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_11.jpg",
+        "background": "/illustrations/chapter_0/page_12.jpg",
         "next": "end",
         "bgm" : "song_1",
         "style" : "no_box"
