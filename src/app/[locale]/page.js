@@ -218,6 +218,7 @@ export default function GameEngine() {
   
   return (
     <ArticleComponent>
+      <div style={{width: '100%', position: 'relative'}}>
       {pageDates.page_png &&  (
           pageDates.compound && pageDates.boxes ? ( renderCompoundBoxes(1)
         ) : (
@@ -292,7 +293,7 @@ export default function GameEngine() {
           ))}
       </div>)}
       
-     
+     </div>
     </ArticleComponent>
   );
 }

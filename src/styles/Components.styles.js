@@ -156,25 +156,27 @@ background-position:  ${props => props.$backgroundposition || "center"};
 background-repeat:  ${props => props.$backgroundrepeat || "no-repeat"};     
 border-color: ${props => props.$bordercolor || "black"};  
 overflow: ${props => props.$overflow || "hidden"};
-z-index: 2;
+top: 0;
+left: 0;
+z-index: 3;
 @media ${device.mobileS} {
-    width: 100vw;
-    height: 100vh; 
+    width: 100%;
+    height: 100%; 
 
     }
 @media ${device.mobileS} {
-    width: 100vw;
-    height: 100vh; 
+    width: 100%;
+    height: 100%;  
 
     }
 @media ${device.mobileM} {
-    width: 100vw;
-    height: 100vh; 
+    width: 100%;
+    height: 100%;  
 
     }
 @media ${device.mobileL} {
-    width: 100vw;
-    height: 100vh; 
+    width: 100%;
+    height: 100%;  
 
     }
 @media ${device.laptop} {
