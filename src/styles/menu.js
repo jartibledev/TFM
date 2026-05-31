@@ -36,7 +36,7 @@ export default function MenuConfiguracion() {
             Settings
         </ButtonComponent>
         {isOpen && (
-          <Box $width= "100vw" $flexdirection = "row">
+          <Box $width= "100%" $flexdirection = "row">
             <div style ={container}>
                       
                         <label>Activate/desactivate sound:</label>

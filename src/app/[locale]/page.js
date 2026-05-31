@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import MenuConfiguracion from '@/styles/menu';
-import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box } from '@/styles/Components.styles';
+import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box, Frame } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
 import { useMusic } from '@/styles/MusicContext';
 
@@ -218,7 +218,7 @@ export default function GameEngine() {
   
   return (
     <ArticleComponent>
-      <div style={{width: '100%', position: 'relative'}}>
+      <Frame>
       {pageDates.page_png &&  (
           pageDates.compound && pageDates.boxes ? ( renderCompoundBoxes(1)
         ) : (
@@ -293,7 +293,7 @@ export default function GameEngine() {
           ))}
       </div>)}
       
-     </div>
+     </Frame>
     </ArticleComponent>
   );
 }

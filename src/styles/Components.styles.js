@@ -111,15 +111,53 @@ const colorBorderNegative = ' rgba(31, 31, 31, 0.63)';
 const colorBackgroundNegative = 'rgba(255, 255, 255, 0.68)';
 const colorFontNegative = 'rgba(0, 0, 0, 0.92)';
 
+export const Frame = styled.div`
+  position: relative;
+@media ${device.mobileS} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;  
+
+    }
+@media ${device.mobileM} {
+    width: 100%;
+    height: 100%;  
+
+    }
+@media ${device.mobileL} {
+    width: 100%;
+    height: 100%;  
+
+    }
+@media ${device.laptop} {
+    width: 50%;
+
+
+    }
+
+@media ${device.laptopL} {
+  width: 50%;
+
+
+    }
+@media ${device.desktop} {
+  width: 50%;
+ 
+
+    }
+  
+`;
 export const ArticleComponent = styled.article`
-    display: block !important;
+    display: flex !important;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+    background-color: black;
     @media  ${device.mobileL} {
       padding: 0;
     }
