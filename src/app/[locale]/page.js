@@ -6,6 +6,7 @@ import MenuConfiguracion from '@/styles/menu';
 import { ArticleComponent, ButtonComponent, ContainerIllustrations, Box, Frame } from '@/styles/Components.styles';
 import { Character, TextCharacter } from '@/styles/Paragraph.styles';
 import { useMusic } from '@/styles/MusicContext';
+import TypewriterText from '@/styles/TypeWritter';
 
 export default function GameEngine() {
   const [actualChapter, setActualChapter] = useState('introduction');
@@ -183,7 +184,7 @@ export default function GameEngine() {
         onClick={(e) => e.stopPropagation()}
         >
           <Character>{boxData.character}</Character>
-          <TextCharacter>{boxData.text}</TextCharacter>
+          <TypewriterText text={boxData.text} isHorror={actualAmbient === 'horror'}></TypewriterText>
         </Box>
       );
     });
@@ -225,7 +226,7 @@ export default function GameEngine() {
         <Box $keystyle={actualAmbient} style={styleBox}
           onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
-          <TextCharacter>{currentTextChunk}</TextCharacter>
+          <TypewriterText text={currentTextChunk} isHorror={actualAmbient === 'horror'}></TypewriterText>
         </Box>
           )
       )}
@@ -240,7 +241,7 @@ export default function GameEngine() {
         <Box $keystyle={actualAmbient} style={styleBox}
          onClick={(e) => e.stopPropagation()}>
           <Character>{pageDates.character}</Character>
-          <TextCharacter>{currentTextChunk}</TextCharacter>
+          <TypewriterText text={currentTextChunk} isHorror={actualAmbient === 'horror'}></TypewriterText>
           
         { isPageFinished && pageDates.next && !pageDates.options && (
             <ButtonComponent $width="5em"  onClick={handleNextClick}>
