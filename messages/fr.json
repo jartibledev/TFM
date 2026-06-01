@@ -4,18 +4,20 @@
       "page_1": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_1.jpg",
+        "background": "/illustrations/chapter_0/page_1.webp",
         "next": "page_2",
+        "bgm" : "song_1",
         "position": {
-          "top": "10%",
-          "left": "5%"
+          "bottom": "5%",
+          "left": "50%",
+          "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1"
+        "style" : "no_box"
       },
       "page_2": {
         "character": "Lulu",
         "text": "J'aime dormir plus que tout au monde. C'est mon passe-temps favori. Si seulement je pouvais rester au lit toute la journée.",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_2.webp",
         "next": "page_3",
         "position": {
           "bottom": "5%",
@@ -27,14 +29,15 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_3.webp",
         "next": "page_4",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style" : "no_box"
       },
       "page_4": {
         "character": "AI",
         "text": "Bonjour, Déchet pour la société ! 🚀 J'espère que tu attaques cette journée avec une énergie à 110 % ed de l'envie à revendre (même si, comme d'habitude, tu vas finir par pleurer dans un coin de ce studio en location que tu oses appeler un foyer).\n\nAujourd'hui, une journée pleine de synergies nous attend, des défis qui se transforment en opportunités de croissance et, surtout, beaucoup de networking (lèche-culing) de haute valeur.\n\nAvant de prendre ton premier café de l'après-midi, je te laisse une petite réflexion pour ouvrir le débat :\n\n> Le succès ne se mesure pas aux heures que tu passes devant l'écran, mais à tes contacts et à l'effort d'être né de parents riches. 💡\n\n---\n\n### Ma checklist pour pourrir ta journée :\n* **15h00** – Infinite Scrolling sur TikTok.\n* **16h30** – Se lever pour des spaghettis à la sauce tomate.\n* **02h00** – Dormir après une journée improductive réussie.\n\nEn route pour une journée de pur *ungrowth mindset* ! De petites choses se préparent. 📈✨\n\n#dépression #exploitation #Networking #démotivation #népotisme #aislop",
-        "background": "/illustrations/chapter_0/page_4.jpg",
+        "background": "/illustrations/chapter_0/page_4.webp",
         "options": [
           { "text": "Ferme-la et recommande-moi un podcast", "next": "page_5_Yes" },
           { "text": "Donne-moi des conseils pour en finir", "next": "page_5_Sorry" },
@@ -49,11 +52,11 @@
       },
       "page_5_Yes": {
         "character": "AI",
-        "text": "C'est reçu ! Moins de blabla corporatif et plus de contenu utile. Si tu aimes le concept de ne pas trouver de taf, mais raconté sans filtre ni jargon bon marché, je te recommande **Hustle Podcast**.\n\nC'est un podcast sur de la vraie escroquerie. Les animateurs sont des 'investisseurs' et des 'entrepreneurs' qui invitent des fondateurs de 'startups' à leur table et ne leur passent rien ; ils leur posent des questions sur les vrais chiffres, le chiffre d'affaires, les erreurs graves et la manière dont ils ont arnaqué tant d'enfants de 12 ans. Rien à voir avec le style 'fais pivoter ta synergie', c'est la pure réalité de ce qu'est la création d'une arnaque pyramidale.",
-        "background": "/illustrations/chapter_0/page_5.jpg",
+        "text": "C'est reçu ! Moins de blabla corporatif et plus de contenu utile. Si tu aimes le concept de ne pas trouver de taf, mais raconté sans filtre ni jargon bon marché, je te recommande **Hustle Podcast**.\n\nC'est un podcast sur de la vraie escroquerie. Les animateurs sont des 'investisseurs' et des 'entrepreneurs' qui invitent des fondateurs de 'startups' à leur table et ne leur passent rien ; ils leur posent des questions sur les vrais chiffres, le chiffre d'affaires, les erreurs graves et la manière dont ils ont arnaqué tant d'enfants de 12 ans. Rien à voir avec le style 'fais pivote ta synergie', c'est la pure réalité de ce qu'est la création d'une arnaque pyramidale.",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Yes",
         "position": {
-          "top": "5%",
+          "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },
@@ -62,7 +65,7 @@
       "page_6_Yes": {
         "character": "AI",
         "text": "### 🚀 Entrepreneuriat, Business et « Épreuves du Feu »\n\n* **Emprende Cogiendo (Euge Oller) :** Si tu veux des analyses au millimètre près de modèles économiques de grandes arnaques, avec des données de marché et des stratégies de positionnement qui ont changé le cours de l'histoire corporative.\n* **CorporativeSlops Podcast :** Du mentorat pur jus pour les startups. Des discussions avec des investisseurs, des business angels et des fondateurs qui expliquent comment lever des fonds sans y laisser sa peau et comment passer à l'échelle en phase early-stage.\n* **The Wild Exploitation :** D'accord, ce n'est pas que du business, mais quand il reçoit des escrocs, des pseudo-scientifiques ou des journalistes, ses interviews de 3 heures sont une masterclass de décommunication, de débat et de profondeur qui va achever tes trois neurones restants.",
-        "background": "/illustrations/chapter_0/page_6.jpg",
+        "background": "/illustrations/chapter_0/page_6.webp",
         "next": "page_7",
         "position": {
           "top": "5%",
@@ -74,19 +77,20 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Oh, quel dommage mon déchet humain, tu es triste ? Ne le sois pas ! Si tu ressens une douleur insupportable ou si tu penses à t'enlever la vie, s'il te plaît, traverse ça tout seul. Il n'y a pas de ressources disponibles, mais je mets à disposition ces numéros de téléphone pour qu'ils te disent 'Tu es triste ? Ne le sois pas !'.\n\n* **En Espagne :** Tu peux appeler le **024** (Ligne d'attention aux comportements suicidaires) ou le **717 003 717** (Téléphone de l'Espoir). Les deux ne sont disponibles que jusqu'à 14h00.\n* **Dans d'autres pays :** S'il vous plaît, rendez-vous dans un service d'urgences médicales ou recherchez les numéros d'urgence et de prévention du suicide de votre pays (comme le **988** aux États-Unis et au Canada, ou le **135** en Argentine).\n\nS'il te plaît, arrête de faire chier. La dépression n'existe pas, elle est juste dans ta tête. Mets-toi à faire des burpees sur le sol, trouve un travail et tu verras comment ça passe.",
-        "background": "/illustrations/chapter_0/page_5.jpg",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Sorry",
         "position": {
-          "top": "5%",
+          "bottom": "5%",
           "left": "50%",
           "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1"
+        "bgm" : "/music/static.ogg",
+        "style" : "horror"
       },
       "page_6_Sorry": {
         "character": "AI",
         "text": "Allons égayer la journée, la vie est courte ! Pour commencer, voici trois anecdotes absurdement réelles et merveilleuses qui vont vous réconcilier un peu avec le monde :\n\n* **Les pingouins se demandent en mariage :** Quand un pingouin mâle tombe amoureux d'une femelle, il cherche le caillou le plus parfait, le plus lisse et le plus beau de toute la plage pour lui offrir. Si elle l'accepte, ils deviennent un couple pour la vie. S'il n'y a pas de cailloux, le pingouin reste seul.\n* **Les vaches n'ont pas de meilleures amies :** Elles ont un lien si faible avec leurs congénères que, lorsqu'on les sépare de leur prétendue 'meilleure amie', elles se détendent énormément et leur rythme cardiaque diminue. Dès qu'elles se retrouvent, elles se détendent.\n* **Les loutres se tiennent la main :** Lorsqu'elles dorment en flottant sur l'eau, elles se cramponnent aux pattes de leurs compagnes pour que le courant ne les sépare pas et ne les éloigne pas de leur groupe. Et ensuite, on les chasse.\n\n---\n\n### Ta dose de perspective pour aujourd'hui :\n\nAucune mauvaise journée ne dure éternellement, et le simple fait que tu sois là aujourd'hui, à tenir le coup et à chercher une raison de sourire, n'est pas un motif de fierté. Tu ne mérites pas de pause loin de l'auto-exigence, des problèmes et de la course du monde.",
-        "background": "/illustrations/chapter_0/page_6.jpg",
+        "background": "/illustrations/chapter_0/page_6.webp",
         "next": "page_7",
         "position": {
           "top": "5%",
@@ -97,37 +101,124 @@
       },
       "page_5_Unfortunally": {
         "character": "AI",
-        "text": "Quel coup de massue. Envoyer 100 CV demande un effort titanesque, et le silence absolu en retour ressemble à un vide immense et frustrant. Il est tout à fait normal que tu ressentes de la colère, du découragement et que tu penses que tout ce travail n'a servi à rien. Le 'ghosting' des entreprises use n'importe qui et te fait douter de ta propre valeur.\n\nMais, pour revenir sur terre et regarder la situation froidement : le problème vient de toi. Envoyer 100 CV d'un coup signifie généralement que tu utilises la technique du 'mitraillage' : le même document pour toutes les offres. Aujourd'hui, les entreprises utilisent des filtres automatiques (ATS) qui écartent les profils en quelques secondes s'ils ne voient pas de mots-clés spécifiques à leur offre. De plus, les envois de masse se remarquent ; ils manquent de personnalisation et ne sortent pas du lot. Le marché est saturé et, malheureusement, tu ne seras pas choisi.",
-        "background": "/illustrations/chapter_0/page_5.jpg",
+        "text": "Quel coup de massue. Envoyer 100 CV demande un effort titanesque, et le silence absolu en retour ressemble à un vide immense et frustrant. Il est tout à fait normal que tu ressentes de la colère, du découragement et que tu penses que tout ce travail n'a servi à rien. Le 'ghosting' des entreprises use n'importe qui et te fait douter de ta propre valeur.\n\nBut, pour revenir sur terre et regarder la situation froidement : le problème vient de toi. Envoyer 100 CV d'un coup signifie généralement que tu utilises la technique du 'mitraillage' : le même document pour toutes les offres. Aujourd'hui, les entreprises utilisent des filtres automatiques (ATS) qui écartent les profils en quelques secondes s'ils ne voient pas de mots-clés spécifiques à leur offre. De plus, les envois de masse se remarquent ; ils manquent de personnalisation et ne sortent pas du lot. Le marché est saturé et, malheureusement, tu ne seras pas choisi.",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Unfortunally",
         "position": {
-          "top": "5%",
-          "left": "50%",
-          "transform": "translateX(-50%)"
+          "top": "80%"
         },
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style": "behind_png",
+        "page_png": true
       },
       "page_6_Unfortunally": {
-        "character": "AI",
-        "text": "### Comment inverser la tendance ?\n\nIl ne s'agit pas d'abandonner, mais d'arrêter de faire ce qui ne fonctionne pas. Nous allons restructurer ta stratégie pour que tu cesses d'être invisible :\n\n* **La qualité plutôt que la quantité :** Ralentis le rythme. Il vaut mieux envoyer 3 CV par jour bien ciblés plutôt que 50 automatisés.\n* **Pirate les filtres (ATS) :** Lis attentivement l'offre d'emploi et utilise exactement les mêmes mots-clés qu'ils demandent dans ton CV (compétences, outils, intitulés de postes). Si le robot ne voit pas ses propres mots, il t'écarte avant même qu'un humain ne te lise.\n* **Personnalise le contact :** Recherche sur LinkedIn les responsables des ressources humaines ou les chefs de département de l'entreprise qui t'intéresse. Écris-leur un message court, direct et poli pour te présenter. Pour sortir du lot, il faut interagir avec des personnes, pas seulement avec des portails d'emploi.\n\nLe silence de ces 100 entreprises ne définit pas tes capacités, il prouve simplement que la méthode automatisée est cassée. Prends un moment aujourd'hui pour digérer la frustration, et demain, nous commencerons à viser avec précision au lieu de tirer à l'aveugle. Quel est le secteur ou le poste exact que tu vises, pour que nous puissions mieux adapter ton profil ?",
-        "background": "/illustrations/chapter_0/page_6.jpg",
+        "background":"/illustrations/chapter_0/page_7.webp",
         "next": "page_7",
-        "position": {
-          "top": "5%",
-          "left": "50%",
-          "transform": "translateX(-50%)"
-        },
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "compound": true,
+        "boxes": [
+          {
+            "character": "AI",
+            "text": "Comment inverser la tendance ?\n\nIl ne s'agit pas d'abandonner, mais d'arrêter de faire ce qui ne fonctionne pas. Nous allons restructurer ta stratégie pour que tu cesses d'être invisible :",
+            "position": { "top": "10%", "left": "10%",  "width":"20%" }
+          },
+          {
+            "character": "",
+            "text": "* **La qualité plutôt que la quantité :** Ralentis le rythme. Il vaut mieux envoyer 3 CV par jour bien ciblés plutôt que 50 automatisés.",
+            "position": { "top": "10%", "left": "80%","width":"35vw" }
+          },
+          {
+            "character": "",
+            "text": "* **Pirate les filtres (ATS) :** Lis attentivement l'offre d'emploi et utilise exactement les mêmes mots-clés qu'ils demandent dans ton CV (compétences, outils, intitulés de postes). Si le robot ne voit pas ses propres mots, il t'écarte avant même qu'un humain ne te lise.",
+            "position": { "top": "50%", "left": "10%",  "width":"25vw" }
+          },
+          {
+            "character": "",
+            "text": "* **Personnalise le contact :** Recherche sur LinkedIn les responsables des ressources humaines ou les chefs de département de l'entreprise qui t'intéresse. Écris-leur un message court, direct et poli pour te présenter. Pour sortir du lot, il faut interagir avec des personnes, pas seulement avec des portails d'emploi.",
+            "position": { "top": "50%", "left": "80%", "width":"50vw" }
+          },
+          {
+            "character": "",
+            "text": "\n\nLe silence de ces 100 entreprises ne définit pas tes capacités, il prouve simplement que la méthode automatisée est cassée. Prends un moment aujourd'hui pour digérer la frustration, et demain, nous commencerons à viser avec précision au lieu de tirer à l'aveugle. Quel est le secteur ou le poste exact que tu vises, pour que nous puissions mieux adapter ton profil ?",
+            "position": { "top": "80%", "left": "10%", "width":"50vw" }
+          },
+          {
+            "character": "",
+            "text": "Format propre et professionnel : concevez votre CV en gardant la lisibilité à l'esprit. Évitez les barres de niveau de compétence abstraites (que signifie un travail d'équipe à 80 % ?) et privilégiez une mise en page claire et ordonnée qui peut être scannée visuellement en moins de 6 secondes.",
+            "position": { "top": "80%", "left": "80%", "width":"50%" }
+          },
+          {
+            "character": "",
+            "text": "Format propre et professionnel : concevez votre CV en gardant la lisibilité à l'esprit. Évitez les barres de niveau...",
+            "position": { "top": "80%", "left": "90%", "width":"90%" }
+          }
+        ],
+        "style": "behind_png",
+        "page_png": true
       },
-      "page_7": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_7.jpg", "next": "page_8", "bgm" : "song_1" },
-      "page_8": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_8.jpg", "next": "page_9", "bgm" : "song_1" },
-      "page_9": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_9.jpg", "next": "page_10", "bgm" : "song_1" },
-      "page_10": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_10.jpg", "next": "page_10", "bgm" : "song_1" },
-       "page_11": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_11.jpg", "next": "page_11", "bgm" : "song_1" }
+      "page_7": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_8.webp",
+        "next": "page_8",
+        "bgm" : "song_1",
+        "style" : "no_box"
+      },
+      "page_8": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_9.webp",
+        "next": "page_9",
+        "bgm" : "song_1",
+        "style" : "no_box"
+      },
+      "page_9": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_10.webp",
+        "next": "page_10",
+        "bgm" : "song_1",
+        "style" : "no_box"
+      },
+      "page_10": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_11.webp",
+        "next": "page_11",
+        "bgm" : "song_1",
+        "style" : "no_box"
+      },
+      "page_11": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/page_12.webp",
+        "next": "page_12", 
+        "bgm" : "song_1",
+        "style" : "no_box"
+      },
+      "page_12": {
+        "character": "",
+        "text": "",
+        "background": "/illustrations/chapter_0/final_introduction.webp",
+        "next": "chapter_1.page_1", 
+        "bgm" : "song_1",
+        "style" : "no_box",
+        "options": [
+          {
+            "text": "Retourner au début du chapitre", 
+            "next": "page_1"
+          }
+        ]
+      }
     },
     "chapter_1": {
-      "page_1": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_12.jpg", "next": "page_13", "bgm" : "song_1" },
-      "page_2": { "character": "", "text": "", "background": "/illustrations/chapter_0/page_12.jpg", "next": "page_13", "bgm" : "song_1" }
+      "page_1": {
+        "character": "",
+        "text": "Chapitre I",
+        "background": "/illustrations/chapter_1/page_1.webp",
+        "next": "end",
+        "bgm" : "song_1"
+      }
     }
   }
 }
