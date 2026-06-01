@@ -4,15 +4,6 @@ import { song_1 } from '@/music/song_1';
 
 const MusicContext = createContext(null);
 
-// Purga radical de hilos en la pestaña del navegador
-const purgeAllWebIntervals = () => {
-    if (typeof window === 'undefined') return;
-    const highestIntervalId = setInterval(() => {}, 1000);
-    for (let i = 0; i <= highestIntervalId; i++) {
-        window.clearInterval(i);
-    }
-};
-
 const getAudioSystem = () => {
     if (typeof window === 'undefined') return null;
     
@@ -23,7 +14,7 @@ const getAudioSystem = () => {
             activeSong: null,
             activeBgmUrl: null,
             bgmSource: null,
-            hasActiveInterval: false 
+            patternIntervalId: null 
         };
     }
     return window.__AUDIO_SYSTEM__;
@@ -35,16 +26,23 @@ export function MusicProvider({ children }) {
     const songs = { song_1 };
 
     useEffect(() => {
-        const sys = getAudioSystem();
-        if (sys) {
-            if (sys.ctx) {
-                try { sys.ctx.close(); } catch(e) {}
-                sys.ctx = null;
-                sys.masterGain = null;
+        return () => {
+            const sys = getAudioSystem();
+            if (sys) {
+                if (sys.patternIntervalId) {
+                    clearInterval(sys.patternIntervalId);
+                    sys.patternIntervalId = null;
+                }
+                sys.activeSong = null;
+                sys.activeBgmUrl = null;
+                
+                if (sys.ctx) {
+                    try { sys.ctx.close(); } catch(e) {}
+                    sys.ctx = null;
+                    sys.masterGain = null;
+                }
             }
-            sys.hasActiveInterval = false; 
-        }
-        purgeAllWebIntervals();
+        };
     }, []);
 
     const toggleMute = () => {
@@ -89,31 +87,52 @@ export function MusicProvider({ children }) {
         const sys = getAudioSystem();
         if (!sys || !audioKeyOrUrl) return;
 
-       
-        if (audioKeyOrUrl.endsWith('.ogg') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
-        if (!audioKeyOrUrl.endsWith('.ogg') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
+        const isOgg = audioKeyOrUrl.endsWith('.ogg');
 
-       
-        purgeAllWebIntervals();
-        sys.hasActiveInterval = false;
+        // 🔄 CAMBIO: Corrección de las condiciones de retorno (Bloqueo de seguridad)
+        // Explicación: Si se solicita reproducir algo que ya está registrado y activo en el sistema,
+        // salimos inmediatamente antes de mutar estados o instanciar duplicados.
+        if (isOgg && sys.activeBgmUrl === audioKeyOrUrl) return;
+        if (!isOgg && sys.activeSong === audioKeyOrUrl) return;
+
+        // 🔄 CAMBIO: Registro síncrono inmediato
+        // Explicación: Guardamos el identificador en memoria global antes de cualquier operación asíncrona (await)
+        // o cambios de estado de React. Así cualquier ráfaga consecutiva de renderizados rebotará en los 'return' de arriba.
+        if (!isOgg) {
+            sys.activeSong = audioKeyOrUrl;
+            sys.activeBgmUrl = null;
+        } else {
+            sys.activeBgmUrl = audioKeyOrUrl;
+            sys.activeSong = null;
+        }
+
+        // Limpieza atómica del bucle algorítmico previo si existiese
+        if (sys.patternIntervalId) {
+            clearInterval(sys.patternIntervalId);
+            sys.patternIntervalId = null;
+        }
 
         try {
             await initAudioContext();
 
+            // Parada inmediata de la fuente estática previa (.ogg)
             if (sys.bgmSource) {
                 try { sys.bgmSource.stop(); } catch(e){}
                 sys.bgmSource = null;
             }
 
-            if (audioKeyOrUrl.endsWith('.ogg')) {
-                sys.activeSong = null;
+            if (isOgg) {
                 await playAudioFile(audioKeyOrUrl);
             } else {
-                sys.activeBgmUrl = null;
+                // 🔄 CAMBIO: Invocación de la función reproductora algorítmica
+                // Explicación: En tu código faltaba esta llamada dentro del 'else'. Centralizando aquí
+                // la ejecución, nos aseguramos de que el ciclo 'setInterval' esté supeditado al control de este método.
                 await playPattern(audioKeyOrUrl);
             }
         } catch (error) {
             console.error("Error en play:", error);
+            sys.activeSong = null;
+            sys.activeBgmUrl = null;
         }
     };
 
@@ -143,8 +162,6 @@ export function MusicProvider({ children }) {
         const songData = songs[songKey]?.();
         if (!songData) return;
 
-        sys.activeSong = songKey;
-        sys.hasActiveInterval = true; 
         setIsPlaying(true);
 
         const tempo = 120; 
@@ -153,6 +170,7 @@ export function MusicProvider({ children }) {
         const loopDurationSeconds = totalNotasMelodia * beatDuration;
 
         const runSequence = () => {
+            // Verificación imperativa para que el timer no reproduzca frecuencias desfasadas
             if (sys.activeSong !== songKey) return;
             const now = sys.ctx.currentTime;
 
@@ -170,7 +188,7 @@ export function MusicProvider({ children }) {
         };
 
         runSequence();
-        setInterval(runSequence, loopDurationSeconds * 1000);
+        sys.patternIntervalId = setInterval(runSequence, loopDurationSeconds * 1000);
     };
 
     const fallbackPlay = (noteName, startTime, duration, type, volume, songKey) => {
@@ -198,16 +216,17 @@ export function MusicProvider({ children }) {
 
     const stopAll = () => {
         const sys = getAudioSystem();
-        purgeAllWebIntervals();
-        
-        if (sys && sys.bgmSource) {
-            try { sys.bgmSource.stop(); } catch(e){}
-            sys.bgmSource = null;
-        }
         if (sys) {
+            if (sys.patternIntervalId) {
+                clearInterval(sys.patternIntervalId);
+                sys.patternIntervalId = null;
+            }
+            if (sys.bgmSource) {
+                try { sys.bgmSource.stop(); } catch(e){}
+                sys.bgmSource = null;
+            }
             sys.activeSong = null;
             sys.activeBgmUrl = null;
-            sys.hasActiveInterval = false;
         }
         setIsPlaying(false);
     };
