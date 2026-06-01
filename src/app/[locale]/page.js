@@ -217,7 +217,7 @@ export default function GameEngine() {
   }
   
   return (
-    <ArticleComponent>
+    <ArticleComponent key={`${actualChapter}_${actualPage}`}>
       <Frame>
       {pageDates.page_png &&  (
           pageDates.compound && pageDates.boxes ? ( renderCompoundBoxes(1)

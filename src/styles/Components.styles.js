@@ -1,6 +1,17 @@
 'use client';
 import  { keyframes, styled, css } from "styled-components";
-
+const flipPage = keyframes`
+ 0% {
+    opacity: 0;
+    filter: blur(5px) brightness(0.5);
+    transform: scale(1.02) translateX(15px); /* Pequeño desplazamiento de hoja */
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1) translateX(0);
+  }
+`;
 const ambientCatalogue = {
   "horror": css`
     background-color: rgba(255, 0, 0, 0.9);
@@ -158,6 +169,7 @@ export const ArticleComponent = styled.article`
     align-items: center;
     overflow: hidden;
     background-color: black;
+    animation: ${flipPage} 0.4s ease-out forwards;
     @media  ${device.mobileL} {
       padding: 0;
     }
@@ -267,6 +279,12 @@ export const Box = styled.div`
         `
   }
 `;
+
+export const TransitionComponet = styled.div`
+  animation: ${flipPage} 0.3s forwards;
+  transition: background-image 0.2s ease-in-out;
+`;
+
 
 export const ButtonComponent = styled.button`
   display: ${props => props.$display || "flex"};
