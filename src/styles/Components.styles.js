@@ -269,6 +269,9 @@ export const Box = styled.div`
 `;
 
 export const ButtonComponent = styled.button`
+  display: ${props => props.$display || "flex"};
+  justify-content: ${props => props.$justifycontent || "center"};
+  align-items: ${props => props.$alignitems || "center"};
   width: ${props => props.$width || "auto"} ;
   min-width: ${props => props.$minwidth || "50px"},
   height: ${props => props.$height || "auto"} ;
