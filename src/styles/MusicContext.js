@@ -89,15 +89,10 @@ export function MusicProvider({ children }) {
 
         const isOgg = audioKeyOrUrl.endsWith('.ogg');
 
-        // 🔄 CAMBIO: Corrección de las condiciones de retorno (Bloqueo de seguridad)
-        // Explicación: Si se solicita reproducir algo que ya está registrado y activo en el sistema,
-        // salimos inmediatamente antes de mutar estados o instanciar duplicados.
         if (isOgg && sys.activeBgmUrl === audioKeyOrUrl) return;
         if (!isOgg && sys.activeSong === audioKeyOrUrl) return;
 
-        // 🔄 CAMBIO: Registro síncrono inmediato
-        // Explicación: Guardamos el identificador en memoria global antes de cualquier operación asíncrona (await)
-        // o cambios de estado de React. Así cualquier ráfaga consecutiva de renderizados rebotará en los 'return' de arriba.
+       
         if (!isOgg) {
             sys.activeSong = audioKeyOrUrl;
             sys.activeBgmUrl = null;
@@ -106,7 +101,7 @@ export function MusicProvider({ children }) {
             sys.activeSong = null;
         }
 
-        // Limpieza atómica del bucle algorítmico previo si existiese
+    
         if (sys.patternIntervalId) {
             clearInterval(sys.patternIntervalId);
             sys.patternIntervalId = null;
@@ -115,7 +110,6 @@ export function MusicProvider({ children }) {
         try {
             await initAudioContext();
 
-            // Parada inmediata de la fuente estática previa (.ogg)
             if (sys.bgmSource) {
                 try { sys.bgmSource.stop(); } catch(e){}
                 sys.bgmSource = null;
@@ -124,9 +118,7 @@ export function MusicProvider({ children }) {
             if (isOgg) {
                 await playAudioFile(audioKeyOrUrl);
             } else {
-                // 🔄 CAMBIO: Invocación de la función reproductora algorítmica
-                // Explicación: En tu código faltaba esta llamada dentro del 'else'. Centralizando aquí
-                // la ejecución, nos aseguramos de que el ciclo 'setInterval' esté supeditado al control de este método.
+               
                 await playPattern(audioKeyOrUrl);
             }
         } catch (error) {
@@ -170,7 +162,6 @@ export function MusicProvider({ children }) {
         const loopDurationSeconds = totalNotasMelodia * beatDuration;
 
         const runSequence = () => {
-            // Verificación imperativa para que el timer no reproduzca frecuencias desfasadas
             if (sys.activeSong !== songKey) return;
             const now = sys.ctx.currentTime;
 
