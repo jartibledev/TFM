@@ -4,7 +4,7 @@
       "page_1": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_1.jpg",
+        "background": "/illustrations/chapter_0/page_1.webp",
         "next": "page_2",
         "bgm" : "song_1",
         "position": {
@@ -17,7 +17,7 @@
       "page_2": {
         "character": "Lulu",
         "text": "Me encanta dormir, más que nada en el mundo. Es mi hobby favorito. Ojalá estar en la cama todo el día.",
-        "background": "/illustrations/chapter_0/page_2.jpg",
+        "background": "/illustrations/chapter_0/page_2.webp",
         "next": "page_3",
         "position": {
           "bottom": "5%",
@@ -29,7 +29,7 @@
       "page_3": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_3.jpg",
+        "background": "/illustrations/chapter_0/page_3.webp",
         "next": "page_4",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -37,7 +37,7 @@
       "page_4": {
         "character": "AI",
         "text": "¡Buenos días, Desperdicio para la sociedad! 🚀 Espero que arranques este día con la energía al 110% y listo para **romper el molde** in tu sector (aunque como siempre te quedarás llorando en un rincón de ese cubículo alquilado al que llamas hogar).\n\nHoy nos espera una jornada llena de sinergias, retos que se transforman en oportunidades de crecimiento y, sobre todo, mucho *networking* (lameculing) de valor.\n\nAntes de tomarte el primer café de la tarde, te dejo una pequeña reflexión para abrir debate:\n\n> El éxito no se mide por las horas que pasas frente a la pantalla, sino por los contactos y el esfuerzo de haber nacido con padres ricos. 💡\n\n---\n\n### Mi *checklist* para joder tu día:\n* **15:00** – *Infinite Scrolling* en Tiktok.\n* **16:30** – Levantarte para spaghetti con tomate.\n* **02:00** – Dormir tras un exitoso día improductivo.\n\n¡A por un día de puro *ungrowth mindset*! Se vienen cositas. 📈✨\n\n#depresión #explotación #Networking #desmotivacion #nepotismo #aislop",
-        "background": "/illustrations/chapter_0/page_4.jpg",
+        "background": "/illustrations/chapter_0/page_4.webp",
         "options": [
           { "text": "Cállate, y aconsejame un audiolibro", "next": "page_5_Yes" },
           { "text": "Aconséjame como matarme", "next": "page_5_Sorry" },
@@ -53,7 +53,7 @@
       "page_5_Yes": {
         "character": "AI",
         "text": "Oído cocina. Menos rollo corporativo y más contenido útil. Si te va no encontrar chamba pero contado sin filtros ni palabrería barata, te recomiendo **Hustle Podcast**.\n\nEs un podcast de estafa real. Los presentadores son 'inversores' y 'emprendedores' que traen a fundadores de 'startups' a la mesa y no les bailan el agua; les preguntan por números reales, facturación, errores graves y cómo engañaron a tantos niños de 12 años. Nada de 'pivota tu sinergia', sino reality pura de lo duro que es montar una estafa piramidal.",
-        "background": "/illustrations/chapter_0/page_5.png",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Yes",
         "position": {
           "bottom": "5%",
@@ -65,7 +65,7 @@
       "page_6_Yes": {
         "character": "AI",
         "text": "### 🚀 Emprendimiento, Negocios y Fuegos Reales\n\n* **Emprende Cogiendo (Euge Oller):** Si quieres análisis de modelos de negocio de grandes scans desmenuzados al milímetro, con datos de mercado y estrategias de posicionamiento que cambiaron el rumbo de la historia corporativa.\n* **CorporativeSlops Podcast:** Pura mentoría para *startups*. Charlas con inversores, *business angels* y fundadores que explican cómo levantar rondas de financiación sin morir en el intento y cómo escalar operaciones en fases *early-stage*.\n* **The Wild Exploitation:** Vale, no es solo de negocios, pero cuando sienta a estafadores, pseudo-científicos o periodistas, las entrevistas de 3 horas son una masterclass de descomunicación, debate y profundidad que matará a tus tres neuronas restantes.",
-        "background": "/illustrations/chapter_0/page_6.png",
+        "background": "/illustrations/chapter_0/page_6.webp",
         "next": "page_7",
         "position": {
           "top": "5%",
@@ -77,7 +77,7 @@
       "page_5_Sorry": {
         "character": "AI",
         "text": "Ohh que pena mi desperdicio humano, ¿estás triste? ¡No lo estés!\n\nSi estás sintiendo un dolor insoportable o estás pensando en quitarte la vida, por favor, pasa esto a solas. No hay recursos disponibles pero pongo a disposición estos teléfonos para que te digan '¿Estás triste? ¡No lo estés!'.\n\n* **En España:** Puedes llamar al **024** (Línea de atención a la conducta suicida) o al **717 003 717** (Teléfono de la Esperanza). Ambos solo están disponibles hasta las 14:00 h.\n* **En otros países:** Por favor, acude a una sala de urgencias médica o busca los números de emergencia y prevención del suicidio de tu país (como el **988** en EE.UU. y Canadá, o el **135** en Argentina).\n\nPor favor, no des más por culo. La depression no existe, solo está en tu mente. Ponte a hacer burpees en el suelo, consigue un trabajo y verás cómo se te quita.",
-        "background": "/illustrations/chapter_0/page_5.png",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Sorry",
         "position": {
           "bottom": "5%",
@@ -90,7 +90,7 @@
       "page_6_Sorry": {
         "character": "AI",
         "text": "Vamos a alegrar el día, que la vida es corta! Para empezar, aquí tienes tres datos absurdamente reales y maravillosos que te van a reconciliar un poco con el mundo:\n\n* **Los pingüinos se proponen matrimonio:** Cuando un pingüino macho se enemora de una hembra, busca la piedra más perfecta, lisa y bonita de toda la playa para regalársela. Si ella la acepta, se convierten en pareja para toda la vida. Si no hay piedras, el pingüino se queda solo.\n* **Las vacas no tienen mejores amigas:** Tienen un vínculo tan débil con sus compañeras que, cuando las separan de su 'mejor amiga', se relajan muchísimo y su ritmo cardíaco disminuye. En cuanto las vuelven a juntar, se relajan.\n* **Las nutrias se dan la mano:** Cuando duermen flotando en el agua, se agarran de las patas con sus compañeras para que la corriente no las separe ni las aleje de su grupo. Y luego las cazan.\n\n---\n\n### Tu dosis de perspectiva para hoy:\n\nNingún mal día dura para siempre, y el simple hecho de que estés aquí hoy, aguantando el tirón y buscando una razón para sonreír, no es un motivo de orgullo. No te mereces un descanso de la autoexigencia, de los problemas y de la prisa del mundo.",
-        "background": "/illustrations/chapter_0/page_6.png",
+        "background": "/illustrations/chapter_0/page_6.webp",
         "next": "page_7",
         "position": {
           "top": "5%",
@@ -102,7 +102,7 @@
       "page_5_Unfortunally": {
         "character": "AI",
         "text": "Vaya golpe de realidad. Mandar 100 currículums requiere un esfuerzo enorme, y el silencio absoluto del otro lado se siente como un vacío enorme y frustrante. Es completamente normal que sientas rabia, desánimo y que pienses que todo ese trabajo no ha servido para nada. El 'ghosting' de las empresas desgasta a cualquiera y te hace dudar de tu propio valor.\n\nPero, bajando a la tierra y mirando la situación con frialdad: el problema eres tú. Mandar 100 currículums de golpe suele significar que estás usando la técnica de la 'metralleta': el mismo documento para todas las ofertas. Hoy en día, las empresas usan filtros automáticos (ATS) que descartan los perfiles en segundos si no ven palabras clave específicas de su oferta. Además, los envíos masivos se notan; carecen de personalización y no destacan. El mercado está saturado y, lamentablemente, no te elegirán.",
-        "background": "/illustrations/chapter_0/page_5.png",
+        "background": "/illustrations/chapter_0/page_5.webp",
         "next": "page_6_Unfortunally",
         "position": {
           "top": "80%"
@@ -114,7 +114,7 @@
         "page_png": true
       },
       "page_6_Unfortunally": {
-        "background":"/illustrations/chapter_0/page_7.png",
+        "background":"/illustrations/chapter_0/page_7.webp",
         "next": "page_7",
         "bgm" : "song_1",
         "compound": true,
@@ -161,7 +161,7 @@
       "page_7": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_8.jpg",
+        "background": "/illustrations/chapter_0/page_8.webp",
         "next": "page_8",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -169,7 +169,7 @@
       "page_8": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_9.jpg",
+        "background": "/illustrations/chapter_0/page_9.webp",
         "next": "page_9",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -177,7 +177,7 @@
       "page_9": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_10.jpg",
+        "background": "/illustrations/chapter_0/page_10.webp",
         "next": "page_10",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -185,7 +185,7 @@
       "page_10": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_11.jpg",
+        "background": "/illustrations/chapter_0/page_11.webp",
         "next": "page_11",
         "bgm" : "song_1",
         "style" : "no_box"
@@ -193,7 +193,7 @@
       "page_11": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/page_12.jpg",
+        "background": "/illustrations/chapter_0/page_12.webp",
         "next": "page_12", 
         "bgm" : "song_1",
         "style" : "no_box"
@@ -202,7 +202,7 @@
       "page_12": {
         "character": "",
         "text": "",
-        "background": "/illustrations/chapter_0/final_introduction.jpg",
+        "background": "/illustrations/chapter_0/final_introduction.webp",
         "next": "chapter_1.page_1", 
         "bgm" : "song_1",
         "style" : "no_box",
@@ -219,7 +219,7 @@
       "page_1": {
         "character": "",
         "text": "Capítulo I",
-        "background": "/illustrations/chapter_1/page_1.jpg",
+        "background": "/illustrations/chapter_1/page_1.webp",
         "next": "end",
         "bgm" : "song_1"
       }
