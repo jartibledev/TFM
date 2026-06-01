@@ -90,8 +90,8 @@ export function MusicProvider({ children }) {
         if (!sys || !audioKeyOrUrl) return;
 
        
-        if (audioKeyOrUrl.endsWith('.wav') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
-        if (!audioKeyOrUrl.endsWith('.wav') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
+        if (audioKeyOrUrl.endsWith('.mp3') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
+        if (!audioKeyOrUrl.endsWith('.mp3') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
 
        
         purgeAllWebIntervals();
@@ -105,9 +105,9 @@ export function MusicProvider({ children }) {
                 sys.bgmSource = null;
             }
 
-            if (audioKeyOrUrl.endsWith('.wav')) {
+            if (audioKeyOrUrl.endsWith('.mp3')) {
                 sys.activeSong = null;
-                await playWav(audioKeyOrUrl);
+                await playAudioFile(audioKeyOrUrl);
             } else {
                 sys.activeBgmUrl = null;
                 await playPattern(audioKeyOrUrl);
@@ -117,7 +117,7 @@ export function MusicProvider({ children }) {
         }
     };
 
-    const playWav = async (url) => {
+    const playAudioFile = async (url) => {
         const sys = getAudioSystem();
         try {
             const response = await fetch(url);
@@ -134,7 +134,7 @@ export function MusicProvider({ children }) {
             sys.activeBgmUrl = url;
             setIsPlaying(true);
         } catch (error) {
-            console.error("Error en playWav:", error);
+            console.error("Error en playAudioFile:", error);
         }
     };
 
