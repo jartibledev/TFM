@@ -84,7 +84,7 @@
           "left": "50%",
           "transform": "translateX(-50%)"
         },
-        "bgm" : "song_1",
+        "bgm" : "/music/static.ogg",
         "style" : "horror"
       },
       "page_6_Sorry": {

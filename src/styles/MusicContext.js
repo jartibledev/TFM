@@ -90,8 +90,8 @@ export function MusicProvider({ children }) {
         if (!sys || !audioKeyOrUrl) return;
 
        
-        if (audioKeyOrUrl.endsWith('.mp3') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
-        if (!audioKeyOrUrl.endsWith('.mp3') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
+        if (audioKeyOrUrl.endsWith('.ogg') && sys.bgmSource && sys.activeBgmUrl === audioKeyOrUrl) return;
+        if (!audioKeyOrUrl.endsWith('.ogg') && sys.hasActiveInterval && sys.activeSong === audioKeyOrUrl) return;
 
        
         purgeAllWebIntervals();
@@ -105,7 +105,7 @@ export function MusicProvider({ children }) {
                 sys.bgmSource = null;
             }
 
-            if (audioKeyOrUrl.endsWith('.mp3')) {
+            if (audioKeyOrUrl.endsWith('.ogg')) {
                 sys.activeSong = null;
                 await playAudioFile(audioKeyOrUrl);
             } else {
