@@ -239,18 +239,18 @@
       },
       "page_4": {
         "character": "",
-        "text": "Alguien ha estado tirando petardos por aquí.",
+        "text": "¿Y ese ruido?",
         "background": "/illustrations/chapter_1/page_4.webp",
         "bgm" : "song_1",
         "style": "no_box",
         "options": [
-          { "text": ">", "next": "page_5_left" },
-          { "text": "<", "next": "page_5_right" }
+          { "text": "<", "next": "page_5_left" },
+          { "text": ">", "next": "page_5_right" }
         ]
       },
       "page_5_left": {
         "character": "",
-        "text": "Por aquí no suena.",
+        "text": "Unas ramas bloquean el camino. Por aquí no se puede pasar.",
         "background": "/illustrations/chapter_1/page_5_left.webp",
         "bgm" : "song_1",
         "style": "no_box",
@@ -258,7 +258,7 @@
       },
       "page_5_right": {
         "character": "",
-        "text": "Por aquí suenan los petardos.",
+        "text": "",
         "background": "/illustrations/chapter_1/page_5_right.webp",
         "bgm" : "song_1",
         "style": "no_box",
@@ -268,7 +268,7 @@
       },
       "page_6_right": {
         "character": "",
-        "text": "Por aquí suenan los petardos",
+        "text": "Suena como si fuesen disparos",
         "background": "/illustrations/chapter_1/page_6_right.webp",
         "bgm" : "song_1",
         "style": "no_box",
@@ -276,10 +276,9 @@
       },
       "page_7": {
         "character": "",
-        "text": "Alguién esta tirando petardos.",
+        "text": "Alguién ha esta tirando petardos.",
         "background": "/illustrations/chapter_1/page_7.webp",
         "bgm" : "song_1",
-        "style": "no_box",
         "next" : "page_8"
       }
     }
