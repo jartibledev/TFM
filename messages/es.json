@@ -262,17 +262,25 @@
         "background": "/illustrations/chapter_1/page_5_right.webp",
         "bgm" : "song_1",
         "style": "no_box",
-        "next" : "page_6"
+        "next" : "page_6_right"
         
 
       },
       "page_6_right": {
         "character": "",
-        "text": "Alguién esta tirando los petardos.",
-        "background": "/illustrations/chapter_1/page_6.webp",
+        "text": "Por aquí suenan los petardos",
+        "background": "/illustrations/chapter_1/page_6_right.webp",
         "bgm" : "song_1",
         "style": "no_box",
-        "next" : "page_6"
+        "next" : "page_7"
+      },
+      "page_7": {
+        "character": "",
+        "text": "Alguién esta tirando petardos.",
+        "background": "/illustrations/chapter_1/page_7.webp",
+        "bgm" : "song_1",
+        "style": "no_box",
+        "next" : "page_8"
       }
     }
   }
