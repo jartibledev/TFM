@@ -220,29 +220,59 @@
         "character": "",
         "text": "Capítulo I",
         "background": "/illustrations/chapter_1/page_1.webp",
-        "next": "end",
+        "next": "page_2",
         "bgm" : "song_1"
       },
       "page_2": {
         "character": "Lulu",
         "text": "Qué es eso...",
         "background": "/illustrations/chapter_1/page_2.webp",
-        "next": "end",
+        "next": "page_3",
         "bgm" : "song_1"
       },
       "page_3": {
         "character": "",
         "text": "",
         "background": "/illustrations/chapter_1/page_3.webp",
-        "next": "end",
+        "next": "page_4",
         "bgm" : "song_1"
       },
       "page_4": {
         "character": "",
         "text": "Alguien ha estado tirando petardos por aquí.",
         "background": "/illustrations/chapter_1/page_4.webp",
-        "next": "end",
-        "bgm" : "song_1"
+        "bgm" : "song_1",
+        "style": "no_box",
+        "options": [
+          { "text": ">", "next": "page_5_left" },
+          { "text": "<", "next": "page_5_right" }
+        ]
+      },
+      "page_5_left": {
+        "character": "",
+        "text": "Por aquí no suena.",
+        "background": "/illustrations/chapter_1/page_5_left.webp",
+        "bgm" : "song_1",
+        "style": "no_box",
+        "next" : "page_4"
+      },
+      "page_5_right": {
+        "character": "",
+        "text": "Por aquí suenan los petardos.",
+        "background": "/illustrations/chapter_1/page_5_right.webp",
+        "bgm" : "song_1",
+        "style": "no_box",
+        "next" : "page_6"
+        
+
+      },
+      "page_6_right": {
+        "character": "",
+        "text": "Alguién esta tirando los petardos.",
+        "background": "/illustrations/chapter_1/page_6.webp",
+        "bgm" : "song_1",
+        "style": "no_box",
+        "next" : "page_6"
       }
     }
   }
